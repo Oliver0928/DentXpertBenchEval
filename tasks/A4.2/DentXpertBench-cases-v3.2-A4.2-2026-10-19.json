@@ -1,0 +1,2645 @@
+{
+  "format_version": "3.2",
+  "cases": [
+    {
+      "id": "candidate:05329432aee04caf864b477edd12005b",
+      "task_code": "A4.2",
+      "dataset_id": "C007",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "a8672b98e2fe83341450cb34a98cb812c0312144e668b923359a5230d9421997",
+            "modality": "periapical_radiograph",
+            "width": 885,
+            "height": 1167,
+            "path": "DenPAR-C007/Testing/Images/1059.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.310658,
+              0.238478,
+              0.681605,
+              0.962353
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "轻度吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "LOCAL_BONE_LOSS",
+                "description": "小于1/3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:0b39de95baf74023a9f21cefb2206aa7",
+      "task_code": "A4.2",
+      "dataset_id": "C004",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C004",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "4fac2feef2cab7b8d0424d908f2d464702d25d3e45a680a9efe963c04a941c2d",
+            "modality": "panoramic_radiograph",
+            "width": 2000,
+            "height": 942,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Panoramic radiography database/images/295.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.327513,
+              0.464491,
+              0.375121,
+              0.685028
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "中度吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "LOCAL_BONE_LOSS",
+                "description": "1/3-2/3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:1158640778a64d37843b8a17881ef94e",
+      "task_code": "A4.2",
+      "dataset_id": "C002",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C002",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "bd6adfc6c2001833d575d4f27e082418780a886838b0896c1a08df638650738f",
+            "modality": "panoramic_radiograph",
+            "width": 2868,
+            "height": 1504,
+            "path": "DENTEX-C002/input/test_216.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.42509,
+              0.607754,
+              0.46719,
+              0.83434
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "轻度吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "LOCAL_BONE_LOSS",
+                "description": "小于1/3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:1fbc443d594c4ca186ccc61b5c884822",
+      "task_code": "A4.2",
+      "dataset_id": "C007",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C007",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "框选一颗恒牙，评价牙周影像骨吸收程度，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "7375dbdba3e171493a4a8e9a722053a94f62fd37d3a3627af58fc40fbcd62b99",
+            "modality": "periapical_radiograph",
+            "width": 1168,
+            "height": 886,
+            "path": "DenPAR-C007/Training/Images/986.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.258929,
+              0.093703,
+              0.588393,
+              0.892909
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "无吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "CREST_ROOT_RELATION",
+                "description": "牙槽嵴顶基本位于釉牙骨质界"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:20488be185f64c45a17e02c1948ecad9",
+      "task_code": "A4.2",
+      "dataset_id": "C007",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C007",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "cb395d31abdc40d24f29175362ad0d2e21aa3202f699b7597c53fd83763bd1fd",
+            "modality": "periapical_radiograph",
+            "width": 885,
+            "height": 1167,
+            "path": "DenPAR-C007/Validation/Images/899.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.276513,
+              0.23377,
+              0.681605,
+              0.93175
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "轻度吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "LOCAL_BONE_LOSS",
+                "description": "小于1/3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:21e37137b0ec4c3295ec40e5d3db77e2",
+      "task_code": "A4.2",
+      "dataset_id": "C003",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C003",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "3587af62caa55f342149a50bd7851438b68e113caaf27bd28dd7c698af41982d",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/1045-F-19.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.661949,
+              0.500482,
+              0.74064,
+              0.656643
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "无吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "CREST_ROOT_RELATION",
+                "description": "牙槽嵴顶与釉牙骨质界平齐"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:25c0eca6fb454c7286e290711ad5701d",
+      "task_code": "A4.2",
+      "dataset_id": "C007",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "框选一颗恒牙，评价牙周影像骨吸收程度，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "9afc9b6d1fff029aa2d44643afafde42ec1e6d8de7c07e87361ab3fc943c70a9",
+            "modality": "periapical_radiograph",
+            "width": 1168,
+            "height": 883,
+            "path": "DenPAR-C007/Training/Images/697.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.242382,
+              0.062121,
+              0.405817,
+              0.771155
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "重度吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "LOCAL_BONE_LOSS",
+                "description": "大于2/3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:2737ef72dc4a473f836e3584a0bb3297",
+      "task_code": "A4.2",
+      "dataset_id": "C007",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C007",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "框选一颗恒牙，评价牙周影像骨吸收程度，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "685ebd687f8b31a8f562cfc5debf1442a5b21769e958b8cd47bbc20048234b86",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Validation/Images/1226.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.224377,
+              0.36638,
+              0.937673,
+              0.571408
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "重度吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "LOCAL_BONE_LOSS",
+                "description": "超过2/3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:3705eff53606435f918d7b8be0ac7d2d",
+      "task_code": "A4.2",
+      "dataset_id": "C003",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C003",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "9e6b029284131c6930d9d8e58789f1ee573d3027f4abd3352e1b733d4f39184d",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/484-F-52.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.346872,
+              0.569429,
+              0.402181,
+              0.789541
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "轻度吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "LOCAL_BONE_LOSS",
+                "description": "小于1/3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:374ecd259ae34996afacfa40c78be3c1",
+      "task_code": "A4.2",
+      "dataset_id": "C002",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C002",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "e4baa49da00d4be27071ed36fb301594ad876b01d0a06804ca095f40c916119e",
+            "modality": "panoramic_radiograph",
+            "width": 2831,
+            "height": 1316,
+            "path": "DENTEX-C002/input/test_63.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.266641,
+              0.36793,
+              0.323998,
+              0.60643
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "无吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "CREST_ROOT_RELATION",
+                "description": "平齐"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:44ef1137077b437b87a09e7070765d46",
+      "task_code": "A4.2",
+      "dataset_id": "C007",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C007",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "框选一颗恒牙，评价牙周影像骨吸收程度，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "be244b885acad2e461a2e26260a3afea8a6e75c6dfd98c36fd0163bbe5350983",
+            "modality": "periapical_radiograph",
+            "width": 758,
+            "height": 1062,
+            "path": "DenPAR-C007/Training/Images/841.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.415318,
+              0.277473,
+              0.700156,
+              0.894231
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "中度吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "CREST_ROOT_RELATION",
+                "description": "1/3-2/3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:471a8e7918054045b4399ec8b826ba5d",
+      "task_code": "A4.2",
+      "dataset_id": "C007",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "67ef8b230aad6fdfe5d391bbc7197afeb7994973c80fc072e2407036f5a51c41",
+            "modality": "periapical_radiograph",
+            "width": 885,
+            "height": 1167,
+            "path": "DenPAR-C007/Training/Images/828.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.071638,
+              0.302038,
+              0.312211,
+              0.934105
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "中度吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "LOCAL_BONE_LOSS",
+                "description": "介于1/3-2/3之间"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:4df44f20de634b24b5b9b4461720d351",
+      "task_code": "A4.2",
+      "dataset_id": "C007",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C007",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "0a41af57fae8caa37b64781b3e33d579f734ca6a831af8ef584c6303e1f5facc",
+            "modality": "periapical_radiograph",
+            "width": 885,
+            "height": 1167,
+            "path": "DenPAR-C007/Validation/Images/871.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.343252,
+              0.136076,
+              0.661428,
+              0.839942
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "重度吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "LOCAL_BONE_LOSS",
+                "description": "超过2/3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:4f3308b676ab4d469576c316ced4dcb1",
+      "task_code": "A4.2",
+      "dataset_id": "C002",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C002",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "46dab988f6f9aaff4862ee975824258916ea5a0dd74e0c54f8e5bcc61e6823a5",
+            "modality": "panoramic_radiograph",
+            "width": 2880,
+            "height": 1504,
+            "path": "DENTEX-C002/input/test_198.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.354425,
+              0.34626,
+              0.423673,
+              0.541815
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "中度吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "LOCAL_BONE_LOSS",
+                "description": "1/3-2/3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:511bbacdc00c4356bcd31a11c9d282c6",
+      "task_code": "A4.2",
+      "dataset_id": "C002",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C002",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "8388c44b747ba4398f291bff0ea4bad31c5e25fe98c30400366b24ee284a43f4",
+            "modality": "panoramic_radiograph",
+            "width": 2780,
+            "height": 1316,
+            "path": "DENTEX-C002/input/test_50.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.405137,
+              0.517928,
+              0.443608,
+              0.723316
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "轻度吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "CREST_ROOT_RELATION",
+                "description": "小于1/3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:517ca744d40940d496d84671cbba5c6b",
+      "task_code": "A4.2",
+      "dataset_id": "C004",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C004",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "7884df654d1cecfe6a724c495f9279d523dd2ab8f58cacd8e178f2246bd05df1",
+            "modality": "panoramic_radiograph",
+            "width": 1991,
+            "height": 1127,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate3-00027.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.705285,
+              0.548693,
+              0.817551,
+              0.780392
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "无吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "LOCAL_BONE_LOSS",
+                "description": "无吸收"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:52ec80131acc4c7f85a2f421126cb792",
+      "task_code": "A4.2",
+      "dataset_id": "C007",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "84ebcf10caf37550b8524d2866ac03eba5858336bae1f9bb6ff6cc3b87eba158",
+            "modality": "periapical_radiograph",
+            "width": 885,
+            "height": 1167,
+            "path": "DenPAR-C007/Training/Images/982.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.316867,
+              0.205521,
+              0.805772,
+              0.882315
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "无吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "CREST_ROOT_RELATION",
+                "description": "平齐"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:63018c0597c246adb3541867d5f5059f",
+      "task_code": "A4.2",
+      "dataset_id": "C007",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C007",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "78acf7ba4ae00424b6ba8cb382417c544bde50d470a405ff79e1c88ea1c81dad",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Testing/Images/915.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.282711,
+              0.435043,
+              0.835748,
+              0.796392
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "中度吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "LOCAL_BONE_LOSS",
+                "description": "介于1/3-2/3之间"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:6845eb7b16834f78864a2595934707df",
+      "task_code": "A4.2",
+      "dataset_id": "C003",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C003",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "fe36e578333c7497c268da657ec290ed4b68ae1c1216c545bc9397590743723b",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/736-F-59.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.566089,
+              0.505548,
+              0.702866,
+              0.740816
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "重度吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "LOCAL_BONE_LOSS",
+                "description": "超过2/3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:74defc9746a747808f432213dcd35b34",
+      "task_code": "A4.2",
+      "dataset_id": "C007",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C007",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "1dae8bad21de5848f5876e4c91e862504fe49d7892cd34ce25f1c34fd136a1f5",
+            "modality": "periapical_radiograph",
+            "width": 885,
+            "height": 1167,
+            "path": "DenPAR-C007/Testing/Images/896.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.264096,
+              0.250248,
+              0.616418,
+              0.849358
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "重度吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "LOCAL_BONE_LOSS",
+                "description": "超过2/3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:8c6b2c10694d4c2cb8052fd480ccce39",
+      "task_code": "A4.2",
+      "dataset_id": "C004",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C004",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "f5b2c80b0617a731e24fb15733e146401712de06dc71f078cb13a700cf209ee7",
+            "modality": "panoramic_radiograph",
+            "width": 1991,
+            "height": 1127,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate8-00261.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.30022,
+              0.281196,
+              0.356314,
+              0.518761
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "中度吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "LOCAL_BONE_LOSS",
+                "description": "1/3-2/3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:8e0a0a85a2314c3c9c2d08380961816c",
+      "task_code": "A4.2",
+      "dataset_id": "C007",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "97bcac65060d19c2711ad5041eba75682dcc6d6707989bae260e1afd112790eb",
+            "modality": "periapical_radiograph",
+            "width": 885,
+            "height": 1168,
+            "path": "DenPAR-C007/Training/Images/1165.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.493799,
+              0.203167,
+              0.860409,
+              0.841119
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "轻度吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "CREST_ROOT_RELATION",
+                "description": "小于1/3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:8e7c2a989b474a15b48190663f2ef8c5",
+      "task_code": "A4.2",
+      "dataset_id": "C003",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C003",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "d7d18a03f3e70ce0199ae1fce8bda0dc1645d6b066d04daebd5763aad926a283",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/1510-F-22.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.309021,
+              0.317551,
+              0.357023,
+              0.50197
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "无吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "CREST_ROOT_RELATION",
+                "description": "平齐"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:99f0b2c01dcd4023ac5289c2ac2f860b",
+      "task_code": "A4.2",
+      "dataset_id": "C003",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C003",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "3a0d530eede11e96634baf67fe4be878523178a04d20466c77d618c7a7fb7de0",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/40-F-59.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.23721,
+              0.492478,
+              0.367071,
+              0.736459
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "重度吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "LOCAL_BONE_LOSS",
+                "description": "超过2/3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:9ea7c1d7f4ed4ac398fb87ab79293074",
+      "task_code": "A4.2",
+      "dataset_id": "C007",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C007",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "框选一颗恒牙，评价牙周影像骨吸收程度，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "f13ccfb35cad47c96c15e7b746578f2328cb546875a4be9062263575dbedc3f4",
+            "modality": "periapical_radiograph",
+            "width": 885,
+            "height": 1167,
+            "path": "DenPAR-C007/Validation/Images/488.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.46741,
+              0.368132,
+              0.710129,
+              0.90522
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "重度吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "LOCAL_BONE_LOSS",
+                "description": "大于2/3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:9ef3420d76194b219fbbdda19914a1b1",
+      "task_code": "A4.2",
+      "dataset_id": "C007",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "框选一颗恒牙，评价牙周影像骨吸收程度，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "f82625ccb30b93d4ed080d8ca139a8d03bee7af8d27a6d69c681c398a2c8c82e",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Training/Images/1130.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.264009,
+              0.08311,
+              0.585501,
+              0.865837
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "无吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "CREST_ROOT_RELATION",
+                "description": "牙槽嵴顶基本位于釉牙骨质界"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:a03c95614b264026b40da28285f74f0b",
+      "task_code": "A4.2",
+      "dataset_id": "C003",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C003",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "f2d68a8dae8e29b569d35203ad8864dc313db0839e54968b897a937f00ef94ae",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/83-F-67.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.407778,
+              0.565921,
+              0.453812,
+              0.749596
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "中度吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "CREST_ROOT_RELATION",
+                "description": "1/3-2/3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:a52d112e7ccb44e1ad9e945bade0b838",
+      "task_code": "A4.2",
+      "dataset_id": "C003",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C003",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "545becfbb5566ceb92cd43bba8937822f605a6a9a68428458f6fc550bd4a02a7",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/1003-F-23.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.623023,
+              0.37877,
+              0.680729,
+              0.557238
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "无吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "CREST_ROOT_RELATION",
+                "description": "CEJ与牙槽嵴顶平齐"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:a92fec5c062b457a907c02a5059ebe79",
+      "task_code": "A4.2",
+      "dataset_id": "C004",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C004",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "edb97756a27c62e1d54144cda8651951ef28f49da428968d44990a12be3c7e23",
+            "modality": "panoramic_radiograph",
+            "width": 1991,
+            "height": 1127,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate8-00293.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.331584,
+              0.579135,
+              0.392738,
+              0.852405
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "轻度吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "LOCAL_BONE_LOSS",
+                "description": "小于1/3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:af557d5cd61540a6896ca2e6e6c1707c",
+      "task_code": "A4.2",
+      "dataset_id": "C002",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C002",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "9be31e7b28e3f1471a8322824d51977edaa886e79b22d766d10f5bcbbb17d2cf",
+            "modality": "panoramic_radiograph",
+            "width": 2872,
+            "height": 1504,
+            "path": "DENTEX-C002/input/test_236.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.404237,
+              0.4095,
+              0.441222,
+              0.594327
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "中度吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "LOCAL_BONE_LOSS",
+                "description": "1/3-2/3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:b2457ab0f7a248f38e6c69ec8f3cde78",
+      "task_code": "A4.2",
+      "dataset_id": "C002",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C002",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "5c824a712c29d3f2b49ab8144c2ad869e5466e4f63c6df41425e49f8706159b2",
+            "modality": "panoramic_radiograph",
+            "width": 2765,
+            "height": 1316,
+            "path": "DENTEX-C002/input/test_93.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.598362,
+              0.544916,
+              0.652919,
+              0.841982
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "轻度吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "LOCAL_BONE_LOSS",
+                "description": "小于1/3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:c5e89877ad4841aeb78bba74a4a3b4e2",
+      "task_code": "A4.2",
+      "dataset_id": "C003",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C003",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "99d390a820a6878c140d4c1fddeb6531675c7a6cd1949fd10f5ae034dd4cd5d0",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/766-M-34.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.663017,
+              0.237382,
+              0.729432,
+              0.430128
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "中度吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "LOCAL_BONE_LOSS",
+                "description": "1/3-2/3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:c75efd44b9dc4f5f869327284757a8e5",
+      "task_code": "A4.2",
+      "dataset_id": "C004",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C004",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "d9b48218b2cd659420628e795ce22f40172cecf07b625fbdd347fbbf6b09dc77",
+            "modality": "panoramic_radiograph",
+            "width": 1991,
+            "height": 1127,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate8-00256.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.645898,
+              0.328902,
+              0.697609,
+              0.560069
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "轻度吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "CREST_ROOT_RELATION",
+                "description": "小于1/3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:cf7016263a5f44908e46a4879ce2dc1b",
+      "task_code": "A4.2",
+      "dataset_id": "C007",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C007",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "1a5f0ea4ebcd2c9fb6271704490bb8ad681ea2dffc45e5ea533bd8ae20e8d210",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Training/Images/1020.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.305865,
+              0.046622,
+              0.709288,
+              0.830526
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "无吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "CREST_ROOT_RELATION",
+                "description": "平齐"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:d0bf677e85634460ae5caf47120f199b",
+      "task_code": "A4.2",
+      "dataset_id": "C003",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C003",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "d7a6cf99b9e53af469b05549faeac7a63e92bc618d5b31f2bcc21561384fb898",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/326-M-43.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.671831,
+              0.311148,
+              0.74517,
+              0.47058
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "重度吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "LOCAL_BONE_LOSS",
+                "description": "超过2/3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:d0dd1c146faa47068ff634f72e8abb69",
+      "task_code": "A4.2",
+      "dataset_id": "C004",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C004",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "80927645ae564f76d76c07342512911bbea4143b011ba5c652451e6a1a40afb2",
+            "modality": "panoramic_radiograph",
+            "width": 2000,
+            "height": 942,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Panoramic radiography database/images/187.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.606815,
+              0.579648,
+              0.69134,
+              0.853731
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "中度吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "LOCAL_BONE_LOSS",
+                "description": "1/3-2/3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:e2277f45563b4d3caa48cdc60cbcb35d",
+      "task_code": "A4.2",
+      "dataset_id": "C007",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "ba21d2145bc5486d50895af6769b162f288e7e67bca2a538ca4b98f39cd99ca8",
+            "modality": "periapical_radiograph",
+            "width": 885,
+            "height": 1168,
+            "path": "DenPAR-C007/Training/Images/1203.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.479817,
+              0.169033,
+              0.77031,
+              0.789329
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "重度吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "LOCAL_BONE_LOSS",
+                "description": "超过2/3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:e94c3158821f44059a9865e3aa2ac767",
+      "task_code": "A4.2",
+      "dataset_id": "C004",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C004",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "a3efa1b074ed9a642a48288384a4ed9d0a34fe146e38c987a86c217c63b80550",
+            "modality": "panoramic_radiograph",
+            "width": 1991,
+            "height": 1127,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate8-00368.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.646998,
+              0.506049,
+              0.743001,
+              0.719443
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "重度吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "LOCAL_BONE_LOSS",
+                "description": "超过1/3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:ee0c442435f047d8a0ef023bcce70687",
+      "task_code": "A4.2",
+      "dataset_id": "C007",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "1f2d5e0773e2c1e68b662d47097834cb4b1bf6c5848c3e6f17a30a0d86843302",
+            "modality": "periapical_radiograph",
+            "width": 818,
+            "height": 1167,
+            "path": "DenPAR-C007/Training/Images/1050.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.01136,
+              0.279674,
+              0.387505,
+              0.949406
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "轻度吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "LOCAL_BONE_LOSS",
+                "description": "小于1/3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:f78702fa075e42579fb5d9dc35200519",
+      "task_code": "A4.2",
+      "dataset_id": "C002",
+      "schema_version": "0.6.2",
+      "title": "A4.2 · 牙周影像骨丧失程度 · C002",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "框选一颗恒牙，评价无吸收、轻度吸收、中度吸收或重度吸收，并提供直接证据。",
+        "images": [
+          {
+            "sha256": "ba4c90557069ad5754db4bb6db727e55824cb200c1ae3b631a44c674cbbea90b",
+            "modality": "panoramic_radiograph",
+            "width": 2834,
+            "height": 1316,
+            "path": "DENTEX-C002/input/test_3.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "RBL_GRADE"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "RBL_ROOT_THIRDS_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.606585,
+              0.586737,
+              0.67898,
+              0.770509
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "轻度吸收"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "LOCAL_BONE_LOSS",
+                "description": "小于1/3"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

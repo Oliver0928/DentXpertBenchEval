@@ -1,0 +1,13 @@
+{
+  "model": "deepseek-flash",
+  "base_url": "https://api.sublyx.org/v1",
+  "api_key_file": "D:\\Desktop\\sublyx.txt",
+  "api_key_env": "SUBLYX_API_KEY",
+  "generation": {
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "timeout": 120,
+    "retries": 5,
+    "retry_sleep": 2.0
+  }
+}

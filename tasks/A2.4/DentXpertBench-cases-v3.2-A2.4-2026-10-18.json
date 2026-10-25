@@ -1,0 +1,5631 @@
+{
+  "format_version": "3.2",
+  "cases": [
+    {
+      "id": "candidate:011c3e7fced54205b1d6f2f3c5c2d5cb",
+      "task_code": "A2.4",
+      "dataset_id": "C007",
+      "schema_version": "0.7.3",
+      "title": "A2.4 · 关键结构与关键点 · C007",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "定位头影或牙周关键结构；坐标统一为0–1。",
+        "images": [
+          {
+            "sha256": "e3d707a9461ae186608578ed5bc4923b4fc92d188e1487752ddbbbd1ea8d2ac3",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Testing/Images/938.jpg"
+          }
+        ],
+        "fields": [
+          {"key": "image_fdis", "name": "图中包含的牙位", "value": [17, 16, 15, 14, 13]},
+          {"key": "target_fdis", "name": "目标牙位", "value": [17]}
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "structures",
+            "name": "关键结构",
+            "value": [
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "13",
+                "coordinate": [
+                  0.91049,
+                  0.521739
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "14",
+                "coordinate": [
+                  0.86043,
+                  0.502835
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "14",
+                "coordinate": [
+                  0.747438,
+                  0.540642
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "15",
+                "coordinate": [
+                  0.714542,
+                  0.544423
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "15",
+                "coordinate": [
+                  0.588677,
+                  0.565218
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "16",
+                "coordinate": [
+                  0.552921,
+                  0.616257
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "16",
+                "coordinate": [
+                  0.349821,
+                  0.508507
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "17",
+                "coordinate": [
+                  0.331227,
+                  0.52363
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "14",
+                "coordinate": [
+                  0.740287,
+                  0.034026
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "15",
+                "coordinate": [
+                  0.645889,
+                  0.083176
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "16",
+                "coordinate": [
+                  0.528605,
+                  0.134216
+                ]
+              },
+              {
+                "structure_code": "FURCATION",
+                "fdi": "16",
+                "coordinate": [
+                  0.468975,
+                  0.378495
+                ]
+              },
+              {
+                "structure_code": "DISTAL_ALVEOLAR_CREST",
+                "fdi": "16",
+                "coordinate": [
+                  0.352632,
+                  0.476614
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "17",
+                "coordinate": [
+                  0.24255,
+                  0.018904
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:0366fd5c2e6e46c6b2bc3e2f9b96f909",
+      "task_code": "A2.4",
+      "dataset_id": "C005",
+      "schema_version": "0.7.3",
+      "title": "A2.4 · 关键结构与关键点 · C005",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "定位头影或牙周关键结构；坐标统一为0–1。",
+        "images": [
+          {
+            "sha256": "32e0c2286384981bd0ff91d2fd4d842a6d562ab320529ed74abef9798cf8601b",
+            "modality": "cephalometric_radiograph",
+            "width": 959,
+            "height": 1198,
+            "path": "Aariz-C005/test/Cephalograms/cl6cc2n5k404r07716yihau93.jpeg"
+          }
+        ],
+        "fields": [
+          {"key": "target_structures", "name": "目标头影关键点", "value": ["S", "N", "A", "B", "ANS", "PNS", "Me", "Pog"]}
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "structures",
+            "name": "关键结构",
+            "value": [
+              {
+                "structure_code": "A",
+                "coordinate": [
+                  0.766423,
+                  0.522538
+                ]
+              },
+              {
+                "structure_code": "ANS",
+                "coordinate": [
+                  0.782065,
+                  0.510851
+                ]
+              },
+              {
+                "structure_code": "B",
+                "coordinate": [
+                  0.727842,
+                  0.698664
+                ]
+              },
+              {
+                "structure_code": "Me",
+                "coordinate": [
+                  0.693431,
+                  0.770451
+                ]
+              },
+              {
+                "structure_code": "N",
+                "coordinate": [
+                  0.773723,
+                  0.305509
+                ]
+              },
+              {
+                "structure_code": "Or",
+                "coordinate": [
+                  0.713243,
+                  0.412354
+                ]
+              },
+              {
+                "structure_code": "Pog",
+                "coordinate": [
+                  0.724713,
+                  0.744574
+                ]
+              },
+              {
+                "structure_code": "PNS",
+                "coordinate": [
+                  0.539103,
+                  0.512521
+                ]
+              },
+              {
+                "structure_code": "Pn",
+                "coordinate": [
+                  0.931178,
+                  0.472454
+                ]
+              },
+              {
+                "structure_code": "R",
+                "coordinate": [
+                  0.376434,
+                  0.529215
+                ]
+              },
+              {
+                "structure_code": "S",
+                "coordinate": [
+                  0.429614,
+                  0.341402
+                ]
+              },
+              {
+                "structure_code": "Ar",
+                "coordinate": [
+                  0.35975,
+                  0.46828
+                ]
+              },
+              {
+                "structure_code": "Co",
+                "coordinate": [
+                  0.367049,
+                  0.430718
+                ]
+              },
+              {
+                "structure_code": "Gn",
+                "coordinate": [
+                  0.713243,
+                  0.762104
+                ]
+              },
+              {
+                "structure_code": "Go",
+                "coordinate": [
+                  0.398332,
+                  0.626043
+                ]
+              },
+              {
+                "structure_code": "Po",
+                "coordinate": [
+                  0.31074,
+                  0.420701
+                ]
+              },
+              {
+                "structure_code": "LPM",
+                "coordinate": [
+                  0.660063,
+                  0.611018
+                ]
+              },
+              {
+                "structure_code": "LIT",
+                "coordinate": [
+                  0.787278,
+                  0.616027
+                ]
+              },
+              {
+                "structure_code": "LMT",
+                "coordinate": [
+                  0.64755,
+                  0.605175
+                ]
+              },
+              {
+                "structure_code": "UPM",
+                "coordinate": [
+                  0.683003,
+                  0.609349
+                ]
+              },
+              {
+                "structure_code": "UIA",
+                "coordinate": [
+                  0.751825,
+                  0.530885
+                ]
+              },
+              {
+                "structure_code": "UIT",
+                "coordinate": [
+                  0.831074,
+                  0.614357
+                ]
+              },
+              {
+                "structure_code": "UMT",
+                "coordinate": [
+                  0.651721,
+                  0.601836
+                ]
+              },
+              {
+                "structure_code": "LIA",
+                "coordinate": [
+                  0.705944,
+                  0.686144
+                ]
+              },
+              {
+                "structure_code": "Li",
+                "coordinate": [
+                  0.848801,
+                  0.659432
+                ]
+              },
+              {
+                "structure_code": "Ls",
+                "coordinate": [
+                  0.880083,
+                  0.577629
+                ]
+              },
+              {
+                "structure_code": "N`",
+                "coordinate": [
+                  0.819604,
+                  0.321369
+                ]
+              },
+              {
+                "structure_code": "Pog`",
+                "coordinate": [
+                  0.797706,
+                  0.722037
+                ]
+              },
+              {
+                "structure_code": "Sn",
+                "coordinate": [
+                  0.870699,
+                  0.512521
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:04926faa96e24001bb6dd2a97cb2e1bb",
+      "task_code": "A2.4",
+      "dataset_id": "C007",
+      "schema_version": "0.7.3",
+      "title": "A2.4 · 关键结构与关键点 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "定位头影或牙周关键结构；坐标统一为0–1。",
+        "images": [
+          {
+            "sha256": "050510b4d4695fe9d27f5484885238e7fc4fae335708582ddd1bb24abd8149ee",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Training/Images/432.jpg"
+          }
+        ],
+        "fields": [
+          {"key": "image_fdis", "name": "图中包含的牙位", "value": [35, 36, 37]},
+          {"key": "target_fdis", "name": "目标牙位", "value": [35, 36]}
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "structures",
+            "name": "关键结构",
+            "value": [
+              {
+                "structure_code": "MESIAL_ALVEOLAR_CREST",
+                "fdi": "36",
+                "coordinate": [
+                  0.170476,
+                  0.29916
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "36",
+                "coordinate": [
+                  0.179812,
+                  0.263375
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "35",
+                "coordinate": [
+                  0.075505,
+                  0.77572
+                ]
+              },
+              {
+                "structure_code": "DISTAL_ALVEOLAR_CREST",
+                "fdi": "36",
+                "coordinate": [
+                  0.420558,
+                  0.345001
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "36",
+                "coordinate": [
+                  0.41178,
+                  0.320988
+                ]
+              },
+              {
+                "structure_code": "DISTAL_ALVEOLAR_CREST",
+                "fdi": "35",
+                "coordinate": [
+                  0.148996,
+                  0.302112
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "35",
+                "coordinate": [
+                  0.15646,
+                  0.26749
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "36",
+                "coordinate": [
+                  0.363518,
+                  0.771605
+                ]
+              },
+              {
+                "structure_code": "DISTAL_ALVEOLAR_CREST",
+                "fdi": "37",
+                "coordinate": [
+                  0.688705,
+                  0.325814
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "37",
+                "coordinate": [
+                  0.687338,
+                  0.308642
+                ]
+              },
+              {
+                "structure_code": "MESIAL_ALVEOLAR_CREST",
+                "fdi": "37",
+                "coordinate": [
+                  0.463344,
+                  0.3248
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "37",
+                "coordinate": [
+                  0.461599,
+                  0.30247
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "37",
+                "coordinate": [
+                  0.645304,
+                  0.74074
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:07a327da28814beeb3c79ad5a6b8f984",
+      "task_code": "A2.4",
+      "dataset_id": "C005",
+      "schema_version": "0.7.3",
+      "title": "A2.4 · 关键结构与关键点 · C005",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "定位头影或牙周关键结构；坐标统一为0–1。",
+        "images": [
+          {
+            "sha256": "db2b2f0e1a8d07e4ac7c07c904dfd54bae2348e5f63683fe3590e60e0e15c120",
+            "modality": "cephalometric_radiograph",
+            "width": 1976,
+            "height": 2201,
+            "path": "Aariz-C005/train/Cephalograms/cks2ip8fr2a3q0yufadyu84rc.png"
+          }
+        ],
+        "fields": [
+          {"key": "target_structures", "name": "目标头影关键点", "value": ["S", "N", "Or", "Po", "Co", "Ar", "Go", "Me"]}
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "structures",
+            "name": "关键结构",
+            "value": [
+              {
+                "structure_code": "A",
+                "coordinate": [
+                  0.743421,
+                  0.537029
+                ]
+              },
+              {
+                "structure_code": "ANS",
+                "coordinate": [
+                  0.776822,
+                  0.522944
+                ]
+              },
+              {
+                "structure_code": "B",
+                "coordinate": [
+                  0.701417,
+                  0.729668
+                ]
+              },
+              {
+                "structure_code": "Me",
+                "coordinate": [
+                  0.687753,
+                  0.825534
+                ]
+              },
+              {
+                "structure_code": "N",
+                "coordinate": [
+                  0.73583,
+                  0.243526
+                ]
+              },
+              {
+                "structure_code": "Or",
+                "coordinate": [
+                  0.648279,
+                  0.412994
+                ]
+              },
+              {
+                "structure_code": "Pog",
+                "coordinate": [
+                  0.717105,
+                  0.785552
+                ]
+              },
+              {
+                "structure_code": "PNS",
+                "coordinate": [
+                  0.47166,
+                  0.553839
+                ]
+              },
+              {
+                "structure_code": "Pn",
+                "coordinate": [
+                  0.923077,
+                  0.471149
+                ]
+              },
+              {
+                "structure_code": "R",
+                "coordinate": [
+                  0.312753,
+                  0.626533
+                ]
+              },
+              {
+                "structure_code": "S",
+                "coordinate": [
+                  0.368421,
+                  0.328487
+                ]
+              },
+              {
+                "structure_code": "Ar",
+                "coordinate": [
+                  0.287449,
+                  0.515675
+                ]
+              },
+              {
+                "structure_code": "Co",
+                "coordinate": [
+                  0.300101,
+                  0.45343
+                ]
+              },
+              {
+                "structure_code": "Gn",
+                "coordinate": [
+                  0.711032,
+                  0.811904
+                ]
+              },
+              {
+                "structure_code": "Go",
+                "coordinate": [
+                  0.343623,
+                  0.719219
+                ]
+              },
+              {
+                "structure_code": "Po",
+                "coordinate": [
+                  0.247976,
+                  0.445252
+                ]
+              },
+              {
+                "structure_code": "LPM",
+                "coordinate": [
+                  0.642713,
+                  0.651976
+                ]
+              },
+              {
+                "structure_code": "LIT",
+                "coordinate": [
+                  0.729251,
+                  0.626533
+                ]
+              },
+              {
+                "structure_code": "LMT",
+                "coordinate": [
+                  0.597166,
+                  0.652885
+                ]
+              },
+              {
+                "structure_code": "UPM",
+                "coordinate": [
+                  0.634109,
+                  0.643344
+                ]
+              },
+              {
+                "structure_code": "UIA",
+                "coordinate": [
+                  0.723677,
+                  0.544462
+                ]
+              },
+              {
+                "structure_code": "UIT",
+                "coordinate": [
+                  0.774798,
+                  0.662881
+                ]
+              },
+              {
+                "structure_code": "UMT",
+                "coordinate": [
+                  0.596154,
+                  0.644253
+                ]
+              },
+              {
+                "structure_code": "LIA",
+                "coordinate": [
+                  0.672065,
+                  0.729214
+                ]
+              },
+              {
+                "structure_code": "Li",
+                "coordinate": [
+                  0.826923,
+                  0.681054
+                ]
+              },
+              {
+                "structure_code": "Ls",
+                "coordinate": [
+                  0.849696,
+                  0.595184
+                ]
+              },
+              {
+                "structure_code": "N`",
+                "coordinate": [
+                  0.769231,
+                  0.274875
+                ]
+              },
+              {
+                "structure_code": "Pog`",
+                "coordinate": [
+                  0.784919,
+                  0.77692
+                ]
+              },
+              {
+                "structure_code": "Sn",
+                "coordinate": [
+                  0.854251,
+                  0.531577
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:0b0a629b01c44f65886b22fe66695183",
+      "task_code": "A2.4",
+      "dataset_id": "C005",
+      "schema_version": "0.7.3",
+      "title": "A2.4 · 关键结构与关键点 · C005",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "定位头影或牙周关键结构；坐标统一为0–1。",
+        "images": [
+          {
+            "sha256": "b4fef48f15a59d24ffe670d668680621c1396f159f786a7c08ca3f4ecc7f3af5",
+            "modality": "cephalometric_radiograph",
+            "width": 672,
+            "height": 812,
+            "path": "Aariz-C005/train/Cephalograms/cl6cc2n543zeb0771cq8zdf07.bmp"
+          }
+        ],
+        "fields": [
+          {"key": "target_structures", "name": "目标头影关键点", "value": ["A", "B", "UIA", "UIT", "LIA", "LIT", "UPM", "LPM"]}
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "structures",
+            "name": "关键结构",
+            "value": [
+              {
+                "structure_code": "A",
+                "coordinate": [
+                  0.72619,
+                  0.618227
+                ]
+              },
+              {
+                "structure_code": "ANS",
+                "coordinate": [
+                  0.75744,
+                  0.591133
+                ]
+              },
+              {
+                "structure_code": "B",
+                "coordinate": [
+                  0.671131,
+                  0.820197
+                ]
+              },
+              {
+                "structure_code": "Me",
+                "coordinate": [
+                  0.660714,
+                  0.908867
+                ]
+              },
+              {
+                "structure_code": "N",
+                "coordinate": [
+                  0.738095,
+                  0.332512
+                ]
+              },
+              {
+                "structure_code": "Or",
+                "coordinate": [
+                  0.651786,
+                  0.480296
+                ]
+              },
+              {
+                "structure_code": "Pog",
+                "coordinate": [
+                  0.691964,
+                  0.881773
+                ]
+              },
+              {
+                "structure_code": "PNS",
+                "coordinate": [
+                  0.474702,
+                  0.602217
+                ]
+              },
+              {
+                "structure_code": "Pn",
+                "coordinate": [
+                  0.89881,
+                  0.555419
+                ]
+              },
+              {
+                "structure_code": "R",
+                "coordinate": [
+                  0.303571,
+                  0.607143
+                ]
+              },
+              {
+                "structure_code": "S",
+                "coordinate": [
+                  0.345238,
+                  0.415025
+                ]
+              },
+              {
+                "structure_code": "Ar",
+                "coordinate": [
+                  0.282738,
+                  0.544335
+                ]
+              },
+              {
+                "structure_code": "Co",
+                "coordinate": [
+                  0.284226,
+                  0.495074
+                ]
+              },
+              {
+                "structure_code": "Gn",
+                "coordinate": [
+                  0.681548,
+                  0.902709
+                ]
+              },
+              {
+                "structure_code": "Go",
+                "coordinate": [
+                  0.318452,
+                  0.729064
+                ]
+              },
+              {
+                "structure_code": "Po",
+                "coordinate": [
+                  0.214286,
+                  0.497537
+                ]
+              },
+              {
+                "structure_code": "LPM",
+                "coordinate": [
+                  0.605655,
+                  0.70936
+                ]
+              },
+              {
+                "structure_code": "LIT",
+                "coordinate": [
+                  0.717262,
+                  0.716749
+                ]
+              },
+              {
+                "structure_code": "LMT",
+                "coordinate": [
+                  0.583333,
+                  0.706897
+                ]
+              },
+              {
+                "structure_code": "UPM",
+                "coordinate": [
+                  0.611607,
+                  0.70197
+                ]
+              },
+              {
+                "structure_code": "UIA",
+                "coordinate": [
+                  0.693452,
+                  0.628079
+                ]
+              },
+              {
+                "structure_code": "UIT",
+                "coordinate": [
+                  0.775298,
+                  0.71798
+                ]
+              },
+              {
+                "structure_code": "UMT",
+                "coordinate": [
+                  0.580357,
+                  0.700739
+                ]
+              },
+              {
+                "structure_code": "LIA",
+                "coordinate": [
+                  0.652867,
+                  0.80623
+                ]
+              },
+              {
+                "structure_code": "Li",
+                "coordinate": [
+                  0.80506,
+                  0.758621
+                ]
+              },
+              {
+                "structure_code": "Ls",
+                "coordinate": [
+                  0.831845,
+                  0.667488
+                ]
+              },
+              {
+                "structure_code": "N`",
+                "coordinate": [
+                  0.761905,
+                  0.347291
+                ]
+              },
+              {
+                "structure_code": "Pog`",
+                "coordinate": [
+                  0.744048,
+                  0.848522
+                ]
+              },
+              {
+                "structure_code": "Sn",
+                "coordinate": [
+                  0.834821,
+                  0.605911
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:27ef48d5dcfa40d1be8c7e4ba6041c80",
+      "task_code": "A2.4",
+      "dataset_id": "C005",
+      "schema_version": "0.7.3",
+      "title": "A2.4 · 关键结构与关键点 · C005",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "定位头影或牙周关键结构；坐标统一为0–1。",
+        "images": [
+          {
+            "sha256": "0c87083ee74a1f5763fd84327dc3320b337fc990a0b9b31cf3517c7aedf90e47",
+            "modality": "cephalometric_radiograph",
+            "width": 2198,
+            "height": 2719,
+            "path": "Aariz-C005/train/Cephalograms/cl7ww1jcl9ccw084fgcjj9brn.bmp"
+          }
+        ],
+        "fields": [
+          {"key": "target_structures", "name": "目标头影关键点", "value": ["N`", "Pn", "Ls", "Li", "Sn", "Pog`", "A", "Pog"]}
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "structures",
+            "name": "关键结构",
+            "value": [
+              {
+                "structure_code": "A",
+                "coordinate": [
+                  0.708371,
+                  0.573373
+                ]
+              },
+              {
+                "structure_code": "ANS",
+                "coordinate": [
+                  0.739308,
+                  0.559029
+                ]
+              },
+              {
+                "structure_code": "B",
+                "coordinate": [
+                  0.637398,
+                  0.729312
+                ]
+              },
+              {
+                "structure_code": "Me",
+                "coordinate": [
+                  0.619654,
+                  0.815373
+                ]
+              },
+              {
+                "structure_code": "N",
+                "coordinate": [
+                  0.7202,
+                  0.304524
+                ]
+              },
+              {
+                "structure_code": "Or",
+                "coordinate": [
+                  0.637398,
+                  0.441707
+                ]
+              },
+              {
+                "structure_code": "Pog",
+                "coordinate": [
+                  0.639672,
+                  0.781537
+                ]
+              },
+              {
+                "structure_code": "PNS",
+                "coordinate": [
+                  0.429026,
+                  0.557926
+                ]
+              },
+              {
+                "structure_code": "Pn",
+                "coordinate": [
+                  0.905823,
+                  0.528871
+                ]
+              },
+              {
+                "structure_code": "R",
+                "coordinate": [
+                  0.232029,
+                  0.572269
+                ]
+              },
+              {
+                "structure_code": "S",
+                "coordinate": [
+                  0.32848,
+                  0.362633
+                ]
+              },
+              {
+                "structure_code": "Ar",
+                "coordinate": [
+                  0.22111,
+                  0.503862
+                ]
+              },
+              {
+                "structure_code": "Co",
+                "coordinate": [
+                  0.257117,
+                  0.441049
+                ]
+              },
+              {
+                "structure_code": "Gn",
+                "coordinate": [
+                  0.636943,
+                  0.804708
+                ]
+              },
+              {
+                "structure_code": "Go",
+                "coordinate": [
+                  0.254322,
+                  0.718279
+                ]
+              },
+              {
+                "structure_code": "Po",
+                "coordinate": [
+                  0.199727,
+                  0.446488
+                ]
+              },
+              {
+                "structure_code": "LPM",
+                "coordinate": [
+                  0.574613,
+                  0.649503
+                ]
+              },
+              {
+                "structure_code": "LIT",
+                "coordinate": [
+                  0.663785,
+                  0.654285
+                ]
+              },
+              {
+                "structure_code": "LMT",
+                "coordinate": [
+                  0.527753,
+                  0.649503
+                ]
+              },
+              {
+                "structure_code": "UPM",
+                "coordinate": [
+                  0.593722,
+                  0.644355
+                ]
+              },
+              {
+                "structure_code": "UIA",
+                "coordinate": [
+                  0.686078,
+                  0.570798
+                ]
+              },
+              {
+                "structure_code": "UIT",
+                "coordinate": [
+                  0.678344,
+                  0.681133
+                ]
+              },
+              {
+                "structure_code": "UMT",
+                "coordinate": [
+                  0.552775,
+                  0.636631
+                ]
+              },
+              {
+                "structure_code": "LIA",
+                "coordinate": [
+                  0.60919,
+                  0.739242
+                ]
+              },
+              {
+                "structure_code": "Li",
+                "coordinate": [
+                  0.759782,
+                  0.698786
+                ]
+              },
+              {
+                "structure_code": "Ls",
+                "coordinate": [
+                  0.807097,
+                  0.654285
+                ]
+              },
+              {
+                "structure_code": "N`",
+                "coordinate": [
+                  0.752047,
+                  0.305627
+                ]
+              },
+              {
+                "structure_code": "Pog`",
+                "coordinate": [
+                  0.725205,
+                  0.791467
+                ]
+              },
+              {
+                "structure_code": "Sn",
+                "coordinate": [
+                  0.8303,
+                  0.584774
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:2b9aef2e59854c4788441701289571cc",
+      "task_code": "A2.4",
+      "dataset_id": "C007",
+      "schema_version": "0.7.3",
+      "title": "A2.4 · 关键结构与关键点 · C007",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "定位头影或牙周关键结构；坐标统一为0–1。",
+        "images": [
+          {
+            "sha256": "85290edb629e7cd9089962452743bbc7eb062a26a1cdb30686001d868cfb5292",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Testing/Images/483.jpg"
+          }
+        ],
+        "fields": [
+          {"key": "image_fdis", "name": "图中包含的牙位", "value": [24, 25, 26, 27]},
+          {"key": "target_fdis", "name": "目标牙位", "value": [24, 25, 26]}
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "structures",
+            "name": "关键结构",
+            "value": [
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "24",
+                "coordinate": [
+                  0.163884,
+                  0.134216
+                ]
+              },
+              {
+                "structure_code": "MESIAL_ALVEOLAR_CREST",
+                "fdi": "25",
+                "coordinate": [
+                  0.272586,
+                  0.612476
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "25",
+                "coordinate": [
+                  0.264003,
+                  0.663516
+                ]
+              },
+              {
+                "structure_code": "DISTAL_ALVEOLAR_CREST",
+                "fdi": "24",
+                "coordinate": [
+                  0.203932,
+                  0.618148
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "24",
+                "coordinate": [
+                  0.206792,
+                  0.633271
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "25",
+                "coordinate": [
+                  0.299761,
+                  0.194707
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "26",
+                "coordinate": [
+                  0.565792,
+                  0.344045
+                ]
+              },
+              {
+                "structure_code": "DISTAL_ALVEOLAR_CREST",
+                "fdi": "27",
+                "coordinate": [
+                  0.838976,
+                  0.446125
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "27",
+                "coordinate": [
+                  0.848988,
+                  0.487712
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "27",
+                "coordinate": [
+                  0.743835,
+                  0.143468
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:3483ccfe23af460c89c5bb94434e2476",
+      "task_code": "A2.4",
+      "dataset_id": "C007",
+      "schema_version": "0.7.3",
+      "title": "A2.4 · 关键结构与关键点 · C007",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "定位头影或牙周关键结构；坐标统一为0–1。",
+        "images": [
+          {
+            "sha256": "c55e5241d1a100591722d05c7f3d6858c9b7ca7a693875f18be299ab211b495b",
+            "modality": "periapical_radiograph",
+            "width": 1170,
+            "height": 884,
+            "path": "DenPAR-C007/Training/Images/1181.jpg"
+          }
+        ],
+        "fields": [
+          {"key": "image_fdis", "name": "图中包含的牙位", "value": [33, 34, 35, 36, 37]},
+          {"key": "target_fdis", "name": "目标牙位", "value": [33, 34, 35, 36, 37]}
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "structures",
+            "name": "关键结构",
+            "value": [
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "34",
+                "coordinate": [
+                  0.127404,
+                  0.378601
+                ]
+              },
+              {
+                "structure_code": "DISTAL_ALVEOLAR_CREST",
+                "fdi": "34",
+                "coordinate": [
+                  0.230748,
+                  0.44725
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "35",
+                "coordinate": [
+                  0.285978,
+                  0.384774
+                ]
+              },
+              {
+                "structure_code": "MESIAL_ALVEOLAR_CREST",
+                "fdi": "34",
+                "coordinate": [
+                  0.126159,
+                  0.480391
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "33",
+                "coordinate": [
+                  0.085429,
+                  0.399176
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "34",
+                "coordinate": [
+                  0.116522,
+                  0.917696
+                ]
+              },
+              {
+                "structure_code": "MESIAL_ALVEOLAR_CREST",
+                "fdi": "36",
+                "coordinate": [
+                  0.458515,
+                  0.439049
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "36",
+                "coordinate": [
+                  0.460097,
+                  0.403292
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "34",
+                "coordinate": [
+                  0.241828,
+                  0.41352
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "35",
+                "coordinate": [
+                  0.326039,
+                  0.88868
+                ]
+              },
+              {
+                "structure_code": "DISTAL_ALVEOLAR_CREST",
+                "fdi": "36",
+                "coordinate": [
+                  0.711634,
+                  0.610037
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "37",
+                "coordinate": [
+                  0.719722,
+                  0.541153
+                ]
+              },
+              {
+                "structure_code": "DISTAL_ALVEOLAR_CREST",
+                "fdi": "35",
+                "coordinate": [
+                  0.432874,
+                  0.456017
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "35",
+                "coordinate": [
+                  0.425896,
+                  0.41358
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "36",
+                "coordinate": [
+                  0.497409,
+                  0.845679
+                ]
+              },
+              {
+                "structure_code": "FURCATION",
+                "fdi": "36",
+                "coordinate": [
+                  0.55097,
+                  0.539643
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "37",
+                "coordinate": [
+                  0.965356,
+                  0.471193
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "37",
+                "coordinate": [
+                  0.87131,
+                  0.911122
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:3743865507a34eb4b65ba8ec6098bacb",
+      "task_code": "A2.4",
+      "dataset_id": "C007",
+      "schema_version": "0.7.3",
+      "title": "A2.4 · 关键结构与关键点 · C007",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "定位头影或牙周关键结构；坐标统一为0–1。",
+        "images": [
+          {
+            "sha256": "8d365c3b98cbb31e713f8e499d02dd8cd2cc5a3e2fb95d14bd2d539ab319d405",
+            "modality": "periapical_radiograph",
+            "width": 776,
+            "height": 1134,
+            "path": "DenPAR-C007/Training/Images/589.jpg"
+          }
+        ],
+        "fields": [
+          {"key": "image_fdis", "name": "图中包含的牙位", "value": [43, 42, 41, 31, 32]},
+          {"key": "target_fdis", "name": "目标牙位", "value": [43, 42, 41, 31]}
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "structures",
+            "name": "关键结构",
+            "value": [
+              {
+                "structure_code": "MESIAL_ALVEOLAR_CREST",
+                "fdi": "43",
+                "coordinate": [
+                  0.111737,
+                  0.46324
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "43",
+                "coordinate": [
+                  0.106673,
+                  0.443563
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "43",
+                "coordinate": [
+                  0.261312,
+                  0.743386
+                ]
+              },
+              {
+                "structure_code": "DISTAL_ALVEOLAR_CREST",
+                "fdi": "42",
+                "coordinate": [
+                  0.13837,
+                  0.44384
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "42",
+                "coordinate": [
+                  0.107795,
+                  0.347042
+                ]
+              },
+              {
+                "structure_code": "MESIAL_ALVEOLAR_CREST",
+                "fdi": "42",
+                "coordinate": [
+                  0.273249,
+                  0.452658
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "42",
+                "coordinate": [
+                  0.268852,
+                  0.361305
+                ]
+              },
+              {
+                "structure_code": "DISTAL_ALVEOLAR_CREST",
+                "fdi": "41",
+                "coordinate": [
+                  0.316419,
+                  0.449131
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "41",
+                "coordinate": [
+                  0.323168,
+                  0.357143
+                ]
+              },
+              {
+                "structure_code": "MESIAL_ALVEOLAR_CREST",
+                "fdi": "32",
+                "coordinate": [
+                  0.770503,
+                  0.476313
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "32",
+                "coordinate": [
+                  0.812858,
+                  0.441799
+                ]
+              },
+              {
+                "structure_code": "DISTAL_ALVEOLAR_CREST",
+                "fdi": "31",
+                "coordinate": [
+                  0.751603,
+                  0.462204
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "31",
+                "coordinate": [
+                  0.787085,
+                  0.390653
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "32",
+                "coordinate": [
+                  0.678838,
+                  0.792769
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:55a8b164130b4653975b868614e235a0",
+      "task_code": "A2.4",
+      "dataset_id": "C007",
+      "schema_version": "0.7.3",
+      "title": "A2.4 · 关键结构与关键点 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "定位头影或牙周关键结构；坐标统一为0–1。",
+        "images": [
+          {
+            "sha256": "ceb79fd58c1196f0077607e7e993dc7050270083da1ccbd5a03ac0b3cbdf7743",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Training/Images/67.jpg"
+          }
+        ],
+        "fields": [
+          {"key": "image_fdis", "name": "图中包含的牙位", "value": [17, 16, 15]},
+          {"key": "target_fdis", "name": "目标牙位", "value": [17, 16, 15]}
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "structures",
+            "name": "关键结构",
+            "value": [
+              {
+                "structure_code": "DISTAL_ALVEOLAR_CREST",
+                "fdi": "17",
+                "coordinate": [
+                  0.32081,
+                  0.407368
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "17",
+                "coordinate": [
+                  0.285009,
+                  0.52683
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "16",
+                "coordinate": [
+                  0.502196,
+                  0.602946
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "17",
+                "coordinate": [
+                  0.388089,
+                  0.113427
+                ]
+              },
+              {
+                "structure_code": "MESIAL_ALVEOLAR_CREST",
+                "fdi": "17",
+                "coordinate": [
+                  0.481602,
+                  0.4323
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "17",
+                "coordinate": [
+                  0.467183,
+                  0.609718
+                ]
+              },
+              {
+                "structure_code": "MESIAL_ALVEOLAR_CREST",
+                "fdi": "16",
+                "coordinate": [
+                  0.687836,
+                  0.443975
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "15",
+                "coordinate": [
+                  0.708003,
+                  0.529582
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "16",
+                "coordinate": [
+                  0.536354,
+                  0.141321
+                ]
+              },
+              {
+                "structure_code": "DISTAL_ALVEOLAR_CREST",
+                "fdi": "15",
+                "coordinate": [
+                  0.718283,
+                  0.382889
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "15",
+                "coordinate": [
+                  0.817311,
+                  0.5657
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "15",
+                "coordinate": [
+                  0.723823,
+                  0.053384
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:568bc0b34e3342a09baa766a2fb3a271",
+      "task_code": "A2.4",
+      "dataset_id": "C007",
+      "schema_version": "0.7.3",
+      "title": "A2.4 · 关键结构与关键点 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "定位头影或牙周关键结构；坐标统一为0–1。",
+        "images": [
+          {
+            "sha256": "2b12dc36824e8932d02befcd1c037cf10a082d7ea9b1f33cf24b49f89251230e",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Training/Images/1287.jpg"
+          }
+        ],
+        "fields": [
+          {"key": "image_fdis", "name": "图中包含的牙位", "value": [48, 47, 46, 45]},
+          {"key": "target_fdis", "name": "目标牙位", "value": [48]}
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "structures",
+            "name": "关键结构",
+            "value": [
+              {
+                "structure_code": "MESIAL_ALVEOLAR_CREST",
+                "fdi": "48",
+                "coordinate": [
+                  0.293384,
+                  0.587771
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "48",
+                "coordinate": [
+                  0.285158,
+                  0.55967
+                ]
+              },
+              {
+                "structure_code": "DISTAL_ALVEOLAR_CREST",
+                "fdi": "47",
+                "coordinate": [
+                  0.309326,
+                  0.585514
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "47",
+                "coordinate": [
+                  0.305396,
+                  0.530865
+                ]
+              },
+              {
+                "structure_code": "DISTAL_ALVEOLAR_CREST",
+                "fdi": "46",
+                "coordinate": [
+                  0.608785,
+                  0.52908
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "46",
+                "coordinate": [
+                  0.612091,
+                  0.469135
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "47",
+                "coordinate": [
+                  0.350545,
+                  0.975308
+                ]
+              },
+              {
+                "structure_code": "MESIAL_ALVEOLAR_CREST",
+                "fdi": "47",
+                "coordinate": [
+                  0.559254,
+                  0.548644
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "47",
+                "coordinate": [
+                  0.554489,
+                  0.502058
+                ]
+              },
+              {
+                "structure_code": "DISTAL_ALVEOLAR_CREST",
+                "fdi": "45",
+                "coordinate": [
+                  0.886894,
+                  0.417719
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "45",
+                "coordinate": [
+                  0.88765,
+                  0.372428
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "46",
+                "coordinate": [
+                  0.828491,
+                  0.923868
+                ]
+              },
+              {
+                "structure_code": "MESIAL_ALVEOLAR_CREST",
+                "fdi": "46",
+                "coordinate": [
+                  0.862129,
+                  0.421105
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "46",
+                "coordinate": [
+                  0.848729,
+                  0.403292
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:5934634766c347eab49a0573e6e92531",
+      "task_code": "A2.4",
+      "dataset_id": "C007",
+      "schema_version": "0.7.3",
+      "title": "A2.4 · 关键结构与关键点 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "定位头影或牙周关键结构；坐标统一为0–1。",
+        "images": [
+          {
+            "sha256": "2e2e27c8899e331b7480fd73b661dfc4bcc3dace278e6a42a62b730826abed05",
+            "modality": "periapical_radiograph",
+            "width": 950,
+            "height": 883,
+            "path": "DenPAR-C007/Validation/Images/935.jpg"
+          }
+        ],
+        "fields": [
+          {"key": "image_fdis", "name": "图中包含的牙位", "value": [15, 14]},
+          {"key": "target_fdis", "name": "目标牙位", "value": [15, 14]}
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "structures",
+            "name": "关键结构",
+            "value": [
+              {
+                "structure_code": "DISTAL_ALVEOLAR_CREST",
+                "fdi": "15",
+                "coordinate": [
+                  0.587697,
+                  0.531135
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "15",
+                "coordinate": [
+                  0.59488,
+                  0.689981
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "14",
+                "coordinate": [
+                  0.782883,
+                  0.650283
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "15",
+                "coordinate": [
+                  0.552712,
+                  0.175803
+                ]
+              },
+              {
+                "structure_code": "DISTAL_ALVEOLAR_CREST",
+                "fdi": "14",
+                "coordinate": [
+                  0.761529,
+                  0.531159
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "15",
+                "coordinate": [
+                  0.747742,
+                  0.661626
+                ]
+              },
+              {
+                "structure_code": "MESIAL_ALVEOLAR_CREST",
+                "fdi": "14",
+                "coordinate": [
+                  0.87952,
+                  0.463138
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "14",
+                "coordinate": [
+                  0.937503,
+                  0.625709
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "14",
+                "coordinate": [
+                  0.714359,
+                  0.185255
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:5b6e59f0ab354bf49e666c4fc497292b",
+      "task_code": "A2.4",
+      "dataset_id": "C005",
+      "schema_version": "0.7.3",
+      "title": "A2.4 · 关键结构与关键点 · C005",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "定位头影或牙周关键结构；坐标统一为0–1。",
+        "images": [
+          {
+            "sha256": "ee693ba4e1ece2743e9d9921c83b2b521f026efb3a0e9d9c4fed43e97af69711",
+            "modality": "cephalometric_radiograph",
+            "width": 707,
+            "height": 733,
+            "path": "Aariz-C005/train/Cephalograms/cl9k69ka132i5088c3imk12f4.jpg"
+          }
+        ],
+        "fields": [
+          {"key": "target_structures", "name": "目标头影关键点", "value": ["Gn", "Go", "Me", "A", "B", "UIA", "LIA", "Pog"]}
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "structures",
+            "name": "关键结构",
+            "value": [
+              {
+                "structure_code": "A",
+                "coordinate": [
+                  0.674682,
+                  0.61528
+                ]
+              },
+              {
+                "structure_code": "ANS",
+                "coordinate": [
+                  0.697313,
+                  0.585266
+                ]
+              },
+              {
+                "structure_code": "B",
+                "coordinate": [
+                  0.635078,
+                  0.791269
+                ]
+              },
+              {
+                "structure_code": "Me",
+                "coordinate": [
+                  0.615276,
+                  0.889495
+                ]
+              },
+              {
+                "structure_code": "N",
+                "coordinate": [
+                  0.661952,
+                  0.332879
+                ]
+              },
+              {
+                "structure_code": "Or",
+                "coordinate": [
+                  0.594059,
+                  0.478854
+                ]
+              },
+              {
+                "structure_code": "Pog",
+                "coordinate": [
+                  0.637907,
+                  0.86221
+                ]
+              },
+              {
+                "structure_code": "PNS",
+                "coordinate": [
+                  0.414427,
+                  0.601637
+                ]
+              },
+              {
+                "structure_code": "Pn",
+                "coordinate": [
+                  0.828854,
+                  0.525239
+                ]
+              },
+              {
+                "structure_code": "R",
+                "coordinate": [
+                  0.263083,
+                  0.626194
+                ]
+              },
+              {
+                "structure_code": "S",
+                "coordinate": [
+                  0.3137,
+                  0.41911
+                ]
+              },
+              {
+                "structure_code": "Ar",
+                "coordinate": [
+                  0.234795,
+                  0.549795
+                ]
+              },
+              {
+                "structure_code": "Co",
+                "coordinate": [
+                  0.243281,
+                  0.496589
+                ]
+              },
+              {
+                "structure_code": "Gn",
+                "coordinate": [
+                  0.630835,
+                  0.879945
+                ]
+              },
+              {
+                "structure_code": "Go",
+                "coordinate": [
+                  0.289958,
+                  0.757162
+                ]
+              },
+              {
+                "structure_code": "Po",
+                "coordinate": [
+                  0.190948,
+                  0.491132
+                ]
+              },
+              {
+                "structure_code": "LPM",
+                "coordinate": [
+                  0.58133,
+                  0.713506
+                ]
+              },
+              {
+                "structure_code": "LIT",
+                "coordinate": [
+                  0.673267,
+                  0.703956
+                ]
+              },
+              {
+                "structure_code": "LMT",
+                "coordinate": [
+                  0.541726,
+                  0.709413
+                ]
+              },
+              {
+                "structure_code": "UPM",
+                "coordinate": [
+                  0.575672,
+                  0.705321
+                ]
+              },
+              {
+                "structure_code": "UIA",
+                "coordinate": [
+                  0.64215,
+                  0.61528
+                ]
+              },
+              {
+                "structure_code": "UIT",
+                "coordinate": [
+                  0.724187,
+                  0.721692
+                ]
+              },
+              {
+                "structure_code": "UMT",
+                "coordinate": [
+                  0.547383,
+                  0.699864
+                ]
+              },
+              {
+                "structure_code": "LIA",
+                "coordinate": [
+                  0.601132,
+                  0.796726
+                ]
+              },
+              {
+                "structure_code": "Li",
+                "coordinate": [
+                  0.732673,
+                  0.754434
+                ]
+              },
+              {
+                "structure_code": "Ls",
+                "coordinate": [
+                  0.768034,
+                  0.671214
+                ]
+              },
+              {
+                "structure_code": "N`",
+                "coordinate": [
+                  0.681754,
+                  0.356071
+                ]
+              },
+              {
+                "structure_code": "Pog`",
+                "coordinate": [
+                  0.705799,
+                  0.873124
+                ]
+              },
+              {
+                "structure_code": "Sn",
+                "coordinate": [
+                  0.768034,
+                  0.585266
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:662849fbfacb41d6ada9db1ab4159e20",
+      "task_code": "A2.4",
+      "dataset_id": "C007",
+      "schema_version": "0.7.3",
+      "title": "A2.4 · 关键结构与关键点 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "定位头影或牙周关键结构；坐标统一为0–1。",
+        "images": [
+          {
+            "sha256": "289af10666aa903b1b94efe24e93321be724fff96c73372412d5fcdaba9daa7e",
+            "modality": "periapical_radiograph",
+            "width": 885,
+            "height": 1167,
+            "path": "DenPAR-C007/Training/Images/1005.jpg"
+          }
+        ],
+        "fields": [
+          {"key": "image_fdis", "name": "图中包含的牙位", "value": [12, 11, 21, 22]},
+          {"key": "target_fdis", "name": "目标牙位", "value": [12, 11, 21, 22]}
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "structures",
+            "name": "关键结构",
+            "value": [
+              {
+                "structure_code": "MESIAL_ALVEOLAR_CREST",
+                "fdi": "12",
+                "coordinate": [
+                  0.210845,
+                  0.603025
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "11",
+                "coordinate": [
+                  0.485044,
+                  0.663516
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "11",
+                "coordinate": [
+                  0.263192,
+                  0.652174
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "21",
+                "coordinate": [
+                  0.587245,
+                  0.654064
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "21",
+                "coordinate": [
+                  0.784169,
+                  0.589792
+                ]
+              },
+              {
+                "structure_code": "MESIAL_ALVEOLAR_CREST",
+                "fdi": "22",
+                "coordinate": [
+                  0.819067,
+                  0.544423
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "11",
+                "coordinate": [
+                  0.320524,
+                  0.26087
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "21",
+                "coordinate": [
+                  0.559842,
+                  0.216086
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "22",
+                "coordinate": [
+                  0.704402,
+                  0.10586
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "12",
+                "coordinate": [
+                  0.064009,
+                  0.213493
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:69e643ab6d7e47848d9167b6d3d7dfa7",
+      "task_code": "A2.4",
+      "dataset_id": "C005",
+      "schema_version": "0.7.3",
+      "title": "A2.4 · 关键结构与关键点 · C005",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "定位头影或牙周关键结构；坐标统一为0–1。",
+        "images": [
+          {
+            "sha256": "185d9ff0d17b0912b8bcc07aa5dd60a7a1de0fb88f2b36d8e688289688cc8799",
+            "modality": "cephalometric_radiograph",
+            "width": 959,
+            "height": 1198,
+            "path": "Aariz-C005/train/Cephalograms/cl6cc2n5l405n07713eef9lbt.jpeg"
+          }
+        ],
+        "fields": [
+          {"key": "target_structures", "name": "目标头影关键点", "value": ["S", "N", "A", "B", "ANS", "PNS", "Me", "Pog"]}
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "structures",
+            "name": "关键结构",
+            "value": [
+              {
+                "structure_code": "A",
+                "coordinate": [
+                  0.747086,
+                  0.486607
+                ]
+              },
+              {
+                "structure_code": "ANS",
+                "coordinate": [
+                  0.764338,
+                  0.46828
+                ]
+              },
+              {
+                "structure_code": "B",
+                "coordinate": [
+                  0.708029,
+                  0.660267
+                ]
+              },
+              {
+                "structure_code": "Me",
+                "coordinate": [
+                  0.675704,
+                  0.738731
+                ]
+              },
+              {
+                "structure_code": "N",
+                "coordinate": [
+                  0.733055,
+                  0.265442
+                ]
+              },
+              {
+                "structure_code": "Or",
+                "coordinate": [
+                  0.679875,
+                  0.374791
+                ]
+              },
+              {
+                "structure_code": "Pog",
+                "coordinate": [
+                  0.705944,
+                  0.716194
+                ]
+              },
+              {
+                "structure_code": "PNS",
+                "coordinate": [
+                  0.498436,
+                  0.488314
+                ]
+              },
+              {
+                "structure_code": "Pn",
+                "coordinate": [
+                  0.885297,
+                  0.443239
+                ]
+              },
+              {
+                "structure_code": "R",
+                "coordinate": [
+                  0.388947,
+                  0.516694
+                ]
+              },
+              {
+                "structure_code": "S",
+                "coordinate": [
+                  0.429614,
+                  0.328047
+                ]
+              },
+              {
+                "structure_code": "Ar",
+                "coordinate": [
+                  0.386861,
+                  0.440735
+                ]
+              },
+              {
+                "structure_code": "Co",
+                "coordinate": [
+                  0.402931,
+                  0.384673
+                ]
+              },
+              {
+                "structure_code": "Gn",
+                "coordinate": [
+                  0.695516,
+                  0.729549
+                ]
+              },
+              {
+                "structure_code": "Go",
+                "coordinate": [
+                  0.395203,
+                  0.615192
+                ]
+              },
+              {
+                "structure_code": "Po",
+                "coordinate": [
+                  0.35245,
+                  0.403172
+                ]
+              },
+              {
+                "structure_code": "LPM",
+                "coordinate": [
+                  0.684046,
+                  0.581803
+                ]
+              },
+              {
+                "structure_code": "LIT",
+                "coordinate": [
+                  0.775808,
+                  0.59182
+                ]
+              },
+              {
+                "structure_code": "LMT",
+                "coordinate": [
+                  0.653806,
+                  0.578464
+                ]
+              },
+              {
+                "structure_code": "UPM",
+                "coordinate": [
+                  0.675704,
+                  0.584307
+                ]
+              },
+              {
+                "structure_code": "UIA",
+                "coordinate": [
+                  0.748807,
+                  0.518978
+                ]
+              },
+              {
+                "structure_code": "UIT",
+                "coordinate": [
+                  0.787278,
+                  0.600167
+                ]
+              },
+              {
+                "structure_code": "UMT",
+                "coordinate": [
+                  0.645464,
+                  0.575125
+                ]
+              },
+              {
+                "structure_code": "LIA",
+                "coordinate": [
+                  0.691345,
+                  0.659432
+                ]
+              },
+              {
+                "structure_code": "Li",
+                "coordinate": [
+                  0.823775,
+                  0.611853
+                ]
+              },
+              {
+                "structure_code": "Ls",
+                "coordinate": [
+                  0.828989,
+                  0.562604
+                ]
+              },
+              {
+                "structure_code": "N`",
+                "coordinate": [
+                  0.759124,
+                  0.271285
+                ]
+              },
+              {
+                "structure_code": "Pog`",
+                "coordinate": [
+                  0.754953,
+                  0.71202
+                ]
+              },
+              {
+                "structure_code": "Sn",
+                "coordinate": [
+                  0.808133,
+                  0.490818
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:6c071cefddc7429bb79b91ebb666ad2b",
+      "task_code": "A2.4",
+      "dataset_id": "C007",
+      "schema_version": "0.7.3",
+      "title": "A2.4 · 关键结构与关键点 · C007",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "定位头影或牙周关键结构；坐标统一为0–1。",
+        "images": [
+          {
+            "sha256": "0706a1892184d24f6c0df2d1f8ecc0b24261929b1aba1e03b432b01459d76455",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Training/Images/105.jpg"
+          }
+        ],
+        "fields": [
+          {"key": "image_fdis", "name": "图中包含的牙位", "value": [24, 25, 26, 27, 28]},
+          {"key": "target_fdis", "name": "目标牙位", "value": [24, 25, 26, 27, 28]}
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "structures",
+            "name": "关键结构",
+            "value": [
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "24",
+                "coordinate": [
+                  0.063764,
+                  0.627599
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "24",
+                "coordinate": [
+                  0.181048,
+                  0.654064
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "25",
+                "coordinate": [
+                  0.218235,
+                  0.62949
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "25",
+                "coordinate": [
+                  0.341239,
+                  0.638941
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "26",
+                "coordinate": [
+                  0.39845,
+                  0.58223
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "26",
+                "coordinate": [
+                  0.584386,
+                  0.58223
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "27",
+                "coordinate": [
+                  0.625865,
+                  0.559546
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "27",
+                "coordinate": [
+                  0.818952,
+                  0.570888
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "28",
+                "coordinate": [
+                  0.817523,
+                  0.487712
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "24",
+                "coordinate": [
+                  0.239424,
+                  0.121685
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "25",
+                "coordinate": [
+                  0.321215,
+                  0.064272
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "26",
+                "coordinate": [
+                  0.577235,
+                  0.035916
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "27",
+                "coordinate": [
+                  0.803219,
+                  0.069944
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:6cf5e76c23ba480d90e1476cb9ecc7d4",
+      "task_code": "A2.4",
+      "dataset_id": "C005",
+      "schema_version": "0.7.3",
+      "title": "A2.4 · 关键结构与关键点 · C005",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "定位头影或牙周关键结构；坐标统一为0–1。",
+        "images": [
+          {
+            "sha256": "0c192c5776f375c223bcd14817ebbf50d05f616e43109c5f9b9a088642200582",
+            "modality": "cephalometric_radiograph",
+            "width": 2091,
+            "height": 1592,
+            "path": "Aariz-C005/train/Cephalograms/cl5lc0isd128s072ucfos30b1.jpg"
+          }
+        ],
+        "fields": [
+          {"key": "target_structures", "name": "目标头影关键点", "value": ["S", "N", "Or", "Po", "Co", "Ar", "Go", "Me"]}
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "structures",
+            "name": "关键结构",
+            "value": [
+              {
+                "structure_code": "A",
+                "coordinate": [
+                  0.813486,
+                  0.585427
+                ]
+              },
+              {
+                "structure_code": "ANS",
+                "coordinate": [
+                  0.837877,
+                  0.569095
+                ]
+              },
+              {
+                "structure_code": "B",
+                "coordinate": [
+                  0.835007,
+                  0.80402
+                ]
+              },
+              {
+                "structure_code": "Me",
+                "coordinate": [
+                  0.815399,
+                  0.910176
+                ]
+              },
+              {
+                "structure_code": "N",
+                "coordinate": [
+                  0.816834,
+                  0.280151
+                ]
+              },
+              {
+                "structure_code": "Or",
+                "coordinate": [
+                  0.755619,
+                  0.411432
+                ]
+              },
+              {
+                "structure_code": "Pog",
+                "coordinate": [
+                  0.838833,
+                  0.882538
+                ]
+              },
+              {
+                "structure_code": "PNS",
+                "coordinate": [
+                  0.625538,
+                  0.540201
+                ]
+              },
+              {
+                "structure_code": "Pn",
+                "coordinate": [
+                  0.942611,
+                  0.500628
+                ]
+              },
+              {
+                "structure_code": "R",
+                "coordinate": [
+                  0.549498,
+                  0.589196
+                ]
+              },
+              {
+                "structure_code": "S",
+                "coordinate": [
+                  0.560019,
+                  0.309673
+                ]
+              },
+              {
+                "structure_code": "Ar",
+                "coordinate": [
+                  0.505978,
+                  0.479271
+                ]
+              },
+              {
+                "structure_code": "Co",
+                "coordinate": [
+                  0.517934,
+                  0.43907
+                ]
+              },
+              {
+                "structure_code": "Gn",
+                "coordinate": [
+                  0.830225,
+                  0.907035
+                ]
+              },
+              {
+                "structure_code": "Go",
+                "coordinate": [
+                  0.577714,
+                  0.724874
+                ]
+              },
+              {
+                "structure_code": "Po",
+                "coordinate": [
+                  0.475868,
+                  0.441082
+                ]
+              },
+              {
+                "structure_code": "LPM",
+                "coordinate": [
+                  0.780966,
+                  0.688442
+                ]
+              },
+              {
+                "structure_code": "LIT",
+                "coordinate": [
+                  0.852224,
+                  0.685302
+                ]
+              },
+              {
+                "structure_code": "LMT",
+                "coordinate": [
+                  0.758011,
+                  0.684045
+                ]
+              },
+              {
+                "structure_code": "UPM",
+                "coordinate": [
+                  0.74175,
+                  0.667085
+                ]
+              },
+              {
+                "structure_code": "UIA",
+                "coordinate": [
+                  0.787661,
+                  0.576633
+                ]
+              },
+              {
+                "structure_code": "UIT",
+                "coordinate": [
+                  0.842181,
+                  0.692839
+                ]
+              },
+              {
+                "structure_code": "UMT",
+                "coordinate": [
+                  0.715447,
+                  0.665829
+                ]
+              },
+              {
+                "structure_code": "LIA",
+                "coordinate": [
+                  0.822095,
+                  0.792714
+                ]
+              },
+              {
+                "structure_code": "Li",
+                "coordinate": [
+                  0.898135,
+                  0.755025
+                ]
+              },
+              {
+                "structure_code": "Ls",
+                "coordinate": [
+                  0.88857,
+                  0.63505
+                ]
+              },
+              {
+                "structure_code": "N`",
+                "coordinate": [
+                  0.84792,
+                  0.317211
+                ]
+              },
+              {
+                "structure_code": "Pog`",
+                "coordinate": [
+                  0.882353,
+                  0.862437
+                ]
+              },
+              {
+                "structure_code": "Sn",
+                "coordinate": [
+                  0.883788,
+                  0.576005
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:755c8f5828d04c2dbec93358b8cedd6a",
+      "task_code": "A2.4",
+      "dataset_id": "C007",
+      "schema_version": "0.7.3",
+      "title": "A2.4 · 关键结构与关键点 · C007",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "定位头影或牙周关键结构；坐标统一为0–1。",
+        "images": [
+          {
+            "sha256": "364c282aeb4659654477946f5999c00b209f66c5d32c7c53397955b0d817d9ae",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Testing/Images/1271.jpg"
+          }
+        ],
+        "fields": [
+          {"key": "image_fdis", "name": "图中包含的牙位", "value": [47, 46, 45]},
+          {"key": "target_fdis", "name": "目标牙位", "value": [47, 46, 45]}
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "structures",
+            "name": "关键结构",
+            "value": [
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "47",
+                "coordinate": [
+                  0.210332,
+                  0.437749
+                ]
+              },
+              {
+                "structure_code": "DISTAL_ALVEOLAR_CREST",
+                "fdi": "47",
+                "coordinate": [
+                  0.206845,
+                  0.464403
+                ]
+              },
+              {
+                "structure_code": "MESIAL_ALVEOLAR_CREST",
+                "fdi": "47",
+                "coordinate": [
+                  0.438111,
+                  0.474486
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "47",
+                "coordinate": [
+                  0.436848,
+                  0.470422
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "47",
+                "coordinate": [
+                  0.275163,
+                  0.985848
+                ]
+              },
+              {
+                "structure_code": "DISTAL_ALVEOLAR_CREST",
+                "fdi": "46",
+                "coordinate": [
+                  0.478105,
+                  0.473546
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "46",
+                "coordinate": [
+                  0.490364,
+                  0.465907
+                ]
+              },
+              {
+                "structure_code": "DISTAL_ALVEOLAR_CREST",
+                "fdi": "45",
+                "coordinate": [
+                  0.775287,
+                  0.434606
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "45",
+                "coordinate": [
+                  0.767036,
+                  0.401927
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "46",
+                "coordinate": [
+                  0.519968,
+                  0.927157
+                ]
+              },
+              {
+                "structure_code": "MESIAL_ALVEOLAR_CREST",
+                "fdi": "46",
+                "coordinate": [
+                  0.740274,
+                  0.442507
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "46",
+                "coordinate": [
+                  0.724921,
+                  0.413237
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "45",
+                "coordinate": [
+                  0.889738,
+                  0.96177
+                ]
+              },
+              {
+                "structure_code": "MESIAL_ALVEOLAR_CREST",
+                "fdi": "45",
+                "coordinate": [
+                  0.938781,
+                  0.387282
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "45",
+                "coordinate": [
+                  0.932151,
+                  0.37712
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:76158016d6484318bd3ade0f57853048",
+      "task_code": "A2.4",
+      "dataset_id": "C007",
+      "schema_version": "0.7.3",
+      "title": "A2.4 · 关键结构与关键点 · C007",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "定位头影或牙周关键结构；坐标统一为0–1。",
+        "images": [
+          {
+            "sha256": "fd902c6788ccd69bcaed7718520b627eceb4cb20d2d6b1890c2a1acebf2c3355",
+            "modality": "periapical_radiograph",
+            "width": 628,
+            "height": 885,
+            "path": "DenPAR-C007/Training/Images/1215.jpg"
+          }
+        ],
+        "fields": [
+          {"key": "image_fdis", "name": "图中包含的牙位", "value": [42, 41, 31, 32, 33]},
+          {"key": "target_fdis", "name": "目标牙位", "value": [42, 41, 31, 32]}
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "structures",
+            "name": "关键结构",
+            "value": [
+              {
+                "structure_code": "MESIAL_ALVEOLAR_CREST",
+                "fdi": "42",
+                "coordinate": [
+                  0.090704,
+                  0.602472
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "41",
+                "coordinate": [
+                  0.105734,
+                  0.446124
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "41",
+                "coordinate": [
+                  0.326842,
+                  0.875236
+                ]
+              },
+              {
+                "structure_code": "MESIAL_ALVEOLAR_CREST",
+                "fdi": "41",
+                "coordinate": [
+                  0.31885,
+                  0.614367
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "41",
+                "coordinate": [
+                  0.278892,
+                  0.406427
+                ]
+              },
+              {
+                "structure_code": "MESIAL_ALVEOLAR_CREST",
+                "fdi": "33",
+                "coordinate": [
+                  0.777052,
+                  0.531191
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "32",
+                "coordinate": [
+                  0.779717,
+                  0.429112
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "31",
+                "coordinate": [
+                  0.563935,
+                  0.393194
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "31",
+                "coordinate": [
+                  0.614551,
+                  0.844991
+                ]
+              },
+              {
+                "structure_code": "DISTAL_ALVEOLAR_CREST",
+                "fdi": "31",
+                "coordinate": [
+                  0.710454,
+                  0.52741
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "31",
+                "coordinate": [
+                  0.723772,
+                  0.400756
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "32",
+                "coordinate": [
+                  0.782381,
+                  0.918714
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:a0ee3262c7974f339136939f2495270b",
+      "task_code": "A2.4",
+      "dataset_id": "C005",
+      "schema_version": "0.7.3",
+      "title": "A2.4 · 关键结构与关键点 · C005",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "定位头影或牙周关键结构；坐标统一为0–1。",
+        "images": [
+          {
+            "sha256": "592ee0f96353f2eb22728b817a59d7470a6f8b226983a9bfad1e8b663a91827d",
+            "modality": "cephalometric_radiograph",
+            "width": 1256,
+            "height": 1592,
+            "path": "Aariz-C005/test/Cephalograms/cl5lc0isd1298072u53z31emu.jpg"
+          }
+        ],
+        "fields": [
+          {"key": "target_structures", "name": "目标头影关键点", "value": ["A", "B", "UIA", "UIT", "LIA", "LIT", "UPM", "LPM"]}
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "structures",
+            "name": "关键结构",
+            "value": [
+              {
+                "structure_code": "A",
+                "coordinate": [
+                  0.66879,
+                  0.481784
+                ]
+              },
+              {
+                "structure_code": "ANS",
+                "coordinate": [
+                  0.683917,
+                  0.46294
+                ]
+              },
+              {
+                "structure_code": "B",
+                "coordinate": [
+                  0.639331,
+                  0.671482
+                ]
+              },
+              {
+                "structure_code": "Me",
+                "coordinate": [
+                  0.618631,
+                  0.75
+                ]
+              },
+              {
+                "structure_code": "N",
+                "coordinate": [
+                  0.625796,
+                  0.25
+                ]
+              },
+              {
+                "structure_code": "Or",
+                "coordinate": [
+                  0.565287,
+                  0.353643
+                ]
+              },
+              {
+                "structure_code": "Pog",
+                "coordinate": [
+                  0.647293,
+                  0.717337
+                ]
+              },
+              {
+                "structure_code": "PNS",
+                "coordinate": [
+                  0.373408,
+                  0.49309
+                ]
+              },
+              {
+                "structure_code": "Pn",
+                "coordinate": [
+                  0.811306,
+                  0.415201
+                ]
+              },
+              {
+                "structure_code": "R",
+                "coordinate": [
+                  0.174363,
+                  0.56407
+                ]
+              },
+              {
+                "structure_code": "S",
+                "coordinate": [
+                  0.210987,
+                  0.304648
+                ]
+              },
+              {
+                "structure_code": "Ar",
+                "coordinate": [
+                  0.134554,
+                  0.471734
+                ]
+              },
+              {
+                "structure_code": "Co",
+                "coordinate": [
+                  0.158439,
+                  0.431533
+                ]
+              },
+              {
+                "structure_code": "Gn",
+                "coordinate": [
+                  0.64172,
+                  0.741834
+                ]
+              },
+              {
+                "structure_code": "Go",
+                "coordinate": [
+                  0.217357,
+                  0.664573
+                ]
+              },
+              {
+                "structure_code": "Po",
+                "coordinate": [
+                  0.084395,
+                  0.426508
+                ]
+              },
+              {
+                "structure_code": "LPM",
+                "coordinate": [
+                  0.531051,
+                  0.589824
+                ]
+              },
+              {
+                "structure_code": "LIT",
+                "coordinate": [
+                  0.690287,
+                  0.57098
+                ]
+              },
+              {
+                "structure_code": "LMT",
+                "coordinate": [
+                  0.492834,
+                  0.594849
+                ]
+              },
+              {
+                "structure_code": "UPM",
+                "coordinate": [
+                  0.546975,
+                  0.582286
+                ]
+              },
+              {
+                "structure_code": "UIA",
+                "coordinate": [
+                  0.632166,
+                  0.494347
+                ]
+              },
+              {
+                "structure_code": "UIT",
+                "coordinate": [
+                  0.747611,
+                  0.578518
+                ]
+              },
+              {
+                "structure_code": "UMT",
+                "coordinate": [
+                  0.499204,
+                  0.588568
+                ]
+              },
+              {
+                "structure_code": "LIA",
+                "coordinate": [
+                  0.604299,
+                  0.662688
+                ]
+              },
+              {
+                "structure_code": "Li",
+                "coordinate": [
+                  0.774682,
+                  0.611181
+                ]
+              },
+              {
+                "structure_code": "Ls",
+                "coordinate": [
+                  0.785828,
+                  0.548367
+                ]
+              },
+              {
+                "structure_code": "N`",
+                "coordinate": [
+                  0.65207,
+                  0.244347
+                ]
+              },
+              {
+                "structure_code": "Pog`",
+                "coordinate": [
+                  0.710987,
+                  0.701633
+                ]
+              },
+              {
+                "structure_code": "Sn",
+                "coordinate": [
+                  0.750796,
+                  0.465452
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:abbfc7fb768d458eb7ea66959f875ffe",
+      "task_code": "A2.4",
+      "dataset_id": "C005",
+      "schema_version": "0.7.3",
+      "title": "A2.4 · 关键结构与关键点 · C005",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "定位头影或牙周关键结构；坐标统一为0–1。",
+        "images": [
+          {
+            "sha256": "8af31455a75ce9b7d3c3a51f3af07c3a10f2cd5105e37732e893fd8a5c60da63",
+            "modality": "cephalometric_radiograph",
+            "width": 2093,
+            "height": 1592,
+            "path": "Aariz-C005/train/Cephalograms/cl5lg05uq01k6074kh7rl7rdx.jpg"
+          }
+        ],
+        "fields": [
+          {"key": "target_structures", "name": "目标头影关键点", "value": ["N`", "Pn", "Ls", "Li", "Sn", "Pog`", "A", "Pog"]}
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "structures",
+            "name": "关键结构",
+            "value": [
+              {
+                "structure_code": "A",
+                "coordinate": [
+                  0.791209,
+                  0.584799
+                ]
+              },
+              {
+                "structure_code": "ANS",
+                "coordinate": [
+                  0.798376,
+                  0.567839
+                ]
+              },
+              {
+                "structure_code": "B",
+                "coordinate": [
+                  0.77592,
+                  0.778894
+                ]
+              },
+              {
+                "structure_code": "Me",
+                "coordinate": [
+                  0.761586,
+                  0.868719
+                ]
+              },
+              {
+                "structure_code": "N",
+                "coordinate": [
+                  0.795509,
+                  0.310302
+                ]
+              },
+              {
+                "structure_code": "Or",
+                "coordinate": [
+                  0.746775,
+                  0.444724
+                ]
+              },
+              {
+                "structure_code": "Pog",
+                "coordinate": [
+                  0.781175,
+                  0.83794
+                ]
+              },
+              {
+                "structure_code": "PNS",
+                "coordinate": [
+                  0.604396,
+                  0.549623
+                ]
+              },
+              {
+                "structure_code": "Pn",
+                "coordinate": [
+                  0.899666,
+                  0.545854
+                ]
+              },
+              {
+                "structure_code": "R",
+                "coordinate": [
+                  0.503106,
+                  0.606784
+                ]
+              },
+              {
+                "structure_code": "S",
+                "coordinate": [
+                  0.552317,
+                  0.343593
+                ]
+              },
+              {
+                "structure_code": "Ar",
+                "coordinate": [
+                  0.484472,
+                  0.491834
+                ]
+              },
+              {
+                "structure_code": "Co",
+                "coordinate": [
+                  0.498806,
+                  0.436558
+                ]
+              },
+              {
+                "structure_code": "Gn",
+                "coordinate": [
+                  0.77592,
+                  0.85804
+                ]
+              },
+              {
+                "structure_code": "Go",
+                "coordinate": [
+                  0.521739,
+                  0.722362
+                ]
+              },
+              {
+                "structure_code": "Po",
+                "coordinate": [
+                  0.457716,
+                  0.417085
+                ]
+              },
+              {
+                "structure_code": "LPM",
+                "coordinate": [
+                  0.734353,
+                  0.672111
+                ]
+              },
+              {
+                "structure_code": "LIT",
+                "coordinate": [
+                  0.80172,
+                  0.678392
+                ]
+              },
+              {
+                "structure_code": "LMT",
+                "coordinate": [
+                  0.704252,
+                  0.675251
+                ]
+              },
+              {
+                "structure_code": "UPM",
+                "coordinate": [
+                  0.718108,
+                  0.673367
+                ]
+              },
+              {
+                "structure_code": "UIA",
+                "coordinate": [
+                  0.765772,
+                  0.572229
+                ]
+              },
+              {
+                "structure_code": "UIT",
+                "coordinate": [
+                  0.812231,
+                  0.687186
+                ]
+              },
+              {
+                "structure_code": "UMT",
+                "coordinate": [
+                  0.688008,
+                  0.675251
+                ]
+              },
+              {
+                "structure_code": "LIA",
+                "coordinate": [
+                  0.751553,
+                  0.780151
+                ]
+              },
+              {
+                "structure_code": "Li",
+                "coordinate": [
+                  0.847109,
+                  0.721734
+                ]
+              },
+              {
+                "structure_code": "Ls",
+                "coordinate": [
+                  0.852365,
+                  0.651382
+                ]
+              },
+              {
+                "structure_code": "N`",
+                "coordinate": [
+                  0.819876,
+                  0.31093
+                ]
+              },
+              {
+                "structure_code": "Pog`",
+                "coordinate": [
+                  0.816054,
+                  0.819095
+                ]
+              },
+              {
+                "structure_code": "Sn",
+                "coordinate": [
+                  0.857143,
+                  0.586683
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:b392317747854fc2a2c6fe395e5aad9c",
+      "task_code": "A2.4",
+      "dataset_id": "C005",
+      "schema_version": "0.7.3",
+      "title": "A2.4 · 关键结构与关键点 · C005",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "定位头影或牙周关键结构；坐标统一为0–1。",
+        "images": [
+          {
+            "sha256": "cadc78e7bcd0bf8fd8e1bafa7035be4c5308b85ba0d35451c38795b5843a6598",
+            "modality": "cephalometric_radiograph",
+            "width": 959,
+            "height": 1198,
+            "path": "Aariz-C005/train/Cephalograms/cl6cc2n5c3zqn077186yv9qml.jpeg"
+          }
+        ],
+        "fields": [
+          {"key": "target_structures", "name": "目标头影关键点", "value": ["Gn", "Go", "Me", "A", "B", "UIA", "LIA", "Pog"]}
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "structures",
+            "name": "关键结构",
+            "value": [
+              {
+                "structure_code": "A",
+                "coordinate": [
+                  0.677789,
+                  0.504174
+                ]
+              },
+              {
+                "structure_code": "ANS",
+                "coordinate": [
+                  0.714286,
+                  0.486644
+                ]
+              },
+              {
+                "structure_code": "B",
+                "coordinate": [
+                  0.633994,
+                  0.670284
+                ]
+              },
+              {
+                "structure_code": "Me",
+                "coordinate": [
+                  0.604797,
+                  0.740401
+                ]
+              },
+              {
+                "structure_code": "N",
+                "coordinate": [
+                  0.660063,
+                  0.277129
+                ]
+              },
+              {
+                "structure_code": "Or",
+                "coordinate": [
+                  0.611053,
+                  0.397329
+                ]
+              },
+              {
+                "structure_code": "Pog",
+                "coordinate": [
+                  0.627737,
+                  0.717028
+                ]
+              },
+              {
+                "structure_code": "PNS",
+                "coordinate": [
+                  0.456726,
+                  0.489983
+                ]
+              },
+              {
+                "structure_code": "Pn",
+                "coordinate": [
+                  0.83316,
+                  0.457429
+                ]
+              },
+              {
+                "structure_code": "R",
+                "coordinate": [
+                  0.339937,
+                  0.516694
+                ]
+              },
+              {
+                "structure_code": "S",
+                "coordinate": [
+                  0.358707,
+                  0.339733
+                ]
+              },
+              {
+                "structure_code": "Ar",
+                "coordinate": [
+                  0.323253,
+                  0.445743
+                ]
+              },
+              {
+                "structure_code": "Co",
+                "coordinate": [
+                  0.333681,
+                  0.405676
+                ]
+              },
+              {
+                "structure_code": "Gn",
+                "coordinate": [
+                  0.620438,
+                  0.732053
+                ]
+              },
+              {
+                "structure_code": "Go",
+                "coordinate": [
+                  0.334724,
+                  0.622705
+                ]
+              },
+              {
+                "structure_code": "Po",
+                "coordinate": [
+                  0.290928,
+                  0.400668
+                ]
+              },
+              {
+                "structure_code": "LPM",
+                "coordinate": [
+                  0.590198,
+                  0.611853
+                ]
+              },
+              {
+                "structure_code": "LIT",
+                "coordinate": [
+                  0.694473,
+                  0.605175
+                ]
+              },
+              {
+                "structure_code": "LMT",
+                "coordinate": [
+                  0.571429,
+                  0.596828
+                ]
+              },
+              {
+                "structure_code": "UPM",
+                "coordinate": [
+                  0.582899,
+                  0.586811
+                ]
+              },
+              {
+                "structure_code": "UIA",
+                "coordinate": [
+                  0.656934,
+                  0.512521
+                ]
+              },
+              {
+                "structure_code": "UIT",
+                "coordinate": [
+                  0.706986,
+                  0.604341
+                ]
+              },
+              {
+                "structure_code": "UMT",
+                "coordinate": [
+                  0.550574,
+                  0.587646
+                ]
+              },
+              {
+                "structure_code": "LIA",
+                "coordinate": [
+                  0.611053,
+                  0.664441
+                ]
+              },
+              {
+                "structure_code": "Li",
+                "coordinate": [
+                  0.749227,
+                  0.640448
+                ]
+              },
+              {
+                "structure_code": "Ls",
+                "coordinate": [
+                  0.75391,
+                  0.57596
+                ]
+              },
+              {
+                "structure_code": "N`",
+                "coordinate": [
+                  0.683003,
+                  0.309683
+                ]
+              },
+              {
+                "structure_code": "Pog`",
+                "coordinate": [
+                  0.699687,
+                  0.717863
+                ]
+              },
+              {
+                "structure_code": "Sn",
+                "coordinate": [
+                  0.770594,
+                  0.505008
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:b60f52cd29204fbe8318ad1f920ac63d",
+      "task_code": "A2.4",
+      "dataset_id": "C007",
+      "schema_version": "0.7.3",
+      "title": "A2.4 · 关键结构与关键点 · C007",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "定位头影或牙周关键结构；坐标统一为0–1。",
+        "images": [
+          {
+            "sha256": "2f3925a31b8e9c2e306a61d052353bf2c0c20750ea2633a7e4723d19e66ae653",
+            "modality": "periapical_radiograph",
+            "width": 885,
+            "height": 1167,
+            "path": "DenPAR-C007/Training/Images/32.jpg"
+          }
+        ],
+        "fields": [
+          {"key": "image_fdis", "name": "图中包含的牙位", "value": [43, 42, 31, 32, 33]},
+          {"key": "target_fdis", "name": "目标牙位", "value": [43, 42, 31, 32, 33]}
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "structures",
+            "name": "关键结构",
+            "value": [
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "43",
+                "coordinate": [
+                  0.302328,
+                  0.957204
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "43",
+                "coordinate": [
+                  0.113627,
+                  0.557889
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "42",
+                "coordinate": [
+                  0.46278,
+                  0.797821
+                ]
+              },
+              {
+                "structure_code": "MESIAL_ALVEOLAR_CREST",
+                "fdi": "42",
+                "coordinate": [
+                  0.45261,
+                  0.463631
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "42",
+                "coordinate": [
+                  0.435661,
+                  0.402791
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "33",
+                "coordinate": [
+                  0.753175,
+                  0.37537
+                ]
+              },
+              {
+                "structure_code": "MESIAL_ALVEOLAR_CREST",
+                "fdi": "31",
+                "coordinate": [
+                  0.607412,
+                  0.450777
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "31",
+                "coordinate": [
+                  0.601763,
+                  0.347093
+                ]
+              },
+              {
+                "structure_code": "MESIAL_ALVEOLAR_CREST",
+                "fdi": "33",
+                "coordinate": [
+                  0.903458,
+                  0.456775
+                ]
+              },
+              {
+                "structure_code": "DISTAL_ALVEOLAR_CREST",
+                "fdi": "31",
+                "coordinate": [
+                  0.726056,
+                  0.4225
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "31",
+                "coordinate": [
+                  0.704588,
+                  0.33938
+                ]
+              },
+              {
+                "structure_code": "MESIAL_ALVEOLAR_CREST",
+                "fdi": "32",
+                "coordinate": [
+                  0.771254,
+                  0.457632
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "32",
+                "coordinate": [
+                  0.878599,
+                  0.384796
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "32",
+                "coordinate": [
+                  0.883119,
+                  0.748121
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:bc80edd7f3ad4c49877006a735bcfcec",
+      "task_code": "A2.4",
+      "dataset_id": "C007",
+      "schema_version": "0.7.3",
+      "title": "A2.4 · 关键结构与关键点 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "定位头影或牙周关键结构；坐标统一为0–1。",
+        "images": [
+          {
+            "sha256": "23bc388ac191ac6631e9d0a17e886c449987e61e2328519d4e5b519c3baf533c",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Training/Images/553.jpg"
+          }
+        ],
+        "fields": [
+          {"key": "image_fdis", "name": "图中包含的牙位", "value": [25, 26, 27]},
+          {"key": "target_fdis", "name": "目标牙位", "value": [25]}
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "structures",
+            "name": "关键结构",
+            "value": [
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "25",
+                "coordinate": [
+                  0.102382,
+                  0.610586
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "25",
+                "coordinate": [
+                  0.03945,
+                  0.107751
+                ]
+              },
+              {
+                "structure_code": "MESIAL_ALVEOLAR_CREST",
+                "fdi": "26",
+                "coordinate": [
+                  0.150996,
+                  0.418258
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "26",
+                "coordinate": [
+                  0.366984,
+                  0.58034
+                ]
+              },
+              {
+                "structure_code": "DISTAL_ALVEOLAR_CREST",
+                "fdi": "25",
+                "coordinate": [
+                  0.096661,
+                  0.52741
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "26",
+                "coordinate": [
+                  0.153872,
+                  0.627599
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "26",
+                "coordinate": [
+                  0.185319,
+                  0.066564
+                ]
+              },
+              {
+                "structure_code": "DISTAL_ALVEOLAR_CREST",
+                "fdi": "27",
+                "coordinate": [
+                  0.631856,
+                  0.208617
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "27",
+                "coordinate": [
+                  0.695949,
+                  0.457467
+                ]
+              },
+              {
+                "structure_code": "DISTAL_ALVEOLAR_CREST",
+                "fdi": "26",
+                "coordinate": [
+                  0.388438,
+                  0.234404
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "27",
+                "coordinate": [
+                  0.464243,
+                  0.610586
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "27",
+                "coordinate": [
+                  0.471395,
+                  0.149339
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:bd224a41c99246f2b8202f701ba208b6",
+      "task_code": "A2.4",
+      "dataset_id": "C005",
+      "schema_version": "0.7.3",
+      "title": "A2.4 · 关键结构与关键点 · C005",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "定位头影或牙周关键结构；坐标统一为0–1。",
+        "images": [
+          {
+            "sha256": "b538ed5bb73acb2ce67d1f8cfd1120e361d4768352e831074e62c6cc0dc92eca",
+            "modality": "cephalometric_radiograph",
+            "width": 959,
+            "height": 1198,
+            "path": "Aariz-C005/train/Cephalograms/cl6cc2n5a3zmf0771he5sh0i5.jpeg"
+          }
+        ],
+        "fields": [
+          {"key": "target_structures", "name": "目标头影关键点", "value": ["S", "N", "A", "B", "ANS", "PNS", "Me", "Pog"]}
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "structures",
+            "name": "关键结构",
+            "value": [
+              {
+                "structure_code": "A",
+                "coordinate": [
+                  0.775808,
+                  0.552588
+                ]
+              },
+              {
+                "structure_code": "ANS",
+                "coordinate": [
+                  0.793535,
+                  0.535058
+                ]
+              },
+              {
+                "structure_code": "B",
+                "coordinate": [
+                  0.740355,
+                  0.706177
+                ]
+              },
+              {
+                "structure_code": "Me",
+                "coordinate": [
+                  0.715328,
+                  0.767947
+                ]
+              },
+              {
+                "structure_code": "N",
+                "coordinate": [
+                  0.779979,
+                  0.336394
+                ]
+              },
+              {
+                "structure_code": "Or",
+                "coordinate": [
+                  0.721585,
+                  0.440735
+                ]
+              },
+              {
+                "structure_code": "Pog",
+                "coordinate": [
+                  0.738269,
+                  0.74207
+                ]
+              },
+              {
+                "structure_code": "PNS",
+                "coordinate": [
+                  0.54536,
+                  0.539232
+                ]
+              },
+              {
+                "structure_code": "Pn",
+                "coordinate": [
+                  0.934307,
+                  0.519199
+                ]
+              },
+              {
+                "structure_code": "R",
+                "coordinate": [
+                  0.420229,
+                  0.555927
+                ]
+              },
+              {
+                "structure_code": "S",
+                "coordinate": [
+                  0.475495,
+                  0.376461
+                ]
+              },
+              {
+                "structure_code": "Ar",
+                "coordinate": [
+                  0.392075,
+                  0.500835
+                ]
+              },
+              {
+                "structure_code": "Co",
+                "coordinate": [
+                  0.40146,
+                  0.459098
+                ]
+              },
+              {
+                "structure_code": "Gn",
+                "coordinate": [
+                  0.728884,
+                  0.758765
+                ]
+              },
+              {
+                "structure_code": "Go",
+                "coordinate": [
+                  0.434828,
+                  0.643573
+                ]
+              },
+              {
+                "structure_code": "Po",
+                "coordinate": [
+                  0.362878,
+                  0.453255
+                ]
+              },
+              {
+                "structure_code": "LPM",
+                "coordinate": [
+                  0.701773,
+                  0.636895
+                ]
+              },
+              {
+                "structure_code": "LIT",
+                "coordinate": [
+                  0.788321,
+                  0.63606
+                ]
+              },
+              {
+                "structure_code": "LMT",
+                "coordinate": [
+                  0.672576,
+                  0.632721
+                ]
+              },
+              {
+                "structure_code": "UPM",
+                "coordinate": [
+                  0.698644,
+                  0.629382
+                ]
+              },
+              {
+                "structure_code": "UIA",
+                "coordinate": [
+                  0.769552,
+                  0.566778
+                ]
+              },
+              {
+                "structure_code": "UIT",
+                "coordinate": [
+                  0.821689,
+                  0.654424
+                ]
+              },
+              {
+                "structure_code": "UMT",
+                "coordinate": [
+                  0.672576,
+                  0.619366
+                ]
+              },
+              {
+                "structure_code": "LIA",
+                "coordinate": [
+                  0.718457,
+                  0.699499
+                ]
+              },
+              {
+                "structure_code": "Li",
+                "coordinate": [
+                  0.838373,
+                  0.683639
+                ]
+              },
+              {
+                "structure_code": "Ls",
+                "coordinate": [
+                  0.863399,
+                  0.619366
+                ]
+              },
+              {
+                "structure_code": "N`",
+                "coordinate": [
+                  0.810219,
+                  0.3798
+                ]
+              },
+              {
+                "structure_code": "Pog`",
+                "coordinate": [
+                  0.801877,
+                  0.751252
+                ]
+              },
+              {
+                "structure_code": "Sn",
+                "coordinate": [
+                  0.84463,
+                  0.556761
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:c57ac7c3d0764f099c0e2b14a5a020b2",
+      "task_code": "A2.4",
+      "dataset_id": "C005",
+      "schema_version": "0.7.3",
+      "title": "A2.4 · 关键结构与关键点 · C005",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "定位头影或牙周关键结构；坐标统一为0–1。",
+        "images": [
+          {
+            "sha256": "f277df35ffb86ed7fac8917b9e11673f2862d96bb3d1890985da4bc71cd7abdb",
+            "modality": "cephalometric_radiograph",
+            "width": 959,
+            "height": 1198,
+            "path": "Aariz-C005/train/Cephalograms/cl6cc2n5b3znz07718ntmeo0a.jpeg"
+          }
+        ],
+        "fields": [
+          {"key": "target_structures", "name": "目标头影关键点", "value": ["S", "N", "Or", "Po", "Co", "Ar", "Go", "Me"]}
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "structures",
+            "name": "关键结构",
+            "value": [
+              {
+                "structure_code": "A",
+                "coordinate": [
+                  0.691345,
+                  0.502504
+                ]
+              },
+              {
+                "structure_code": "ANS",
+                "coordinate": [
+                  0.721585,
+                  0.486644
+                ]
+              },
+              {
+                "structure_code": "B",
+                "coordinate": [
+                  0.627737,
+                  0.651085
+                ]
+              },
+              {
+                "structure_code": "Me",
+                "coordinate": [
+                  0.596455,
+                  0.707012
+                ]
+              },
+              {
+                "structure_code": "N",
+                "coordinate": [
+                  0.688217,
+                  0.279633
+                ]
+              },
+              {
+                "structure_code": "Or",
+                "coordinate": [
+                  0.614181,
+                  0.391486
+                ]
+              },
+              {
+                "structure_code": "Pog",
+                "coordinate": [
+                  0.623566,
+                  0.682805
+                ]
+              },
+              {
+                "structure_code": "PNS",
+                "coordinate": [
+                  0.450469,
+                  0.481636
+                ]
+              },
+              {
+                "structure_code": "Pn",
+                "coordinate": [
+                  0.82586,
+                  0.444908
+                ]
+              },
+              {
+                "structure_code": "R",
+                "coordinate": [
+                  0.29927,
+                  0.497496
+                ]
+              },
+              {
+                "structure_code": "S",
+                "coordinate": [
+                  0.342023,
+                  0.324708
+                ]
+              },
+              {
+                "structure_code": "Ar",
+                "coordinate": [
+                  0.279458,
+                  0.442404
+                ]
+              },
+              {
+                "structure_code": "Co",
+                "coordinate": [
+                  0.285714,
+                  0.415693
+                ]
+              },
+              {
+                "structure_code": "Gn",
+                "coordinate": [
+                  0.614181,
+                  0.698664
+                ]
+              },
+              {
+                "structure_code": "Go",
+                "coordinate": [
+                  0.315954,
+                  0.606845
+                ]
+              },
+              {
+                "structure_code": "Po",
+                "coordinate": [
+                  0.235662,
+                  0.410684
+                ]
+              },
+              {
+                "structure_code": "LPM",
+                "coordinate": [
+                  0.573514,
+                  0.570952
+                ]
+              },
+              {
+                "structure_code": "LIT",
+                "coordinate": [
+                  0.67049,
+                  0.568447
+                ]
+              },
+              {
+                "structure_code": "LMT",
+                "coordinate": [
+                  0.54536,
+                  0.562604
+                ]
+              },
+              {
+                "structure_code": "UPM",
+                "coordinate": [
+                  0.580813,
+                  0.569282
+                ]
+              },
+              {
+                "structure_code": "UIA",
+                "coordinate": [
+                  0.661105,
+                  0.509182
+                ]
+              },
+              {
+                "structure_code": "UIT",
+                "coordinate": [
+                  0.735141,
+                  0.593489
+                ]
+              },
+              {
+                "structure_code": "UMT",
+                "coordinate": [
+                  0.559958,
+                  0.565109
+                ]
+              },
+              {
+                "structure_code": "LIA",
+                "coordinate": [
+                  0.596455,
+                  0.646912
+                ]
+              },
+              {
+                "structure_code": "Li",
+                "coordinate": [
+                  0.724713,
+                  0.610184
+                ]
+              },
+              {
+                "structure_code": "Ls",
+                "coordinate": [
+                  0.789364,
+                  0.540067
+                ]
+              },
+              {
+                "structure_code": "N`",
+                "coordinate": [
+                  0.718457,
+                  0.294658
+                ]
+              },
+              {
+                "structure_code": "Pog`",
+                "coordinate": [
+                  0.684046,
+                  0.678631
+                ]
+              },
+              {
+                "structure_code": "Sn",
+                "coordinate": [
+                  0.777894,
+                  0.482471
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:c6d54d4d62f946cb94dce963f03fcfe5",
+      "task_code": "A2.4",
+      "dataset_id": "C005",
+      "schema_version": "0.7.3",
+      "title": "A2.4 · 关键结构与关键点 · C005",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "定位头影或牙周关键结构；坐标统一为0–1。",
+        "images": [
+          {
+            "sha256": "53788d1017e548cf04e735f28accbe17c9a253762a66d2bc468a4516370e116e",
+            "modality": "cephalometric_radiograph",
+            "width": 2091,
+            "height": 1592,
+            "path": "Aariz-C005/train/Cephalograms/cl5lc0isd129s072u8q2f6xbf.jpg"
+          }
+        ],
+        "fields": [
+          {"key": "target_structures", "name": "目标头影关键点", "value": ["A", "B", "UIA", "UIT", "LIA", "LIT", "UPM", "LPM"]}
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "structures",
+            "name": "关键结构",
+            "value": [
+              {
+                "structure_code": "A",
+                "coordinate": [
+                  0.823529,
+                  0.551508
+                ]
+              },
+              {
+                "structure_code": "ANS",
+                "coordinate": [
+                  0.845528,
+                  0.532035
+                ]
+              },
+              {
+                "structure_code": "B",
+                "coordinate": [
+                  0.789096,
+                  0.751256
+                ]
+              },
+              {
+                "structure_code": "Me",
+                "coordinate": [
+                  0.777618,
+                  0.851759
+                ]
+              },
+              {
+                "structure_code": "N",
+                "coordinate": [
+                  0.83692,
+                  0.300879
+                ]
+              },
+              {
+                "structure_code": "Or",
+                "coordinate": [
+                  0.774749,
+                  0.407035
+                ]
+              },
+              {
+                "structure_code": "Pog",
+                "coordinate": [
+                  0.797704,
+                  0.810302
+                ]
+              },
+              {
+                "structure_code": "PNS",
+                "coordinate": [
+                  0.640363,
+                  0.528266
+                ]
+              },
+              {
+                "structure_code": "Pn",
+                "coordinate": [
+                  0.938785,
+                  0.503141
+                ]
+              },
+              {
+                "structure_code": "R",
+                "coordinate": [
+                  0.513152,
+                  0.550879
+                ]
+              },
+              {
+                "structure_code": "S",
+                "coordinate": [
+                  0.582975,
+                  0.269472
+                ]
+              },
+              {
+                "structure_code": "Ar",
+                "coordinate": [
+                  0.504543,
+                  0.451005
+                ]
+              },
+              {
+                "structure_code": "Co",
+                "coordinate": [
+                  0.528455,
+                  0.381281
+                ]
+              },
+              {
+                "structure_code": "Gn",
+                "coordinate": [
+                  0.792444,
+                  0.839196
+                ]
+              },
+              {
+                "structure_code": "Go",
+                "coordinate": [
+                  0.528934,
+                  0.69598
+                ]
+              },
+              {
+                "structure_code": "Po",
+                "coordinate": [
+                  0.483501,
+                  0.378769
+                ]
+              },
+              {
+                "structure_code": "LPM",
+                "coordinate": [
+                  0.74175,
+                  0.667085
+                ]
+              },
+              {
+                "structure_code": "LIT",
+                "coordinate": [
+                  0.810139,
+                  0.660176
+                ]
+              },
+              {
+                "structure_code": "LMT",
+                "coordinate": [
+                  0.712578,
+                  0.665201
+                ]
+              },
+              {
+                "structure_code": "UPM",
+                "coordinate": [
+                  0.738881,
+                  0.659548
+                ]
+              },
+              {
+                "structure_code": "UIA",
+                "coordinate": [
+                  0.802965,
+                  0.550879
+                ]
+              },
+              {
+                "structure_code": "UIT",
+                "coordinate": [
+                  0.837877,
+                  0.667714
+                ]
+              },
+              {
+                "structure_code": "UMT",
+                "coordinate": [
+                  0.709708,
+                  0.650126
+                ]
+              },
+              {
+                "structure_code": "LIA",
+                "coordinate": [
+                  0.767097,
+                  0.750628
+                ]
+              },
+              {
+                "structure_code": "Li",
+                "coordinate": [
+                  0.871832,
+                  0.721734
+                ]
+              },
+              {
+                "structure_code": "Ls",
+                "coordinate": [
+                  0.892874,
+                  0.626884
+                ]
+              },
+              {
+                "structure_code": "N`",
+                "coordinate": [
+                  0.862267,
+                  0.327261
+                ]
+              },
+              {
+                "structure_code": "Pog`",
+                "coordinate": [
+                  0.84792,
+                  0.793342
+                ]
+              },
+              {
+                "structure_code": "Sn",
+                "coordinate": [
+                  0.879962,
+                  0.552764
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:dbbb8ca4f620406f9ad1bf3264c9b8d3",
+      "task_code": "A2.4",
+      "dataset_id": "C005",
+      "schema_version": "0.7.3",
+      "title": "A2.4 · 关键结构与关键点 · C005",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "定位头影或牙周关键结构；坐标统一为0–1。",
+        "images": [
+          {
+            "sha256": "d693107295fe4b9e7122762271557070640a27a7d13518f1ee9c9354a013fff0",
+            "modality": "cephalometric_radiograph",
+            "width": 959,
+            "height": 1198,
+            "path": "Aariz-C005/train/Cephalograms/cl6cc2n5i401f0771as4t0pmi.jpeg"
+          }
+        ],
+        "fields": [
+          {"key": "target_structures", "name": "目标头影关键点", "value": ["N`", "Pn", "Ls", "Li", "Sn", "Pog`", "A", "Pog"]}
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "structures",
+            "name": "关键结构",
+            "value": [
+              {
+                "structure_code": "A",
+                "coordinate": [
+                  0.785193,
+                  0.536728
+                ]
+              },
+              {
+                "structure_code": "ANS",
+                "coordinate": [
+                  0.81439,
+                  0.524207
+                ]
+              },
+              {
+                "structure_code": "B",
+                "coordinate": [
+                  0.793535,
+                  0.66611
+                ]
+              },
+              {
+                "structure_code": "Me",
+                "coordinate": [
+                  0.809176,
+                  0.739566
+                ]
+              },
+              {
+                "structure_code": "N",
+                "coordinate": [
+                  0.760167,
+                  0.343072
+                ]
+              },
+              {
+                "structure_code": "Or",
+                "coordinate": [
+                  0.711157,
+                  0.449082
+                ]
+              },
+              {
+                "structure_code": "Pog",
+                "coordinate": [
+                  0.817518,
+                  0.704508
+                ]
+              },
+              {
+                "structure_code": "PNS",
+                "coordinate": [
+                  0.582899,
+                  0.539232
+                ]
+              },
+              {
+                "structure_code": "Pn",
+                "coordinate": [
+                  0.934307,
+                  0.509182
+                ]
+              },
+              {
+                "structure_code": "R",
+                "coordinate": [
+                  0.459854,
+                  0.587646
+                ]
+              },
+              {
+                "structure_code": "S",
+                "coordinate": [
+                  0.486388,
+                  0.388806
+                ]
+              },
+              {
+                "structure_code": "Ar",
+                "coordinate": [
+                  0.411887,
+                  0.507513
+                ]
+              },
+              {
+                "structure_code": "Co",
+                "coordinate": [
+                  0.425443,
+                  0.48414
+                ]
+              },
+              {
+                "structure_code": "Gn",
+                "coordinate": [
+                  0.820647,
+                  0.724541
+                ]
+              },
+              {
+                "structure_code": "Go",
+                "coordinate": [
+                  0.519291,
+                  0.69783
+                ]
+              },
+              {
+                "structure_code": "Po",
+                "coordinate": [
+                  0.392075,
+                  0.471619
+                ]
+              },
+              {
+                "structure_code": "LPM",
+                "coordinate": [
+                  0.73097,
+                  0.614357
+                ]
+              },
+              {
+                "structure_code": "LIT",
+                "coordinate": [
+                  0.788321,
+                  0.607679
+                ]
+              },
+              {
+                "structure_code": "LMT",
+                "coordinate": [
+                  0.704901,
+                  0.62187
+                ]
+              },
+              {
+                "structure_code": "UPM",
+                "coordinate": [
+                  0.733055,
+                  0.611853
+                ]
+              },
+              {
+                "structure_code": "UIA",
+                "coordinate": [
+                  0.764338,
+                  0.540902
+                ]
+              },
+              {
+                "structure_code": "UIT",
+                "coordinate": [
+                  0.80292,
+                  0.6202
+                ]
+              },
+              {
+                "structure_code": "UMT",
+                "coordinate": [
+                  0.704901,
+                  0.614357
+                ]
+              },
+              {
+                "structure_code": "LIA",
+                "coordinate": [
+                  0.770594,
+                  0.681135
+                ]
+              },
+              {
+                "structure_code": "Li",
+                "coordinate": [
+                  0.875912,
+                  0.626878
+                ]
+              },
+              {
+                "structure_code": "Ls",
+                "coordinate": [
+                  0.88634,
+                  0.587646
+                ]
+              },
+              {
+                "structure_code": "N`",
+                "coordinate": [
+                  0.800834,
+                  0.36227
+                ]
+              },
+              {
+                "structure_code": "Pog`",
+                "coordinate": [
+                  0.888425,
+                  0.705342
+                ]
+              },
+              {
+                "structure_code": "Sn",
+                "coordinate": [
+                  0.876955,
+                  0.539232
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:e9980f31b74e4232ba08d0c488c880c8",
+      "task_code": "A2.4",
+      "dataset_id": "C005",
+      "schema_version": "0.7.3",
+      "title": "A2.4 · 关键结构与关键点 · C005",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "定位头影或牙周关键结构；坐标统一为0–1。",
+        "images": [
+          {
+            "sha256": "9c05741cb1730fafb45c632e16656e12fbb13fa0077b6668de7484ebd7bf632d",
+            "modality": "cephalometric_radiograph",
+            "width": 959,
+            "height": 1198,
+            "path": "Aariz-C005/train/Cephalograms/cl6wmcdb23jfb078vas0r8v7e.jpeg"
+          }
+        ],
+        "fields": [
+          {"key": "target_structures", "name": "目标头影关键点", "value": ["Gn", "Go", "Me", "A", "B", "UIA", "LIA", "Pog"]}
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "structures",
+            "name": "关键结构",
+            "value": [
+              {
+                "structure_code": "A",
+                "coordinate": [
+                  0.793535,
+                  0.551753
+                ]
+              },
+              {
+                "structure_code": "ANS",
+                "coordinate": [
+                  0.811262,
+                  0.540067
+                ]
+              },
+              {
+                "structure_code": "B",
+                "coordinate": [
+                  0.735141,
+                  0.715359
+                ]
+              },
+              {
+                "structure_code": "Me",
+                "coordinate": [
+                  0.690302,
+                  0.77212
+                ]
+              },
+              {
+                "structure_code": "N",
+                "coordinate": [
+                  0.781022,
+                  0.353088
+                ]
+              },
+              {
+                "structure_code": "Or",
+                "coordinate": [
+                  0.732013,
+                  0.449082
+                ]
+              },
+              {
+                "structure_code": "Pog",
+                "coordinate": [
+                  0.719499,
+                  0.758765
+                ]
+              },
+              {
+                "structure_code": "PNS",
+                "coordinate": [
+                  0.566215,
+                  0.527546
+                ]
+              },
+              {
+                "structure_code": "Pn",
+                "coordinate": [
+                  0.930136,
+                  0.532554
+                ]
+              },
+              {
+                "structure_code": "R",
+                "coordinate": [
+                  0.44317,
+                  0.543406
+                ]
+              },
+              {
+                "structure_code": "S",
+                "coordinate": [
+                  0.504692,
+                  0.392321
+                ]
+              },
+              {
+                "structure_code": "Ar",
+                "coordinate": [
+                  0.432742,
+                  0.48414
+                ]
+              },
+              {
+                "structure_code": "Co",
+                "coordinate": [
+                  0.450469,
+                  0.456594
+                ]
+              },
+              {
+                "structure_code": "Gn",
+                "coordinate": [
+                  0.706986,
+                  0.771285
+                ]
+              },
+              {
+                "structure_code": "Go",
+                "coordinate": [
+                  0.453597,
+                  0.630217
+                ]
+              },
+              {
+                "structure_code": "Po",
+                "coordinate": [
+                  0.394161,
+                  0.45409
+                ]
+              },
+              {
+                "structure_code": "LPM",
+                "coordinate": [
+                  0.716371,
+                  0.636895
+                ]
+              },
+              {
+                "structure_code": "LIT",
+                "coordinate": [
+                  0.809176,
+                  0.643573
+                ]
+              },
+              {
+                "structure_code": "LMT",
+                "coordinate": [
+                  0.693431,
+                  0.622705
+                ]
+              },
+              {
+                "structure_code": "UPM",
+                "coordinate": [
+                  0.709072,
+                  0.630217
+                ]
+              },
+              {
+                "structure_code": "UIA",
+                "coordinate": [
+                  0.778936,
+                  0.554257
+                ]
+              },
+              {
+                "structure_code": "UIT",
+                "coordinate": [
+                  0.820647,
+                  0.646077
+                ]
+              },
+              {
+                "structure_code": "UMT",
+                "coordinate": [
+                  0.687174,
+                  0.616027
+                ]
+              },
+              {
+                "structure_code": "LIA",
+                "coordinate": [
+                  0.720542,
+                  0.698664
+                ]
+              },
+              {
+                "structure_code": "Li",
+                "coordinate": [
+                  0.847758,
+                  0.672788
+                ]
+              },
+              {
+                "structure_code": "Ls",
+                "coordinate": [
+                  0.864442,
+                  0.616861
+                ]
+              },
+              {
+                "structure_code": "N`",
+                "coordinate": [
+                  0.816475,
+                  0.385643
+                ]
+              },
+              {
+                "structure_code": "Pog`",
+                "coordinate": [
+                  0.787278,
+                  0.749583
+                ]
+              },
+              {
+                "structure_code": "Sn",
+                "coordinate": [
+                  0.866528,
+                  0.560935
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:f4e7efe4df4e4e92aaae45bf37f8914a",
+      "task_code": "A2.4",
+      "dataset_id": "C007",
+      "schema_version": "0.7.3",
+      "title": "A2.4 · 关键结构与关键点 · C007",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "定位头影或牙周关键结构；坐标统一为0–1。",
+        "images": [
+          {
+            "sha256": "18202312f5d87129195456186321059e8399adb5192e0488a2816a15b39ad7dd",
+            "modality": "periapical_radiograph",
+            "width": 821,
+            "height": 1061,
+            "path": "DenPAR-C007/Training/Images/637.jpg"
+          }
+        ],
+        "fields": [
+          {"key": "image_fdis", "name": "图中包含的牙位", "value": [13, 12, 11, 21, 22]},
+          {"key": "target_fdis", "name": "目标牙位", "value": [13, 12]}
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "structures",
+            "name": "关键结构",
+            "value": [
+              {
+                "structure_code": "MESIAL_ALVEOLAR_CREST",
+                "fdi": "13",
+                "coordinate": [
+                  0.126227,
+                  0.275992
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "13",
+                "coordinate": [
+                  0.101798,
+                  0.385633
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "12",
+                "coordinate": [
+                  0.277691,
+                  0.228733
+                ]
+              },
+              {
+                "structure_code": "MESIAL_ALVEOLAR_CREST",
+                "fdi": "12",
+                "coordinate": [
+                  0.326549,
+                  0.385633
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "12",
+                "coordinate": [
+                  0.052938,
+                  0.568998
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "11",
+                "coordinate": [
+                  0.292348,
+                  0.618147
+                ]
+              },
+              {
+                "structure_code": "DISTAL_ALVEOLAR_CREST",
+                "fdi": "11",
+                "coordinate": [
+                  0.358308,
+                  0.412098
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "12",
+                "coordinate": [
+                  0.277691,
+                  0.572779
+                ]
+              },
+              {
+                "structure_code": "MESIAL_ALVEOLAR_CREST",
+                "fdi": "11",
+                "coordinate": [
+                  0.523459,
+                  0.418355
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "11",
+                "coordinate": [
+                  0.509772,
+                  0.637051
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "11",
+                "coordinate": [
+                  0.473128,
+                  0.206049
+                ]
+              },
+              {
+                "structure_code": "MESIAL_ALVEOLAR_CREST",
+                "fdi": "21",
+                "coordinate": [
+                  0.611448,
+                  0.438532
+                ]
+              },
+              {
+                "structure_code": "DISTAL_CEJ",
+                "fdi": "21",
+                "coordinate": [
+                  0.783384,
+                  0.650284
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "21",
+                "coordinate": [
+                  0.575732,
+                  0.621928
+                ]
+              },
+              {
+                "structure_code": "MESIAL_ALVEOLAR_CREST",
+                "fdi": "22",
+                "coordinate": [
+                  0.817585,
+                  0.396975
+                ]
+              },
+              {
+                "structure_code": "MESIAL_CEJ",
+                "fdi": "22",
+                "coordinate": [
+                  0.834686,
+                  0.514178
+                ]
+              },
+              {
+                "structure_code": "ROOT_APEX",
+                "fdi": "22",
+                "coordinate": [
+                  0.727195,
+                  0.20794
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

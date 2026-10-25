@@ -1,0 +1,20 @@
+{
+  "task_code": "A3.1",
+  "name": "硬组织异常定位",
+  "input": {"images": 1, "fields": ["evaluation_scope"]},
+  "modes": {
+    "local": {"output_format": {"type": "json", "fields": ["findings"], "finding_shape": "finding_code_and_fdi"}},
+    "bbox": {"output_format": {"type": "json", "fields": ["findings"], "finding_shape": "finding_code_and_bbox"}}
+  },
+  "scoring": {
+    "case_points": 100.0,
+    "fields": [{"key": "findings", "weight": 1.0, "metric": "correct_pairs_over_union"}],
+    "bbox_iou_threshold": 0.5
+  },
+  "constraints": {
+    "finding_codes": ["龋样缺损", "非龋性牙体缺损", "牙体折裂", "根尖周透射影", "根尖周阻射影", "牙周骨吸收", "牙根吸收", "牙根形态异常", "骨质异常"],
+    "allowed_fdi": ["11-18", "21-28", "31-38", "41-48", "51-55", "61-65", "71-75", "81-85"],
+    "bbox": "[left, top, right, bottom] normalized to 0-1",
+    "region_code": "standard oral region label"
+  }
+}

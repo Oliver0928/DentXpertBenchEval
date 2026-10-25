@@ -1,0 +1,42 @@
+{
+  "task_code": "A2.1",
+  "name": "牙列阶段判断",
+  "input": {
+    "images": 1
+  },
+  "output_format": {
+    "type": "json",
+    "fields": [
+      "dentition_stage",
+      "unevaluable_reasons"
+    ]
+  },
+  "scoring": {
+    "case_points": 100.0,
+    "fields": [
+      {
+        "key": "dentition_stage",
+        "weight": 1.0,
+        "conditional_weight_when_reference_stage_is_unevaluable": 0.5
+      },
+      {
+        "key": "unevaluable_reasons",
+        "weight": 0.0,
+        "conditional_weight_when_reference_stage_is_unevaluable": 0.5
+      }
+    ]
+  },
+  "options": {
+    "dentition_stage": [
+      "乳牙列",
+      "混合牙列",
+      "恒牙列",
+      "不可评价"
+    ],
+    "unevaluable_reasons": [
+      "牙列覆盖不足",
+      "年龄信息不足",
+      "图像质量不足"
+    ]
+  }
+}

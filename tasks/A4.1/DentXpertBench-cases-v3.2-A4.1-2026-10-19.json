@@ -1,0 +1,1813 @@
+{
+  "format_version": "3.2",
+  "cases": [
+    {
+      "id": "candidate:10bb95b243c4460c8a502a4368815fbf",
+      "task_code": "A4.1",
+      "dataset_id": "C005",
+      "schema_version": "0.6.0",
+      "title": "A4.1 · 序数分级 · C005",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "按冻结分级体系完成CVM或BRAR序数分级。",
+        "images": [
+          {
+            "sha256": "543c5b6c96bd9122257d0e7091dbdbd546c8174192413e1e2c62bb5e38fcb886",
+            "modality": "cephalometric_radiograph",
+            "width": 2092,
+            "height": 1937,
+            "path": "Aariz-C005/valid/Cephalograms/cl5lg05ud017m074k94q030wu.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CVM"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CVM_WORK_RECORD_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "S1"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "C2_INFERIOR_BORDER",
+                "description": "C2锥体下缘平坦"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:2c380ab389d24c429335dd0b48a5cf5a",
+      "task_code": "A4.1",
+      "dataset_id": "C005",
+      "schema_version": "0.6.0",
+      "title": "A4.1 · 序数分级 · C005",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "按冻结分级体系完成CVM或BRAR序数分级。",
+        "images": [
+          {
+            "sha256": "496d75190531442bb8e5e3160131bfa28c83b2f13d7d68d0ef72375441cdbfe3",
+            "modality": "cephalometric_radiograph",
+            "width": 667,
+            "height": 821,
+            "path": "Aariz-C005/train/Cephalograms/cl6cc2n543zdz0771268y9yps.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CVM"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CVM_WORK_RECORD_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "S5"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "C4_INFERIOR_BORDER",
+                "description": "C4锥体下缘凹陷"
+              },
+              {
+                "evidence_code": "C4_BODY_SHAPE",
+                "description": "C4形状呈现正方形"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:313a169e05024fc19c0f1b2f54b60b97",
+      "task_code": "A4.1",
+      "dataset_id": "C005",
+      "schema_version": "0.6.0",
+      "title": "A4.1 · 序数分级 · C005",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "按冻结分级体系完成CVM或BRAR序数分级。",
+        "images": [
+          {
+            "sha256": "3085fb239608e3be05eef52b6bc7a0495082c6e116d21416bd2ae01c2ce70cba",
+            "modality": "cephalometric_radiograph",
+            "width": 2092,
+            "height": 1592,
+            "path": "Aariz-C005/valid/Cephalograms/cl5lg05ug01aq074ka65k4wur.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CVM"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CVM_WORK_RECORD_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "S3"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "C3_INFERIOR_BORDER",
+                "description": "C3锥体下缘凹陷"
+              },
+              {
+                "evidence_code": "C4_INFERIOR_BORDER",
+                "description": "C4锥体下缘平坦"
+              },
+              {
+                "evidence_code": "C3_BODY_SHAPE",
+                "description": "C3/C4呈现梯形到水平长方形的过渡"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:33e0756278564568bc2d40c6af486ba6",
+      "task_code": "A4.1",
+      "dataset_id": "C005",
+      "schema_version": "0.6.0",
+      "title": "A4.1 · 序数分级 · C005",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "按冻结分级体系完成CVM或BRAR序数分级。",
+        "images": [
+          {
+            "sha256": "2e1790e786819dbf512665622feb998d7fd44877641c6feb0d607ba3368c4a70",
+            "modality": "cephalometric_radiograph",
+            "width": 747,
+            "height": 776,
+            "path": "Aariz-C005/train/Cephalograms/cl9k69ka232jd088cckxl2x3g.bmp"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CVM"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CVM_WORK_RECORD_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "S5"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "C4_INFERIOR_BORDER",
+                "description": "C4下缘凹陷"
+              },
+              {
+                "evidence_code": "C4_BODY_SHAPE",
+                "description": "C4呈现正方形"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:3719fe8e27be49de9bc9c5ba38442ef7",
+      "task_code": "A4.1",
+      "dataset_id": "C005",
+      "schema_version": "0.6.0",
+      "title": "A4.1 · 颈椎成熟阶段评估 · C005",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "根据颈椎影像，按固定 CVM 标准评价成熟阶段并提供直接证据。",
+        "images": [
+          {
+            "sha256": "a239d678676f934200781918a7dd1531be07662662b5765a3178f8039f3c007e",
+            "modality": "cephalometric_radiograph",
+            "width": 2092,
+            "height": 1592,
+            "path": "Aariz-C005/train/Cephalograms/cl5lg05ud017q074k8ojw6poi.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CVM"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CVM_WORK_RECORD_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "S1"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "C2_INFERIOR_BORDER",
+                "description": "C2锥体下缘平坦"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:44ae0ad54968464ab34f578d3217c896",
+      "task_code": "A4.1",
+      "dataset_id": "C005",
+      "schema_version": "0.6.0",
+      "title": "A4.1 · 序数分级 · C005",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "按冻结分级体系完成CVM或BRAR序数分级。",
+        "images": [
+          {
+            "sha256": "c8c6230dfc72c831cbffcf6dcdb68feaa8f98784631d6fedb6ece15de3c2d3d3",
+            "modality": "cephalometric_radiograph",
+            "width": 2091,
+            "height": 1592,
+            "path": "Aariz-C005/test/Cephalograms/cl5lc0isd128w072u4hvg4n8y.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CVM"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CVM_WORK_RECORD_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "S1"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "C2_INFERIOR_BORDER",
+                "description": "C2锥体下缘平坦"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:4e1764d07ec84a1dbe1cbc7387dcdfe6",
+      "task_code": "A4.1",
+      "dataset_id": "C005",
+      "schema_version": "0.6.0",
+      "title": "A4.1 · 颈椎成熟阶段评估 · C005",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "根据颈椎影像，按固定 CVM 标准评价成熟阶段并提供直接证据。",
+        "images": [
+          {
+            "sha256": "09e890169f08895e1860740fcb5697d41e9d9916f857c39bc3a8b6026e456ab3",
+            "modality": "cephalometric_radiograph",
+            "width": 748,
+            "height": 776,
+            "path": "Aariz-C005/train/Cephalograms/cl9k69ka032h9088cc98d78oa.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CVM"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CVM_WORK_RECORD_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "S4"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "C4_INFERIOR_BORDER",
+                "description": "C4锥体下缘凹陷"
+              },
+              {
+                "evidence_code": "C4_BODY_SHAPE",
+                "description": "C4呈水平长方形"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:512f76e2b2de4f459a1c9b989c85799e",
+      "task_code": "A4.1",
+      "dataset_id": "C005",
+      "schema_version": "0.6.0",
+      "title": "A4.1 · 颈椎成熟阶段评估 · C005",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "根据颈椎影像，按固定 CVM 标准评价成熟阶段并提供直接证据。",
+        "images": [
+          {
+            "sha256": "c2461c8cfdc53e61abc0c6d7072b27f2f57742a42c4f9b55a97d8d8f7722e565",
+            "modality": "cephalometric_radiograph",
+            "width": 2092,
+            "height": 1592,
+            "path": "Aariz-C005/train/Cephalograms/cl5lg05uk01e6074kbbr9cl5e.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CVM"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CVM_WORK_RECORD_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "S3"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "C3_INFERIOR_BORDER",
+                "description": "C3锥体下缘凹陷"
+              },
+              {
+                "evidence_code": "C4_INFERIOR_BORDER",
+                "description": "C4锥体下缘平坦"
+              },
+              {
+                "evidence_code": "C3_BODY_SHAPE",
+                "description": "C3呈梯形"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:54b174f6061a40bf95eb4f0091940490",
+      "task_code": "A4.1",
+      "dataset_id": "C005",
+      "schema_version": "0.6.0",
+      "title": "A4.1 · 序数分级 · C005",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "按冻结分级体系完成CVM或BRAR序数分级。",
+        "images": [
+          {
+            "sha256": "46cdb01f4e911b592e75cbffd44915222e15d82668932a9cb465db4c189d2e62",
+            "modality": "cephalometric_radiograph",
+            "width": 2092,
+            "height": 1592,
+            "path": "Aariz-C005/train/Cephalograms/cl5lg05uo01iq074k6zpr0akg.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CVM"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CVM_WORK_RECORD_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "S1"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "C2_INFERIOR_BORDER",
+                "description": "C2锥体下缘平坦"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:60dfd1a9778f42bbab7440848902f44a",
+      "task_code": "A4.1",
+      "dataset_id": "C005",
+      "schema_version": "0.6.0",
+      "title": "A4.1 · 序数分级 · C005",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "按冻结分级体系完成CVM或BRAR序数分级。",
+        "images": [
+          {
+            "sha256": "c9bd03f19cacaa5c73aeb30e25e7aab2c84d44944a0d6323cb20248e21675a79",
+            "modality": "cephalometric_radiograph",
+            "width": 2092,
+            "height": 1592,
+            "path": "Aariz-C005/valid/Cephalograms/cl5lg05up01jq074k75kd1p9y.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CVM"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CVM_WORK_RECORD_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "S6"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "C4_BODY_SHAPE",
+                "description": "C4呈现垂直 长方形"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:61fb214213fe4837857bb192ce02d1ac",
+      "task_code": "A4.1",
+      "dataset_id": "C005",
+      "schema_version": "0.6.0",
+      "title": "A4.1 · 序数分级 · C005",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "按冻结分级体系完成CVM或BRAR序数分级。",
+        "images": [
+          {
+            "sha256": "2ccbf678eda9fcc4ce1f73a19fa6751bf1ebc4de5d2d6af4814926d09b9846a8",
+            "modality": "cephalometric_radiograph",
+            "width": 959,
+            "height": 1198,
+            "path": "Aariz-C005/train/Cephalograms/cl6cc2n553zgf077108byc977.jpeg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CVM"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CVM_WORK_RECORD_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "S2"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "C2_INFERIOR_BORDER",
+                "description": "C2锥体下缘凹陷"
+              },
+              {
+                "evidence_code": "C3_INFERIOR_BORDER",
+                "description": "C3锥体下缘平坦"
+              },
+              {
+                "evidence_code": "C3_BODY_SHAPE",
+                "description": "C3呈现梯形"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:6f7d1dd9a2e54f72b1f14eff2a199711",
+      "task_code": "A4.1",
+      "dataset_id": "C005",
+      "schema_version": "0.6.0",
+      "title": "A4.1 · 颈椎成熟阶段评估 · C005",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "根据颈椎影像，按固定 CVM 标准评价成熟阶段并提供直接证据。",
+        "images": [
+          {
+            "sha256": "cef7aa05c81905321d9a9aad48901ee256437017c19a75168f35b63360a46886",
+            "modality": "cephalometric_radiograph",
+            "width": 2198,
+            "height": 2719,
+            "path": "Aariz-C005/train/Cephalograms/cl7ww1jcl9cc4084f8e6ca940.bmp"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CVM"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CVM_WORK_RECORD_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "S6"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "C4_BODY_SHAPE",
+                "description": "C4呈垂直长方形"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:75eecd40b1b543cb848a17b60a13d52f",
+      "task_code": "A4.1",
+      "dataset_id": "C005",
+      "schema_version": "0.6.0",
+      "title": "A4.1 · 序数分级 · C005",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "按冻结分级体系完成CVM或BRAR序数分级。",
+        "images": [
+          {
+            "sha256": "9d5060e4587a8df60888aee2807d7e98f55582629e2ae21eff6a167254653e56",
+            "modality": "cephalometric_radiograph",
+            "width": 1976,
+            "height": 2225,
+            "path": "Aariz-C005/valid/Cephalograms/cks2ip8ft2aat0yufhyrqcmkc.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CVM"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CVM_WORK_RECORD_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "S4"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "C4_INFERIOR_BORDER",
+                "description": "C4锥体下缘凹陷"
+              },
+              {
+                "evidence_code": "C4_BODY_SHAPE",
+                "description": "C4锥体呈现水平长方形"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:783ee84b4cef42e594f0cb6bbfcb2968",
+      "task_code": "A4.1",
+      "dataset_id": "C005",
+      "schema_version": "0.6.0",
+      "title": "A4.1 · 序数分级 · C005",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "按冻结分级体系完成CVM或BRAR序数分级。",
+        "images": [
+          {
+            "sha256": "f093d6ba166c7919acf430073a50999ae9fa0adcd0d30bae43ac8f76303a8379",
+            "modality": "cephalometric_radiograph",
+            "width": 959,
+            "height": 1198,
+            "path": "Aariz-C005/train/Cephalograms/cl6cc2n5g3zxf0771fz7m4res.jpeg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CVM"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CVM_WORK_RECORD_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "S2"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "C2_INFERIOR_BORDER",
+                "description": "C2锥体下缘凹陷"
+              },
+              {
+                "evidence_code": "C3_INFERIOR_BORDER",
+                "description": "C3锥体下缘平坦"
+              },
+              {
+                "evidence_code": "C3_BODY_SHAPE",
+                "description": "C3锥体呈现梯形"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:788caff049d64301ba060fdb49fffa2f",
+      "task_code": "A4.1",
+      "dataset_id": "C005",
+      "schema_version": "0.6.0",
+      "title": "A4.1 · 颈椎成熟阶段评估 · C005",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "根据颈椎影像，按固定 CVM 标准评价成熟阶段并提供直接证据。",
+        "images": [
+          {
+            "sha256": "363299774a698a7632755fb1b62d9d8b8b5a8a811ce3636a26b5ec72b6a6739e",
+            "modality": "cephalometric_radiograph",
+            "width": 1972,
+            "height": 2225,
+            "path": "Aariz-C005/test/Cephalograms/cks2ip8fy2aju0yuf8lqu1038.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CVM"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CVM_WORK_RECORD_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "S3"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "C3_INFERIOR_BORDER",
+                "description": "C3锥体下缘凹陷"
+              },
+              {
+                "evidence_code": "C4_INFERIOR_BORDER",
+                "description": "C4锥体下缘平坦"
+              },
+              {
+                "evidence_code": "C3_BODY_SHAPE",
+                "description": "C3呈现水平长方形"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:7d3704eabd234cc5b6a0f0d5e829e2c8",
+      "task_code": "A4.1",
+      "dataset_id": "C005",
+      "schema_version": "0.6.0",
+      "title": "A4.1 · 颈椎成熟阶段评估 · C005",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "根据颈椎影像，按固定 CVM 标准评价成熟阶段并提供直接证据。",
+        "images": [
+          {
+            "sha256": "9950e5359d02bda2200840e64b4209011260406d6d7747e55d733c20792c4197",
+            "modality": "cephalometric_radiograph",
+            "width": 2091,
+            "height": 1592,
+            "path": "Aariz-C005/test/Cephalograms/cl5lc0ise12bs072u9zb31kau.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CVM"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CVM_WORK_RECORD_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "S6"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "C4_BODY_SHAPE",
+                "description": "C4呈垂直长方形"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:7f183bd80aa84e6d8d4fa39ae065c8f2",
+      "task_code": "A4.1",
+      "dataset_id": "C005",
+      "schema_version": "0.6.0",
+      "title": "A4.1 · 序数分级 · C005",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "按冻结分级体系完成CVM或BRAR序数分级。",
+        "images": [
+          {
+            "sha256": "f785f88e035c6c0377ad7243f10a246b1a8f4397af210f2629afaca37087e5ea",
+            "modality": "cephalometric_radiograph",
+            "width": 1968,
+            "height": 2225,
+            "path": "Aariz-C005/train/Cephalograms/cks2ip8fw2adg0yuf1dzy9uwg.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CVM"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CVM_WORK_RECORD_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "S2"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "C2_INFERIOR_BORDER",
+                "description": "C2锥体下缘凹陷"
+              },
+              {
+                "evidence_code": "C3_INFERIOR_BORDER",
+                "description": "C3锥体下缘平坦"
+              },
+              {
+                "evidence_code": "C3_BODY_SHAPE",
+                "description": "C3锥体呈梯形"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:8505207d04ad417d93bdb09835697114",
+      "task_code": "A4.1",
+      "dataset_id": "C005",
+      "schema_version": "0.6.0",
+      "title": "A4.1 · 序数分级 · C005",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "按冻结分级体系完成CVM或BRAR序数分级。",
+        "images": [
+          {
+            "sha256": "448f183e45593ac45454bfaee5f17b2895727f4e069a8afb022eb350db4a7072",
+            "modality": "cephalometric_radiograph",
+            "width": 2091,
+            "height": 1592,
+            "path": "Aariz-C005/train/Cephalograms/cl5lc0isd12ac072u11hk6avr.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CVM"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CVM_WORK_RECORD_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "S2"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "C2_INFERIOR_BORDER",
+                "description": "C2锥体下缘凹陷"
+              },
+              {
+                "evidence_code": "C3_INFERIOR_BORDER",
+                "description": "C3锥体下缘平坦"
+              },
+              {
+                "evidence_code": "C3_BODY_SHAPE",
+                "description": "C3锥体呈梯形"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:88eefe9e06c34d8b8fc5ed90cdecaaa3",
+      "task_code": "A4.1",
+      "dataset_id": "C005",
+      "schema_version": "0.6.0",
+      "title": "A4.1 · 序数分级 · C005",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "按冻结分级体系完成CVM或BRAR序数分级。",
+        "images": [
+          {
+            "sha256": "d0ae5af6ca051f40e5166fb1f82cea90e7f9372d3c4b138fe918386d77e3bea0",
+            "modality": "cephalometric_radiograph",
+            "width": 2091,
+            "height": 1592,
+            "path": "Aariz-C005/valid/Cephalograms/cl5lc0ise12aw072udmyzbf03.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CVM"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CVM_WORK_RECORD_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "S3"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "C3_INFERIOR_BORDER",
+                "description": "C3锥体下缘凹陷"
+              },
+              {
+                "evidence_code": "C4_INFERIOR_BORDER",
+                "description": "C4锥体下缘平坦"
+              },
+              {
+                "evidence_code": "C3_BODY_SHAPE",
+                "description": "C3/C4呈现梯形"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:945f63e53d884b0aa45ca2dad43eaf11",
+      "task_code": "A4.1",
+      "dataset_id": "C005",
+      "schema_version": "0.6.0",
+      "title": "A4.1 · 颈椎成熟阶段评估 · C005",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "根据颈椎影像，按固定 CVM 标准评价成熟阶段并提供直接证据。",
+        "images": [
+          {
+            "sha256": "9ae29ec22a7f69a2ead9f4d8db0ba0bb6ff0cbc7a075cf46c20617ce91e26354",
+            "modality": "cephalometric_radiograph",
+            "width": 1968,
+            "height": 2225,
+            "path": "Aariz-C005/valid/Cephalograms/cks7vcjki63ka0yto4v5igz63.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CVM"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CVM_WORK_RECORD_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "S2"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "C2_INFERIOR_BORDER",
+                "description": "C2锥体下缘凹陷"
+              },
+              {
+                "evidence_code": "C3_INFERIOR_BORDER",
+                "description": "C3锥体下缘平坦"
+              },
+              {
+                "evidence_code": "C3_BODY_SHAPE",
+                "description": "C3呈现梯形"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:990a9ffe38f74f0ab69d178eedb6e942",
+      "task_code": "A4.1",
+      "dataset_id": "C005",
+      "schema_version": "0.6.0",
+      "title": "A4.1 · 序数分级 · C005",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "按冻结分级体系完成CVM或BRAR序数分级。",
+        "images": [
+          {
+            "sha256": "81f137ee37d628b1c5a7ee1530e6d54b2df4e9524e6f9ab59af83fd9b35f148e",
+            "modality": "cephalometric_radiograph",
+            "width": 1972,
+            "height": 2225,
+            "path": "Aariz-C005/train/Cephalograms/cks7vcjki63k50yto20l03kkh.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CVM"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CVM_WORK_RECORD_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "S4"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "C4_INFERIOR_BORDER",
+                "description": "C4下缘凹陷"
+              },
+              {
+                "evidence_code": "C4_BODY_SHAPE",
+                "description": "C4呈现水平长方形"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:a9b540b1fa6840e0b4b19faab5e9fef1",
+      "task_code": "A4.1",
+      "dataset_id": "C005",
+      "schema_version": "0.6.0",
+      "title": "A4.1 · 序数分级 · C005",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "按冻结分级体系完成CVM或BRAR序数分级。",
+        "images": [
+          {
+            "sha256": "194e5c8399b8e7b3af46a4230c6bb9c9cc2b798b85abbfcb21ce5a363dc0bc1f",
+            "modality": "cephalometric_radiograph",
+            "width": 2198,
+            "height": 2719,
+            "path": "Aariz-C005/test/Cephalograms/cl76jfqye0e5507615nooedyg.bmp"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CVM"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CVM_WORK_RECORD_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "S1"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "C2_INFERIOR_BORDER",
+                "description": "C2锥体下缘平坦"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:ab56d4a27be34931ae48d99931ab3327",
+      "task_code": "A4.1",
+      "dataset_id": "C005",
+      "schema_version": "0.6.0",
+      "title": "A4.1 · 颈椎成熟阶段评估 · C005",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "根据颈椎影像，按固定 CVM 标准评价成熟阶段并提供直接证据。",
+        "images": [
+          {
+            "sha256": "c191db258bdab8d27e83a00b26762ce2a7167f075c47b6ff35e2dba7db1524cd",
+            "modality": "cephalometric_radiograph",
+            "width": 1972,
+            "height": 2225,
+            "path": "Aariz-C005/test/Cephalograms/cks2ip8g32ax10yufafcahymx.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CVM"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CVM_WORK_RECORD_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "S5"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "C4_INFERIOR_BORDER",
+                "description": "C4下缘有凹陷"
+              },
+              {
+                "evidence_code": "C4_BODY_SHAPE",
+                "description": "C4接近方形"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:c2d2303947574e679a4de1f6d123689b",
+      "task_code": "A4.1",
+      "dataset_id": "C005",
+      "schema_version": "0.6.0",
+      "title": "A4.1 · 序数分级 · C005",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "按冻结分级体系完成CVM或BRAR序数分级。",
+        "images": [
+          {
+            "sha256": "0d015530c15760a90c1e21e8c0bc8e19e016fa700aa53982b8324138884596d0",
+            "modality": "cephalometric_radiograph",
+            "width": 959,
+            "height": 1198,
+            "path": "Aariz-C005/train/Cephalograms/cl6cc2n5h3zyb07717ole5upc.jpeg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CVM"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CVM_WORK_RECORD_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "S3"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "C3_INFERIOR_BORDER",
+                "description": "C3锥体下缘凹陷"
+              },
+              {
+                "evidence_code": "C4_INFERIOR_BORDER",
+                "description": "C4锥体下缘平坦"
+              },
+              {
+                "evidence_code": "C3_BODY_SHAPE",
+                "description": "C3/C4呈梯形"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:d1575a021a96449c9d12001bb16b75ce",
+      "task_code": "A4.1",
+      "dataset_id": "C005",
+      "schema_version": "0.6.0",
+      "title": "A4.1 · 序数分级 · C005",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "按冻结分级体系完成CVM或BRAR序数分级。",
+        "images": [
+          {
+            "sha256": "fcc25985325ff4702ac381586dc9404fff5aa4de2e73225037df5695fe9a6cf0",
+            "modality": "cephalometric_radiograph",
+            "width": 2092,
+            "height": 1592,
+            "path": "Aariz-C005/valid/Cephalograms/cl5lg05ug01am074k5dbu39k7.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CVM"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CVM_WORK_RECORD_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "S4"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "C4_INFERIOR_BORDER",
+                "description": "C4下缘均有凹陷"
+              },
+              {
+                "evidence_code": "C3_BODY_SHAPE",
+                "description": "C3主要呈水平长方形"
+              },
+              {
+                "evidence_code": "C4_BODY_SHAPE",
+                "description": "C4主要呈水平长方形"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:d3fbaa6f2dcf44288df9d19d4a4d838f",
+      "task_code": "A4.1",
+      "dataset_id": "C005",
+      "schema_version": "0.6.0",
+      "title": "A4.1 · 序数分级 · C005",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "按冻结分级体系完成CVM或BRAR序数分级。",
+        "images": [
+          {
+            "sha256": "24045f901ff3c475fafba1918e0098c6b8ad32aae349768c0efcf1f686739900",
+            "modality": "cephalometric_radiograph",
+            "width": 2092,
+            "height": 1592,
+            "path": "Aariz-C005/train/Cephalograms/cl5lg05uk01fa074k87516vt4.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CVM"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CVM_WORK_RECORD_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "S6"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "C4_INFERIOR_BORDER",
+                "description": "C4锥体下缘凹陷"
+              },
+              {
+                "evidence_code": "C4_BODY_SHAPE",
+                "description": "C4呈现垂直长方形"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:f1bd837172e3448a945e1804299b66cd",
+      "task_code": "A4.1",
+      "dataset_id": "C005",
+      "schema_version": "0.6.0",
+      "title": "A4.1 · 颈椎成熟阶段评估 · C005",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "根据颈椎影像，按固定 CVM 标准评价成熟阶段并提供直接证据。",
+        "images": [
+          {
+            "sha256": "4f76a0dc224472d5be1db3f4ef0a31d25ac676e7b0430ce3d6b6542d1ad15190",
+            "modality": "cephalometric_radiograph",
+            "width": 2198,
+            "height": 2719,
+            "path": "Aariz-C005/train/Cephalograms/cl7wwse8k9cio084f5nzj6oaw.bmp"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CVM"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CVM_WORK_RECORD_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "S5"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "C4_INFERIOR_BORDER",
+                "description": "C4下缘有凹陷"
+              },
+              {
+                "evidence_code": "C4_BODY_SHAPE",
+                "description": "C3接近方形"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:f2cde732f7a0488595316ac6678c6e10",
+      "task_code": "A4.1",
+      "dataset_id": "C005",
+      "schema_version": "0.6.0",
+      "title": "A4.1 · 序数分级 · C005",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "按冻结分级体系完成CVM或BRAR序数分级。",
+        "images": [
+          {
+            "sha256": "bfbc2dcfdb4edb99897e037a9bc4868a9687614a2e646246c8bb1fc143b421e8",
+            "modality": "cephalometric_radiograph",
+            "width": 959,
+            "height": 1198,
+            "path": "Aariz-C005/train/Cephalograms/cl6cc2n5b3zov0771gxdefozt.jpeg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CVM"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CVM_WORK_RECORD_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "S5"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "C4_INFERIOR_BORDER",
+                "description": "C4下缘凹陷"
+              },
+              {
+                "evidence_code": "C4_BODY_SHAPE",
+                "description": "C4呈现正方形"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:fc842d5b0a9c4fa8977d0f0c7e13a5dc",
+      "task_code": "A4.1",
+      "dataset_id": "C005",
+      "schema_version": "0.6.0",
+      "title": "A4.1 · 序数分级 · C005",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "按冻结分级体系完成CVM或BRAR序数分级。",
+        "images": [
+          {
+            "sha256": "bb203f53d7e56c9a11ec1d034f50edebd9574a76d9d6b9047debe2adf75c8d50",
+            "modality": "cephalometric_radiograph",
+            "width": 581,
+            "height": 734,
+            "path": "Aariz-C005/train/Cephalograms/cl6wmcdbc3jo3078v8k5j16mc.bmp"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CVM"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CVM_WORK_RECORD_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "S6"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "C4_BODY_SHAPE",
+                "description": "C4呈现垂直长方形"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:fd5053f16f304785a571f78b5f6f0a40",
+      "task_code": "A4.1",
+      "dataset_id": "C005",
+      "schema_version": "0.6.0",
+      "title": "A4.1 · 颈椎成熟阶段评估 · C005",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "根据颈椎影像，按固定 CVM 标准评价成熟阶段并提供直接证据。",
+        "images": [
+          {
+            "sha256": "ae2c3351c0555c524b9312daacaff273ccb133aef450a8876eb61513442db30a",
+            "modality": "cephalometric_radiograph",
+            "width": 2198,
+            "height": 2719,
+            "path": "Aariz-C005/valid/Cephalograms/cl7ww1jcp9cfs084f2r7j3v2k.bmp"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CVM"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CVM_WORK_RECORD_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "grade_value",
+            "name": "等级值",
+            "value": "S4"
+          },
+          {
+            "key": "supporting_evidence",
+            "name": "支撑证据",
+            "value": [
+              {
+                "evidence_code": "C4_INFERIOR_BORDER",
+                "description": "C4下缘凹陷"
+              },
+              {
+                "evidence_code": "C4_BODY_SHAPE",
+                "description": "C4呈水平长方形"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

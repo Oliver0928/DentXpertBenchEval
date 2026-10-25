@@ -1,0 +1,13 @@
+[project]
+name = "dentxpertbench-eval"
+version = "0.1.0"
+description = "Evaluation toolkit for DentXpertBench oral multimodal benchmark tasks."
+requires-python = ">=3.10"
+dependencies = [
+    "Pillow>=10.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+

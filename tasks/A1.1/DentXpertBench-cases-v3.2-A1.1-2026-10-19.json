@@ -1,0 +1,1645 @@
+{
+  "format_version": "3.2",
+  "cases": [
+    {
+      "id": "candidate:00a0a7e71a514764bf2f03c2e426d50e",
+      "task_code": "A1.1",
+      "dataset_id": "C007",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "37ac6e799f080561dee25bcf8368c54f478fa32bd3afec575b15f8ceec9a784d",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Training/Images/42.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "根尖片"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "右下后牙区"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:00fa38c4b1a84b1e95ea78f4521cc718",
+      "task_code": "A1.1",
+      "dataset_id": "C001",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "51febddd94f6df514e32e7f0763bb4ed5dff00d71c16106d2a4d098c037aeb15",
+            "modality": "intraoral_photograph",
+            "width": 1175,
+            "height": 880,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-008-598-01_1729004550645_Right_Lateral_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "口内照"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "右侧后牙区"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:05776d57faf5413880b45aac0dc542fc",
+      "task_code": "A1.1",
+      "dataset_id": "C002",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C002",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "ac09e0889ac68295ccbd9fdd0705a1e40e46ae3e56eba32a6f6764d8b712433d",
+            "modality": "panoramic_radiograph",
+            "width": 2771,
+            "height": 1316,
+            "path": "DENTEX-C002/input/test_107.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "全景片"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "全口"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:0d908fa676fc4b6da3d22fe93c430024",
+      "task_code": "A1.1",
+      "dataset_id": "C006",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C006",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "711e771178ea28abf310506ba21d485b322192f1ad0e8c55d51ce0220e04ab6e",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/2. Rx iPhone/2.43.JPG"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "rotate-cw"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "根尖片"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "下颌前牙区"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:13ddc7cee8f64905a9989593b5d959bd",
+      "task_code": "A1.1",
+      "dataset_id": "C008",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C008",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "43e72bc53003ed778ef23e9f3d98b246096e695868a3441c28d9efd4a0f01d6b",
+            "modality": "oral_mucosa_photograph",
+            "width": 1056,
+            "height": 1381,
+            "path": "SMART-OM-C008/01. Normal/01. Unannotated/01. Dorsal tongue/SMITA00285_R_DT.jpeg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "黏膜照"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "舌背"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:1fd8e7a2366f44c484b7ee90c61b7163",
+      "task_code": "A1.1",
+      "dataset_id": "C005",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C005",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "b8eae7278aa489374c4ecc613831eeede1616bb13507cbd4046af426b120a2a8",
+            "modality": "cephalometric_radiograph",
+            "width": 1976,
+            "height": 2201,
+            "path": "Aariz-C005/train/Cephalograms/cks2ip8fx2agn0yufbzhggiuc.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "头颅侧位片"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "头颅侧位"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:32f630b89ce54f3f8aca64861651fc26",
+      "task_code": "A1.1",
+      "dataset_id": "C001",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C001",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "a92738ce11f70f9f18b5f4a54a9002310414092fd33d262975665e27adec2099",
+            "modality": "intraoral_photograph",
+            "width": 1691,
+            "height": 1267,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/test/images/anonymous_003-008-822-00_1729947030203_Maxillary_Occlusal_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "mirror-y"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "口内照"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "上颌"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:3942c8dcc51d46de9774fa4ab6fa8591",
+      "task_code": "A1.1",
+      "dataset_id": "C001",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "03064e0cb7f9af46cedbf33eb736cb7a0c862a1d1465881e31cd14b8964096f7",
+            "modality": "intraoral_photograph",
+            "width": 2963,
+            "height": 1975,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-008-626-01_1729138704180_Maxillary_Occlusal_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "口内照"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "上颌"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:3ebe915a6bf84d32a465a948d06e0f6c",
+      "task_code": "A1.1",
+      "dataset_id": "C001",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "c1636648b34a47a867924ec9e20bc827602ab68a306726c9cd78266906761570",
+            "modality": "intraoral_photograph",
+            "width": 3364,
+            "height": 2522,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_004-007-1026-00_1731218072400_Maxillary_Occlusal_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "口内照"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "上颌"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:41939617c51d4deab68521052f7c1919",
+      "task_code": "A1.1",
+      "dataset_id": "C008",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C008",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "c628eb8068d098b9f2d9ec0273bbc5b5a56c3dd87f774691ddf6173410dbb4d0",
+            "modality": "oral_mucosa_photograph",
+            "width": 911,
+            "height": 1120,
+            "path": "SMART-OM-C008/01. Normal/01. Unannotated/02. Ventral tongue/SMITA00199_R_VT.jpeg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "黏膜照"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "舌腹"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:46d6ae86ca4f4bc18b07a659f8919f76",
+      "task_code": "A1.1",
+      "dataset_id": "C008",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C008",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "31a9a2774a035bfcd3740550679e9add3ce27505da37b7d2c8cfe29577733b50",
+            "modality": "oral_mucosa_photograph",
+            "width": 873,
+            "height": 366,
+            "path": "SMART-OM-C008/04. Oral Cancer/01. Unannotated/02. Ventral tongue/6026.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "黏膜照"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "舌缘"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:4771980d4a6b4ee8be3b8daea42c70d1",
+      "task_code": "A1.1",
+      "dataset_id": "C001",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "9e0606cc0ea81df348410e85c03b3de723c129200af38d73902edcf4ec17d192",
+            "modality": "intraoral_photograph",
+            "width": 1582,
+            "height": 888,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Frontal/anonymous_003-007-1143-01_1732598176850_Frontal_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "口内照"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "正面"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:47b732706d8a42e1a4ad1b11fa34cf1e",
+      "task_code": "A1.1",
+      "dataset_id": "C005",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C005",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "b08f04bdaee2f1d17a654828d4cbd82d1e2fb47e153916d5208dda4bbaba31c2",
+            "modality": "cephalometric_radiograph",
+            "width": 959,
+            "height": 1198,
+            "path": "Aariz-C005/train/Cephalograms/cl6cc2n5j401v0771842y4f7i.jpeg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "头颅侧位片"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "头颅侧位"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:4ae39eebcb3f4edd9bd45b5d1068517e",
+      "task_code": "A1.1",
+      "dataset_id": "C003",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C003",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "833277706954dadac4a8056d0c7526a78611eb0098ead1303df0000aa1684387",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/1361-M-45.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "全景片"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "全口"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:698f37a3e4874a68b6dc16995739c852",
+      "task_code": "A1.1",
+      "dataset_id": "C008",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C008",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "532e0b58e6976bbcf9b700f8dfebd7a924537c19fb30c352c59b00971187ddc0",
+            "modality": "oral_mucosa_photograph",
+            "width": 545,
+            "height": 441,
+            "path": "SMART-OM-C008/04. Oral Cancer/01. Unannotated/02. Ventral tongue/6766.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "黏膜照"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "舌缘"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:6d524bc4cb0a463a8898f0ca859709fd",
+      "task_code": "A1.1",
+      "dataset_id": "C007",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C007",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "462dabc96215019919c63f8fae7868a1d8ef2886e9520377d2f4b8d83d56a382",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Training/Images/1243.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "根尖片"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "右下后牙区"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:7040d28ed81f4e4482bd02bf6c77c0fe",
+      "task_code": "A1.1",
+      "dataset_id": "C008",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C008",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "1639422568d70faefecdaf1518056e0d888193c00a95fe68c5555900239a03f9",
+            "modality": "oral_mucosa_photograph",
+            "width": 793,
+            "height": 1006,
+            "path": "SMART-OM-C008/01. Normal/01. Unannotated/02. Ventral tongue/SMITA00261_R_VT.jpeg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "黏膜照"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "舌腹"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:789b68ed2d6b409da2bf869c39f6ae86",
+      "task_code": "A1.1",
+      "dataset_id": "C004",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C004",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "8951cb09e42f418584ba38b6fb5b79034bcfb89fee6403ae142c9a4e89bba9f6",
+            "modality": "panoramic_radiograph",
+            "width": 2000,
+            "height": 942,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Archive/images/1.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "全景片"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "全口"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:79c636ce3c3d44cc81f919216af32e37",
+      "task_code": "A1.1",
+      "dataset_id": "C001",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "314cc0e71517d92fc7f8bcd02b6627aa10fee822d0d4b56a5eb1f750fefdcbb2",
+            "modality": "intraoral_photograph",
+            "width": 2317,
+            "height": 1301,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Left_Lateral/anonymous_003_007_337_01_1728017558688_Left_Lateral_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "口内照"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "左侧后牙区"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:829477a70608406aa7db79655beaa721",
+      "task_code": "A1.1",
+      "dataset_id": "C008",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C008",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "70e4b13225c5734fb81a840aff7e5162998ffb0b53edc378403b011fa36960ab",
+            "modality": "oral_mucosa_photograph",
+            "width": 1509,
+            "height": 1444,
+            "path": "SMART-OM-C008/03. OPMD/01. Unannotated/03. Left buccal mucosa/SMITA00012_W_LB2.jpeg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "黏膜照"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "左颊黏膜"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:86e2d133b5804b039248be6d1eea59d1",
+      "task_code": "A1.1",
+      "dataset_id": "C005",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C005",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "f003f774bc957de685dcd3f7b4db5ad2f332d52a6ae9f23346207c7987a52a64",
+            "modality": "cephalometric_radiograph",
+            "width": 2092,
+            "height": 1592,
+            "path": "Aariz-C005/train/Cephalograms/cl5lg05un01i6074k1t7t4xku.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "mirror-x"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "头颅侧位片"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "头颅侧位"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:8f2ce2a5d18f4b23a3b11418b81cd55d",
+      "task_code": "A1.1",
+      "dataset_id": "C007",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C007",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "fa359039328616107fb56a61890f18d5ced1b50e57acd9e82798be11bc721320",
+            "modality": "periapical_radiograph",
+            "width": 1061,
+            "height": 883,
+            "path": "DenPAR-C007/Training/Images/608.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "根尖片"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "左下后牙区"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:92a0fe3c9e3f42a9b4b93d74d25d9284",
+      "task_code": "A1.1",
+      "dataset_id": "C008",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C008",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "10d04ce3ad0663f7570b2a80e63fbda003ea4e3942a07e30ffa5da4210afbe7f",
+            "modality": "oral_mucosa_photograph",
+            "width": 1442,
+            "height": 1407,
+            "path": "SMART-OM-C008/03. OPMD/01. Unannotated/03. Left buccal mucosa/SMITA00251_R_LB.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "黏膜照"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "左颊黏膜"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:9907255cdb8446d788b19668597d66e1",
+      "task_code": "A1.1",
+      "dataset_id": "C008",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C008",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "f7e602f5f58a68bc6225ed62a0da7503ecd359f27c947f0cb983ed849232ecca",
+            "modality": "oral_mucosa_photograph",
+            "width": 1718,
+            "height": 1161,
+            "path": "SMART-OM-C008/02. Variation from normal/01. Unannotated/06. Lower lip/SMITA00126_R_LL1.jpeg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "黏膜照"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "下唇"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:9974111112f14f50afcd1cf0b8fe71c5",
+      "task_code": "A1.1",
+      "dataset_id": "C001",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C001",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "ce9092eff16b0978df2449c2340c4c2c01fea44ba3df8618a2cb171b13ebd717",
+            "modality": "intraoral_photograph",
+            "width": 1323,
+            "height": 743,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-008-1273-00_1733140554614_Mandibular_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "mirror-y"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "口内照"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "下颌"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:a17bc040952a46ca9e212d8976d728ec",
+      "task_code": "A1.1",
+      "dataset_id": "C007",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "d9b1a321a974652da5d609343cd9aa38f98b0b66b00b760ed696cde2360c8094",
+            "modality": "periapical_radiograph",
+            "width": 886,
+            "height": 1171,
+            "path": "DenPAR-C007/Validation/Images/55.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "根尖片"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "上颌前牙区"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:a77d87b262a247c19a5367cde36cfa8d",
+      "task_code": "A1.1",
+      "dataset_id": "C017",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C017",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "1d0287a94f0da2856e37661b670d11b820261ce8142522c4ac72928cd10c8f84",
+            "modality": "panoramic_radiograph",
+            "width": 2787,
+            "height": 1316,
+            "path": "BRAR-anchored multimodal dataset-C017/level_2/patient_image_000085_23bbfd21.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "全景片"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "全口"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:aacdbc6a632c48b3ac7678d9a882d203",
+      "task_code": "A1.1",
+      "dataset_id": "C014",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C014",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "89e0885786fc2b40c8ac9bd368334bac335f5979ddca8518658291e6611ac8b1",
+            "modality": "intraoral_photograph",
+            "width": 4751,
+            "height": 3321,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/009.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "口内照"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "正面"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:b32917aa64ac405aaeed1f7389d4d3cd",
+      "task_code": "A1.1",
+      "dataset_id": "C010",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C010",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "957429504406fdcda202e9fde68dffec694e4e4989b26c2ae09f7b576a782b1a",
+            "modality": "panoramic_radiograph",
+            "width": 640,
+            "height": 320,
+            "path": "SD-Tooth-C010/STS-2D-Tooth/A-PXI/Unlabeled/Image/A_U_0027.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "全景片"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "全口"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:b3401d4fb2ef417198ff302e8469826a",
+      "task_code": "A1.1",
+      "dataset_id": "C008",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C008",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "04da125e08bd74555535e934266d060ce1f324ff628e85b8b9d042afacc17ebf",
+            "modality": "oral_mucosa_photograph",
+            "width": 1449,
+            "height": 1917,
+            "path": "SMART-OM-C008/01. Normal/01. Unannotated/01. Dorsal tongue/SMITA00019_W_DT.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "黏膜照"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "舌背"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:b7bb08a91216436cb040b5f407b76148",
+      "task_code": "A1.1",
+      "dataset_id": "C008",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C008",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "8b6674a5cd913312a15958e6ac61232f2c3ceee9af8606086f1c02da0e9ba96f",
+            "modality": "oral_mucosa_photograph",
+            "width": 1269,
+            "height": 1458,
+            "path": "SMART-OM-C008/01. Normal/01. Unannotated/01. Dorsal tongue/SMITA00260_R_DT.jpeg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "黏膜照"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "舌背"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:bdbba1408a9542f98a3d86b44b48568e",
+      "task_code": "A1.1",
+      "dataset_id": "C007",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C007",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "ffad8c3222a2b246eaa6b076118ccdde289ad3cf5d84ca86d685dfbd7c7c20f8",
+            "modality": "periapical_radiograph",
+            "width": 1168,
+            "height": 886,
+            "path": "DenPAR-C007/Training/Images/640.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "根尖片"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "右上后牙区"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:bdd1a08c1295414586084432e974da2c",
+      "task_code": "A1.1",
+      "dataset_id": "C008",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C008",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "f5a883a8f07cd110f4533b0e35fd7512a082adbdbb888d7530ee3a7e44efbecb",
+            "modality": "oral_mucosa_photograph",
+            "width": 852,
+            "height": 1156,
+            "path": "SMART-OM-C008/01. Normal/01. Unannotated/02. Ventral tongue/SMITA00266_R_VT.jpeg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "黏膜照"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "舌腹"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:c8a95eeae70146d8b4926803fc6379e6",
+      "task_code": "A1.1",
+      "dataset_id": "C001",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "00f4b7e633573355d06bcf78a3429818d9830e639a47c24e8debd0c40e01d0bf",
+            "modality": "intraoral_photograph",
+            "width": 1108,
+            "height": 831,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-008-1311-00_1733404330359_Mandibular_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "口内照"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "下颌"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:dd7b5bbb33a54fa4a397c4234886a3ac",
+      "task_code": "A1.1",
+      "dataset_id": "C001",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "616e33a1ad088aa0d05558d7f8e92d7fd092a07376395e990a3fcb2ff608f7aa",
+            "modality": "intraoral_photograph",
+            "width": 1056,
+            "height": 792,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/pilot/Frontal/anonymous-frontalView-1727360243309.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "口内照"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "前牙区"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:de0a6028228b41e481045b434ca9ebef",
+      "task_code": "A1.1",
+      "dataset_id": "C001",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "de374fb97def3762955cf896ffab13e8b995c1474877401b140abfe0a9b2ad12",
+            "modality": "intraoral_photograph",
+            "width": 1477,
+            "height": 984,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/test/images/anonymous_003-007-607-00_1729059680698_Right_Lateral_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "口内照"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "右侧后牙区"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:de8441cb994e48b7bfd1960281c73ebf",
+      "task_code": "A1.1",
+      "dataset_id": "C008",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C008",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "5be91280dd176998d136e3c1c88873f6f017286e5f2da816a2b2c0c8f7ed3001",
+            "modality": "oral_mucosa_photograph",
+            "width": 1008,
+            "height": 671,
+            "path": "SMART-OM-C008/01. Normal/01. Unannotated/05. Upper lip/SMITA00036_R_UL.JPG"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "黏膜照"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "上唇"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:e5401c2c81e14cfabac0a11a5bbbb425",
+      "task_code": "A1.1",
+      "dataset_id": "C001",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "5c2954a2a5f7e5bf07e234ac5b3662176f9720d206b21f5fdd149f2f92aa5dbb",
+            "modality": "intraoral_photograph",
+            "width": 1110,
+            "height": 1110,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-007-693-01_1729314947717_Left_Lateral_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "口内照"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "左侧后牙区"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:f802646c2476467c8c809efa13db66fa",
+      "task_code": "A1.1",
+      "dataset_id": "C007",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "cf67b77b8850ba3fd3c12c8424a4bb97b858a1aa5e5d72e81fc4b7e43ffaeb8e",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Training/Images/294.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "根尖片"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "左上后牙区"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:fb20e981bd094541b5c74d4e7832f2bc",
+      "task_code": "A1.1",
+      "dataset_id": "C008",
+      "schema_version": "0.7.5",
+      "title": "A1.1 · 模态/视角识别 · C008",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "仅根据当前实际显示画面识别影像模态和视角（视野）。",
+        "images": [
+          {
+            "sha256": "fc5f8731a7408b9f1497748675cdb94637a72e4721860cce7c00d5f6123b9868",
+            "modality": "oral_mucosa_photograph",
+            "width": 874,
+            "height": 1154,
+            "path": "SMART-OM-C008/03. OPMD/01. Unannotated/04. Right buccal mucosa/SMITA00214_W_RB1.jpeg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "presentation_transform",
+            "name": "题面影像变换",
+            "value": "original"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "modality_type",
+            "name": "模态类型",
+            "value": "黏膜照"
+          },
+          {
+            "key": "field_of_view",
+            "name": "视野",
+            "value": "右颊黏膜"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "task_code": "A2.3",
+  "name": "牙齿发育、萌出、缺失与阻生状态判断",
+  "input": {
+    "images": 1
+  },
+  "output_format": {
+    "type": "json",
+    "fields": [
+      "teeth"
+    ],
+    "teeth_shape": "objects_with_fdi_and_status"
+  },
+  "scoring": {
+    "case_points": 100.0,
+    "fields": [
+      {
+        "key": "teeth",
+        "weight": 1.0,
+        "metric": "fdi_accuracy",
+        "diagnostics": [
+          "correct_fdi_count",
+          "evaluated_fdi_count",
+          "tooth_status_pair_precision",
+          "tooth_status_pair_recall",
+          "tooth_status_pair_f1"
+        ]
+      }
+    ],
+    "empty_reference_behavior": {
+      "model_outputs_empty_teeth": 1.0,
+      "model_outputs_non_empty_teeth": 0.0
+    },
+    "aggregation": "For each evaluated FDI, award 1 when the predicted status exactly matches the reference status, otherwise 0. The case score is the mean FDI accuracy, including missing and extra FDIs in the denominator."
+  },
+  "options": {
+    "status": [
+      "已萌出",
+      "萌出中",
+      "未萌出",
+      "阻生",
+      "缺失"
+    ],
+    "status_aliases": {
+      "缺牙": "缺失"
+    }
+  },
+  "constraints": {
+    "allowed_fdi": [
+      "11-18",
+      "21-28",
+      "31-38",
+      "41-48",
+      "51-55",
+      "61-65",
+      "71-75",
+      "81-85"
+    ],
+    "counterfactual": "When reference_answer contains counterfactual=true and target_teeth is empty, the prompt builder supplies two stable pseudo-random valid FDI values as target teeth; the expected output remains {\"teeth\": []}.",
+    "ordering": "Output teeth in the given target FDI order. Duplicate FDI entries are normalized to one entry."
+  }
+}

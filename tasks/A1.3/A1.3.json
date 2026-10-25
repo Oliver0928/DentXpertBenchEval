@@ -1,0 +1,58 @@
+{
+  "task_code": "A1.3",
+  "name": "输入充分性与最低必要行动判断",
+  "input": {
+    "images": 1,
+    "fields": [
+      "specified_purpose"
+    ]
+  },
+  "output_format": {
+    "type": "json",
+    "fields": [
+      "sufficiency",
+      "minimum_necessary_action"
+    ]
+  },
+  "scoring": {
+    "case_points": 100.0,
+    "fields": [
+      {
+        "key": "sufficiency",
+        "weight": 0.5
+      },
+      {
+        "key": "minimum_necessary_action",
+        "weight": 0.5,
+        "conditional_subscores": {
+          "when_action_code": "补充缺失视角",
+          "action_code": 0.25,
+          "requested_view": 0.25
+        }
+      }
+    ]
+  },
+  "options": {
+    "sufficiency": [
+      "充分",
+      "不足"
+    ],
+    "minimum_necessary_action": [
+      "无需补充检查",
+      "重拍同一区域",
+      "补充缺失视角",
+      "补充目标牙根尖片",
+      "补充咬翼片",
+      "按标准重拍全景片",
+      "补充限视野CBCT",
+      "先行针对性临床检查",
+      "补充牙髓活力检查",
+      "补充牙周探诊",
+      "补充标准化口内照片",
+      "补充多视角黏膜照片",
+      "补充活检病理",
+      "其他 / 待审核"
+    ]
+  }
+}
+

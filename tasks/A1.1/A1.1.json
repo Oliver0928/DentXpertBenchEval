@@ -1,0 +1,28 @@
+{
+  "task_code": "A1.1",
+  "name": "图像模态与视野识别",
+  "input": {
+    "images": 1
+  },
+  "output_format": {
+    "type": "json",
+    "fields": [
+      "modality_type",
+      "field_of_view"
+    ]
+  },
+  "scoring": {
+    "case_points": 100.0,
+    "fields": [
+      {
+        "key": "modality_type",
+        "weight": 0.5
+      },
+      {
+        "key": "field_of_view",
+        "weight": 0.5
+      }
+    ]
+  }
+}
+

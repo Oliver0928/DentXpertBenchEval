@@ -1,0 +1,63 @@
+{
+  "task_code": "A2.2",
+  "name": "FDI牙位盘点与单牙定位",
+  "input": {
+    "images": 1,
+    "fields": [
+      "localization_mode"
+    ]
+  },
+  "modes": {
+    "inventory": {
+      "output_format": {
+        "type": "json",
+        "fields": [
+          "teeth"
+        ],
+        "teeth_shape": "integer_array"
+      },
+      "scoring": {
+        "case_points": 100.0,
+        "fields": [
+          {
+            "key": "teeth",
+            "weight": 1.0,
+            "metric": "set_f1"
+          }
+        ]
+      }
+    },
+    "detection": {
+      "output_format": {
+        "type": "json",
+        "fields": [
+          "teeth"
+        ],
+        "teeth_shape": "objects_with_fdi_and_bbox"
+      },
+      "scoring": {
+        "case_points": 100.0,
+        "fields": [
+          {
+            "key": "teeth",
+            "weight": 1.0,
+            "metric": "mean_iou_by_fdi"
+          }
+        ]
+      }
+    }
+  },
+  "constraints": {
+    "allowed_fdi": [
+      "11-18",
+      "21-28",
+      "31-38",
+      "41-48",
+      "51-55",
+      "61-65",
+      "71-75",
+      "81-85"
+    ],
+    "bbox": "[left, top, right, bottom] normalized to 0-1"
+  }
+}

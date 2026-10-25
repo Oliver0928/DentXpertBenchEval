@@ -1,0 +1,1487 @@
+{
+  "format_version": "3.2",
+  "cases": [
+    {
+      "id": "candidate:0a94d75c0aba419b9e8b01ba711dc49e",
+      "task_code": "A1.2",
+      "dataset_id": "C001",
+      "schema_version": "0.7.5",
+      "title": "A1.2 · 覆盖与质量 · C001",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "58b006556349cee86eb4b13188f7d62e5438dee39891b5d80a8d2d37cf05a032",
+            "modality": "intraoral_photograph",
+            "width": 1846,
+            "height": 1846,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/pilot/Mandibular/anonymous-mandibularView-1726829514129.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "下颌"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "coverage_or_site"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": [
+              {
+                "issue_code": "PHOTO_INSUFFICIENT_VIEW"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:19164e27904a4ed3b757e68d9286f559",
+      "task_code": "A1.2",
+      "dataset_id": "C008",
+      "schema_version": "0.7.4",
+      "title": "A1.2 · 覆盖与质量 · C008",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "60fc0611d00c9f083975b1baf48827509b9a9feccd81cf9096d969df9beac37d",
+            "modality": "oral_mucosa_photograph",
+            "width": 1099,
+            "height": 731,
+            "path": "SMART-OM-C008/01. Normal/01. Unannotated/02. Ventral tongue/SMITA000234_R_VT.jpeg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "舌腹"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "adequate"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:1eb66fc13729425ebb31f41878bd5e48",
+      "task_code": "A1.2",
+      "dataset_id": "C008",
+      "schema_version": "0.7.5",
+      "title": "A1.2 · 覆盖与质量 · C008",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "abfd038d02849272ce69bc2d5fdf0c6f92d6eb033761556c27d35f869ad3766e",
+            "modality": "oral_mucosa_photograph",
+            "width": 1399,
+            "height": 986,
+            "path": "SMART-OM-C008/01. Normal/01. Unannotated/08. Lower arch/9 - LA.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "下牙弓"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "coverage_or_site"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": [
+              {
+                "issue_code": "PHOTO_INSUFFICIENT_VIEW"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:26032a63dedc4109aa06ee3ce3cc776d",
+      "task_code": "A1.2",
+      "dataset_id": "C001",
+      "schema_version": "0.7.5",
+      "title": "A1.2 · 覆盖与质量 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "f494e5e9c0d69f3df72a1bcf3fc2533b8b8819a95eab1b7b03037041a1afa838",
+            "modality": "intraoral_photograph",
+            "width": 1848,
+            "height": 1038,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous-frontalView-1727683503864.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "正面",
+              "前牙区"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "image_quality"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": [
+              {
+                "issue_code": "PHOTO_INSUFFICIENT_VIEW"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:2dd6b208c4f84bc8958849db2af2e30f",
+      "task_code": "A1.2",
+      "dataset_id": "C005",
+      "schema_version": "0.7.5",
+      "title": "A1.2 · 覆盖与质量 · C005",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "7cae79664acb6e647e7ffde14c1a2f646d6868bbc1f303b1afc35fa77dd5cdfd",
+            "modality": "cephalometric_radiograph",
+            "width": 2091,
+            "height": 1592,
+            "path": "Aariz-C005/train/Cephalograms/cl5lc0isd12ag072u54yse0w9.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "头颅侧位"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "adequate"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:3d3225db7386486e9588693726b2c562",
+      "task_code": "A1.2",
+      "dataset_id": "C007",
+      "schema_version": "0.7.4",
+      "title": "A1.2 · 覆盖与质量 · C007",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "765843d6e1330def112432c746ea734e2f08ae85e1d52f2486be79fe4b23d2ec",
+            "modality": "periapical_radiograph",
+            "width": 1168,
+            "height": 883,
+            "path": "DenPAR-C007/Training/Images/1281.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "左下后牙区"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "image_quality"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": [
+              {
+                "issue_code": "XRAY_OTHER_REVIEW",
+                "description": "牙片划痕严重"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:44e3828e017e41699544dd6c498e5333",
+      "task_code": "A1.2",
+      "dataset_id": "C017",
+      "schema_version": "0.7.4",
+      "title": "A1.2 · 覆盖与质量 · C017",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "7fd65e24018f0ac1d5c68b4d02a369cb09295a1f704e4676a5573f6335c7136b",
+            "modality": "panoramic_radiograph",
+            "width": 2786,
+            "height": 1316,
+            "path": "BRAR-anchored multimodal dataset-C017/level_3/patient_image_000237_fd5a157f.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "全口"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "adequate"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:50666b147c3f438ea01311745c135164",
+      "task_code": "A1.2",
+      "dataset_id": "C001",
+      "schema_version": "0.7.5",
+      "title": "A1.2 · 覆盖与质量 · C001",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "e9d5c1b3ddc2c243a131e40835df4e71819245312fe3e3f6545a65f972ff3423",
+            "modality": "intraoral_photograph",
+            "width": 1421,
+            "height": 1065,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Mandibular/anonymous_003_007_460_00_1728562740351_Mandibular_View.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "下颌"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "coverage_or_site"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": [
+              {
+                "issue_code": "PHOTO_INSUFFICIENT_VIEW"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:5bb710843e2d4416b1777cbfa09f5d2f",
+      "task_code": "A1.2",
+      "dataset_id": "C008",
+      "schema_version": "0.7.4",
+      "title": "A1.2 · 覆盖与质量 · C008",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "18b194ca5ac6a943529d435aa3124e3c65af3f5fa5ad5e746e28cad1bdc8ed00",
+            "modality": "oral_mucosa_photograph",
+            "width": 1186,
+            "height": 1070,
+            "path": "SMART-OM-C008/01. Normal/01. Unannotated/01. Dorsal tongue/SMITA00221_W_DT.jpeg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "舌背"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "adequate"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:631dd7e7e3f94d38aef660c9bb39597a",
+      "task_code": "A1.2",
+      "dataset_id": "C005",
+      "schema_version": "0.7.5",
+      "title": "A1.2 · 覆盖与质量 · C005",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "9e694c144751fe72fcbc9d9e7b2068aa8af5c28f6a1ffddebcd931cb66ea3b36",
+            "modality": "cephalometric_radiograph",
+            "width": 642,
+            "height": 766,
+            "path": "Aariz-C005/valid/Cephalograms/cl6cc2n513zb3077136bu56y8.bmp"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "头颅侧位"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "image_quality"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": [
+              {
+                "issue_code": "CEPH_SITE_UNCLEAR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:6a1e4fb14d3c4b8d9067459ed6bb134a",
+      "task_code": "A1.2",
+      "dataset_id": "C008",
+      "schema_version": "0.7.5",
+      "title": "A1.2 · 覆盖与质量 · C008",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "81680950b376ba2017490c27572f354b3a0eb8ea5f5b33bc2e1f6350d297e76b",
+            "modality": "oral_mucosa_photograph",
+            "width": 1657,
+            "height": 1067,
+            "path": "SMART-OM-C008/01. Normal/01. Unannotated/07. Upper arch/SMITA00246_R_UA.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "上牙弓"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "image_quality"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": [
+              {
+                "issue_code": "PHOTO_EXPOSURE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:6a46a48316f64b07b45f5f6091a474b0",
+      "task_code": "A1.2",
+      "dataset_id": "C008",
+      "schema_version": "0.7.5",
+      "title": "A1.2 · 覆盖与质量 · C008",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "52e699795b06d6d4581648fb29e2a249842d687c0bf9a029a9c5169b0ae0fb6c",
+            "modality": "oral_mucosa_photograph",
+            "width": 1864,
+            "height": 1243,
+            "path": "SMART-OM-C008/01. Normal/01. Unannotated/06. Lower lip/SMITA00206_R_LL.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "下唇"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "coverage_or_site"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": [
+              {
+                "issue_code": "PHOTO_INSUFFICIENT_VIEW"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:6dcc5bed84944e7384cdaccdf51de6cf",
+      "task_code": "A1.2",
+      "dataset_id": "C017",
+      "schema_version": "0.7.4",
+      "title": "A1.2 · 覆盖与质量 · C017",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "238326a468ecd3702e6b1a42b0f272ed2256127cc4d1a74130b860dd3cd9e0c3",
+            "modality": "panoramic_radiograph",
+            "width": 2796,
+            "height": 1316,
+            "path": "BRAR-anchored multimodal dataset-C017/level_2/patient_image_000831_da537e9a.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "全口"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "adequate"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:6fc067acd3234fc1a2118b711bd2a3d4",
+      "task_code": "A1.2",
+      "dataset_id": "C007",
+      "schema_version": "0.7.5",
+      "title": "A1.2 · 覆盖与质量 · C007",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "3b0edcab513eb94b4eae0e802666d81f47f2cde774015ae88c37a9bcbc9704d3",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Training/Images/839.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "左上后牙区"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "coverage_or_site"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": [
+              {
+                "issue_code": "XRAY_APEX_MISSING"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:7406610db33845d589b1fe1efe01488b",
+      "task_code": "A1.2",
+      "dataset_id": "C006",
+      "schema_version": "0.7.5",
+      "title": "A1.2 · 覆盖与质量 · C006",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "2e3bc24d12b2dd0ed912912a735772798c9ab09c381aef71a0ec992f42b3340b",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/3. Rx Xiaomi/3.88.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "部位无法确定"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "image_quality"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": [
+              {
+                "issue_code": "XRAY_UNDEREXPOSURE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:7622346997c249f09bfb2e229c6006d0",
+      "task_code": "A1.2",
+      "dataset_id": "C008",
+      "schema_version": "0.7.5",
+      "title": "A1.2 · 覆盖与质量 · C008",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "8845ce844ab283a39ca3f331b0a259115f00db432a7274fa4df93a96398b26f7",
+            "modality": "oral_mucosa_photograph",
+            "width": 1474,
+            "height": 876,
+            "path": "SMART-OM-C008/01. Normal/01. Unannotated/08. Lower arch/SMITA00311_R__LA.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "下颌"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "image_quality"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": [
+              {
+                "issue_code": "PHOTO_DEFOCUS"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:7897d95badc94105aebbbffc747f8c13",
+      "task_code": "A1.2",
+      "dataset_id": "C006",
+      "schema_version": "0.7.5",
+      "title": "A1.2 · 覆盖与质量 · C006",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "74c5b48c01b317efbff6ff63dac90c14b6fcc541124b235114d55509116152e8",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/2. Rx iPhone/2.19.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "部位无法确定"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "image_quality"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": [
+              {
+                "issue_code": "XRAY_UNDEREXPOSURE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:8b19901722d440e0a4228e3d3820cb21",
+      "task_code": "A1.2",
+      "dataset_id": "C002",
+      "schema_version": "0.7.4",
+      "title": "A1.2 · 覆盖与质量 · C002",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "ef25a5987f9c98cbcd6e67702a8981baf8d2af5003bc93ff7ab377f27e0c64b9",
+            "modality": "panoramic_radiograph",
+            "width": 2872,
+            "height": 1504,
+            "path": "DENTEX-C002/input/test_15.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "全口"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "image_quality"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": [
+              {
+                "issue_code": "XRAY_CROP"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:95fee85e132643ed9536ec6836173370",
+      "task_code": "A1.2",
+      "dataset_id": "C005",
+      "schema_version": "0.7.5",
+      "title": "A1.2 · 覆盖与质量 · C005",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "749135835f28f654e25fb3f3f4c85b7d3e544d6dc0001dc75c286cabebf2cffb",
+            "modality": "cephalometric_radiograph",
+            "width": 1968,
+            "height": 2201,
+            "path": "Aariz-C005/train/Cephalograms/cks2ip8g52b4j0yufb70a5cs9.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "头颅侧位"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "adequate"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:9677147f11f24afc9d63d9d3bb07aa9a",
+      "task_code": "A1.2",
+      "dataset_id": "C014",
+      "schema_version": "0.7.5",
+      "title": "A1.2 · 覆盖与质量 · C014",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "7e43f33aeba047dce1efb0877f91d840963b3f72bce0aa80c1dbd100ab390f27",
+            "modality": "intraoral_photograph",
+            "width": 6092,
+            "height": 4023,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/145.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "正面"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "adequate"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:a36f3495e08f4defad651a8958eada20",
+      "task_code": "A1.2",
+      "dataset_id": "C004",
+      "schema_version": "0.7.5",
+      "title": "A1.2 · 覆盖与质量 · C004",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "57d371a5ac8eb3d3859c13bc123b961f2e7405e3c3612c1e6595bde123da7175",
+            "modality": "panoramic_radiograph",
+            "width": 2000,
+            "height": 942,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Children's dental caries segmentation dataset/Train/images/cate4_012.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "全口"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "coverage_or_site"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": [
+              {
+                "issue_code": "XRAY_OTHER_REVIEW",
+                "description": "局部模糊"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:a6492e967b2c4729bb0d10607b7db08f",
+      "task_code": "A1.2",
+      "dataset_id": "C002",
+      "schema_version": "0.7.4",
+      "title": "A1.2 · 覆盖与质量 · C002",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "0c5eb319671d9a1b4471ca4b3a250d90dc26134d9b88da9bd7ec9f3e26a09cfa",
+            "modality": "panoramic_radiograph",
+            "width": 2864,
+            "height": 1316,
+            "path": "DENTEX-C002/input/test_153.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "全口"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "adequate"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:b26021d3054e497a8978f00033271cfc",
+      "task_code": "A1.2",
+      "dataset_id": "C010",
+      "schema_version": "0.17.0",
+      "title": "A1.2 · 覆盖与质量 · C010",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "f407bf33ff748d83ad3fef990c8bbe0d7636f1ac2a4e7842b987985a11b5fc0f",
+            "modality": "panoramic_radiograph",
+            "width": 640,
+            "height": 320,
+            "path": "SD-Tooth-C010/STS-2D-Tooth/C-PXI/Unlabeled/Image/C_U_049.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "全口"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "image_quality"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": [
+              {
+                "issue_code": "XRAY_MOTION_BLUR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:b7ddeabb431c4b6bb92cdcadbdac6a71",
+      "task_code": "A1.2",
+      "dataset_id": "C006",
+      "schema_version": "0.7.5",
+      "title": "A1.2 · 覆盖与质量 · C006",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "00c0322a694605bba628cb5100073f297ae33b967d20a4317920f322e00328fd",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/3. Rx Xiaomi/3.145.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "部位无法确定"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "image_quality"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": [
+              {
+                "issue_code": "XRAY_OTHER_REVIEW",
+                "description": "图像过小、模糊"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:d1c1888132e348e396be271e06592ddb",
+      "task_code": "A1.2",
+      "dataset_id": "C001",
+      "schema_version": "0.7.4",
+      "title": "A1.2 · 覆盖与质量 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "b943c424ac83244ca7e2fc2909d88bd0213c7268c9d3ed2bc8f84d1ce4deec15",
+            "modality": "intraoral_photograph",
+            "width": 2241,
+            "height": 2241,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-007-990-01_1730962777095_Right_Lateral_View.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "右侧后牙区"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "image_quality"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": [
+              {
+                "issue_code": "PHOTO_EXPOSURE"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:d8ce0bcb1eb44d749951f8668d879c93",
+      "task_code": "A1.2",
+      "dataset_id": "C007",
+      "schema_version": "0.7.5",
+      "title": "A1.2 · 覆盖与质量 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "b0f32d67b480d8d12bf4860406a9e05adee4f47f70aab2f2d6a6db4fa515509d",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Testing/Images/156.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "左上后牙区"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "coverage_or_site"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": [
+              {
+                "issue_code": "XRAY_CROP"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:df3f6be4f3264151b30589d7060849f8",
+      "task_code": "A1.2",
+      "dataset_id": "C006",
+      "schema_version": "0.7.5",
+      "title": "A1.2 · 覆盖与质量 · C006",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "30d0580fc55eda65d9185cc7c52ca9f478c770dd11a7a68aeadc1cecc602c49d",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/1. Rx Canon/1.55.JPG"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "下颌前牙区",
+              "上颌前牙区"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "image_quality"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": [
+              {
+                "issue_code": "XRAY_OTHER_REVIEW",
+                "description": "牙片有污垢，曝光异常"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:e098ee269d1d49a4a265ceacb4717e4e",
+      "task_code": "A1.2",
+      "dataset_id": "C008",
+      "schema_version": "0.7.5",
+      "title": "A1.2 · 覆盖与质量 · C008",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "438bd0c9eea0f971fa69a0cd08b6da1a75aa3e3d3532369f036a8215856e6b70",
+            "modality": "oral_mucosa_photograph",
+            "width": 1773,
+            "height": 1250,
+            "path": "SMART-OM-C008/01. Normal/01. Unannotated/07. Upper arch/SMITA00325_R_UA.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "上颌",
+              "上牙弓"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "adequate"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:e852b09bd22b47a6b4186995a9a688a7",
+      "task_code": "A1.2",
+      "dataset_id": "C003",
+      "schema_version": "0.7.4",
+      "title": "A1.2 · 覆盖与质量 · C003",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "8a88c833108b0d9514d1b89d4dfba83d8c47b2a07ea76585991a02f3c6c46642",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/1065-M-55.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "全口"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "adequate"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:f042f7fabebc48f9a4c3fdda16f72b08",
+      "task_code": "A1.2",
+      "dataset_id": "C006",
+      "schema_version": "0.7.5",
+      "title": "A1.2 · 覆盖与质量 · C006",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "04988145064ef90d6fd4e94e788d317c5dda14a2fa5a15058f174ae7d9e4dcff",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/3. Rx Xiaomi/3.103.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "部位无法确定"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "image_quality"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": [
+              {
+                "issue_code": "XRAY_OTHER_REVIEW",
+                "description": "图像过小、模糊"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:f342d4072e434af4a35c9fe927e3ee48",
+      "task_code": "A1.2",
+      "dataset_id": "C008",
+      "schema_version": "0.7.5",
+      "title": "A1.2 · 覆盖与质量 · C008",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "72a82bb96b73c497b1106cedf16d56bc34003434df5b7abf901214b12ae71f3e",
+            "modality": "oral_mucosa_photograph",
+            "width": 1399,
+            "height": 483,
+            "path": "SMART-OM-C008/01. Normal/01. Unannotated/05. Upper lip/6 - UL.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "上唇"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "coverage_or_site"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": [
+              {
+                "issue_code": "PHOTO_CROP"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:ff87451ddae24008b89167b2b7dd6833",
+      "task_code": "A1.2",
+      "dataset_id": "C007",
+      "schema_version": "0.17.0",
+      "title": "A1.2 · 覆盖与质量 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "b739450d3ff91a727b0f5f3b99aa8d62e15e130af233c88938835974402354f3",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Testing/Images/1278.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "左下后牙区"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "image_quality"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": [
+              {
+                "issue_code": "XRAY_MOTION_BLUR"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:ffc63e62f19c43c69e98cf6801dc5353",
+      "task_code": "A1.2",
+      "dataset_id": "C010",
+      "schema_version": "0.7.4",
+      "title": "A1.2 · 覆盖与质量 · C010",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "记录实际覆盖范围，并区分未见明显问题、覆盖或部位辨识问题、成像质量问题；有问题时记录具体原因，不判断指定临床用途的充分性。",
+        "images": [
+          {
+            "sha256": "9bdef5e8262cb642040f43983904df60b8846edd490a9682c32caaaabbc996c5",
+            "modality": "panoramic_radiograph",
+            "width": 640,
+            "height": 320,
+            "path": "SD-Tooth-C010/STS-2D-Tooth/A-PXI/Unlabeled/Image/A_U_1340.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "coverage_codes",
+            "name": "实际覆盖范围",
+            "value": [
+              "全口"
+            ]
+          },
+          {
+            "key": "quality_grade",
+            "name": "质量类别",
+            "value": "adequate"
+          },
+          {
+            "key": "quality_issues",
+            "name": "质量问题",
+            "value": []
+          }
+        ]
+      }
+    }
+  ]
+}

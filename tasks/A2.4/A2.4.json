@@ -1,0 +1,128 @@
+{
+  "task_code": "A2.4",
+  "name": "关键结构与关键点定位",
+  "input": {
+    "images": 1,
+    "modalities": [
+      "cephalometric_radiograph",
+      "periapical_radiograph"
+    ]
+  },
+  "modes": {
+    "cephalometric_radiograph": {
+      "dataset_id": "C005",
+      "output_format": {
+        "type": "json",
+        "fields": [
+          "structures"
+        ],
+        "structures_shape": "objects_with_structure_code_and_coordinate"
+      },
+      "scoring": {
+        "case_points": 100.0,
+        "fields": [
+          {
+            "key": "structures",
+            "weight": 1.0,
+            "metric": "mean_keypoint_score_by_structure_code",
+            "distance_tolerance": 0.05
+          }
+        ]
+      }
+    },
+    "periapical_radiograph": {
+      "dataset_id": "C007",
+      "output_format": {
+        "type": "json",
+        "fields": [
+          "structures"
+        ],
+        "structures_shape": "objects_with_structure_code_fdi_and_coordinate"
+      },
+      "scoring": {
+        "case_points": 100.0,
+        "fields": [
+          {
+            "key": "structures",
+            "weight": 1.0,
+            "metric": "mean_keypoint_score_by_fdi_and_structure_code",
+            "distance_tolerance": 0.05
+          }
+        ]
+      }
+    }
+  },
+  "scoring": {
+    "case_points": 100.0,
+    "coordinate_score": "max(0, 1 - euclidean_distance / 0.05)",
+    "case_score": "mean score over the union of reference and predicted structure keys; matched keys use coordinate_score, missing and extra keys contribute 0",
+    "case_correct": "true only when the predicted structure key set exactly matches the reference key set and every matched coordinate distance is <= 0.05",
+    "diagnostics": [
+      "per_structure_distance",
+      "missing_structures",
+      "extra_structures",
+      "precision",
+      "recall",
+      "key_f1",
+      "union_structure_count",
+      "union_score"
+    ]
+  },
+  "options": {
+    "cephalometric_structures": [
+      "A",
+      "ANS",
+      "B",
+      "Me",
+      "N",
+      "Or",
+      "Pog",
+      "PNS",
+      "Pn",
+      "R",
+      "S",
+      "Ar",
+      "Co",
+      "Gn",
+      "Go",
+      "Po",
+      "LPM",
+      "LIT",
+      "LMT",
+      "UPM",
+      "UIA",
+      "UIT",
+      "UMT",
+      "LIA",
+      "Li",
+      "Ls",
+      "N`",
+      "Pog`",
+      "Sn"
+    ],
+    "periapical_structures": {
+      "MESIAL_CEJ": "近中釉牙骨质界",
+      "DISTAL_CEJ": "远中釉牙骨质界",
+      "ROOT_APEX": "根尖",
+      "MESIAL_ALVEOLAR_CREST": "近中牙槽嵴顶",
+      "DISTAL_ALVEOLAR_CREST": "远中牙槽嵴顶",
+      "FURCATION": "根分叉"
+    }
+  },
+  "constraints": {
+    "allowed_fdi": [
+      "11-18",
+      "21-28",
+      "31-38",
+      "41-48",
+      "51-55",
+      "61-65",
+      "71-75",
+      "81-85"
+    ],
+    "coordinate": "[x, y] normalized to 0-1",
+    "cephalometric_key": "structure_code",
+    "periapical_key": "fdi + structure_code",
+    "duplicates": "Duplicate structure keys are normalized to one entry, preserving first occurrence."
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "task_code": "A3.3",
+  "name": "正畸与发育异常定位",
+  "input": {"images": 1, "fields": ["evaluation_scope"]},
+  "modes": {
+    "tooth": {
+      "output_format": {"type": "json", "fields": ["findings"], "finding_shape": "finding_code_and_fdi"},
+      "scoring": {"case_points": 100.0, "fields": [{"key": "findings", "weight": 1.0, "metric": "correct_pairs_over_union"}]}
+    },
+    "region": {
+      "output_format": {"type": "json", "fields": ["findings"], "finding_shape": "finding_code_and_region_code"},
+      "scoring": {"case_points": 100.0, "fields": [{"key": "findings", "weight": 1.0, "metric": "correct_pairs_over_union"}]}
+    },
+    "bbox": {
+      "output_format": {"type": "json", "fields": ["findings"], "finding_shape": "finding_code_and_bbox"},
+      "scoring": {"case_points": 100.0, "fields": [{"key": "findings", "weight": 1.0, "metric": "correct_pairs_over_union"}], "bbox_iou_threshold": 0.5}
+    }
+  },
+  "scoring": {
+    "case_points": 100.0,
+    "fields": [{"key": "findings", "weight": 1.0, "metric": "correct_pairs_over_union"}],
+    "bbox_iou_threshold": 0.5
+  },
+  "constraints": {
+    "finding_codes": ["阻生", "异位萌出", "萌出延迟", "多生牙", "先天缺牙", "错位牙", "牙齿旋转", "拥挤", "牙列间隙", "深覆合", "深覆盖", "反合", "交叉合", "开合"],
+    "region_codes": ["全口", "头颅侧位", "上颌", "下颌", "正面", "前牙区", "右侧后牙区", "左侧后牙区", "上颌前牙区", "下颌前牙区", "右上后牙区", "左上后牙区", "右下后牙区", "左下后牙区"],
+    "bbox": "[left, top, right, bottom] normalized to 0-1"
+  }
+}
