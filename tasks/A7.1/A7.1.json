@@ -1,0 +1,9 @@
+{
+  "task_code": "A7.1",
+  "scoring": {
+    "case_points": 100.0,
+    "field_weights": {
+      "surface_grades": 1.0
+    }
+  }
+}
