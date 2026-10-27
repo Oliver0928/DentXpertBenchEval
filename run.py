@@ -1,9 +1,11 @@
 import argparse
+from functools import partial
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import http.client
 import json
 import math
 import os
+import re
 import sys
 import time
 import urllib.error
@@ -58,6 +60,13 @@ from bench.protocol import (
     parse_a42_answer,
     build_a43_prompt,
     parse_a43_answer,
+    CLINICAL_FIELD_KEYS,
+    build_clinical_prompt,
+    parse_clinical_answer,
+    clinical_media,
+    clinical_reference_answer,
+    validate_clinical_answer,
+    build_clinical_mock_response,
 )
 from bench.overlay import draw_bbox_on_image, get_case_bbox
 from bench.metrics.classification import (
@@ -71,6 +80,7 @@ from bench.metrics.classification import (
 )
 from bench.metrics.localization import score_a22_fields, score_a24_fields, score_a31_fields, score_a32_fields, score_a33_fields, score_a34_fields
 from bench.metrics.report import summarize_fields
+from bench.metrics.clinical import score_clinical_fields
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent
@@ -192,6 +202,16 @@ TASK_SPECS = {
     },
 }
 
+for _code, _keys in CLINICAL_FIELD_KEYS.items():
+    TASK_SPECS[_code] = {
+        "case_path": PROJECT_ROOT / f"tasks/{_code}/DentXpertBench-cases-v3.2-{_code}-2026-10-25.json",
+        "output_path": PROJECT_ROOT / f"results/{_code.lower().replace('.', '_')}_eval_results.jsonl",
+        "field_keys": _keys,
+        "prompt_builder": build_clinical_prompt,
+        "answer_parser": partial(parse_clinical_answer, task_code=_code),
+        "scorer": partial(score_clinical_fields, task_code=_code),
+    }
+
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
     sys.stderr.reconfigure(encoding="utf-8")
@@ -236,23 +256,38 @@ def build_openai_messages(
     从 case 提取图片路径和任务信息，构造 prompt，返回图片和文本组成的 messages 列表
     '''
     debug_log(debug, "call build_openai_messages(case, image_root)")
-    image_meta = case["input"]["images"][0]
-    image_path = image_root / image_meta["path"]
-    debug_log(debug, f"resolved image_path={image_path}")
-    if not image_path.exists():
-        raise FileNotFoundError(f"image not found: {image_path}")
-
-    debug_log(debug, f"call {prompt_builder.__name__}(case)")
+    debug_log(debug, f"call {getattr(prompt_builder, '__name__', 'prompt_builder')}(case)")
     prompt = prompt_builder(case)
     if debug:
         print("[debug] prompt begin")
         print(prompt)
         print("[debug] prompt end")
 
-    model_image_path = image_path
-    if case.get("task_code") in {"A4.2", "A4.3"}:
-        overlay_path = PROJECT_ROOT / "preview" / f"{case['task_code'].lower()}_model_input" / f"{case['id'].replace(':', '_')}.jpg"
-        model_image_path = draw_bbox_on_image(image_path, get_case_bbox(case), overlay_path)
+    code = case.get("task_code")
+    images = case["input"].get("images", [])
+    media = clinical_media(case) if code in CLINICAL_FIELD_KEYS else []
+    if not images and code != "A7.1":
+        raise ValueError(f"task {code} requires input images")
+    content = [{"type": "text", "text": prompt}]
+    for index, image_meta in enumerate(images):
+        image_path = image_root / image_meta["path"]
+        if not image_path.is_file():
+            raise FileNotFoundError(f"image not found: {image_path}")
+        model_image_path = image_path
+        bbox = None
+        if code in {"A4.2", "A4.3"}:
+            bbox = get_case_bbox(case)
+        elif code in {"A5.1", "A5.2"}:
+            bbox = media[index].get("diagnosis_bbox")
+            if bbox is None:
+                raise ValueError(f"missing diagnosis_bbox for {media[index]['evidence_id']}")
+        if bbox is not None:
+            safe_id = re.sub(r'[^\w.-]', '_', str(case['id']))
+            overlay_path = PROJECT_ROOT / "preview" / f"{code.lower()}_model_input" / f"{safe_id}_{index + 1}.jpg"
+            model_image_path = draw_bbox_on_image(image_path, bbox, overlay_path)
+        if media:
+            content.append({"type": "text", "text": f"影像 {media[index]['evidence_id']}"})
+        content.append({"type": "image_url", "image_url": {"url": image_to_data_url(model_image_path)}})
 
     return [
         {
@@ -261,10 +296,7 @@ def build_openai_messages(
         },
         {
             "role": "user",
-            "content": [
-                {"type": "text", "text": prompt},
-                {"type": "image_url", "image_url": {"url": image_to_data_url(model_image_path)}},
-            ],
+            "content": content,
         },
     ]
 
@@ -348,7 +380,7 @@ def evaluate_case(
     debug_log(debug, "call evaluate_case(case, response)")
     debug_log(debug, "call fields_to_dict(reference_answer.fields)")
     task_code = case.get("task_code")
-    ref = fields_to_dict(case["reference_answer"]["fields"], case.get("task_code"))
+    ref = clinical_reference_answer(case) if task_code in CLINICAL_FIELD_KEYS else fields_to_dict(case["reference_answer"]["fields"], task_code)
     if task_code == "A2.4":
         modality = case.get("input", {}).get("images", [{}])[0].get("modality")
         if modality == "periapical_radiograph":
@@ -367,8 +399,10 @@ def evaluate_case(
                 ]
     debug_log(debug, f"reference_answer={json.dumps(ref, ensure_ascii=False)}")
     try:
-        debug_log(debug, f"call {answer_parser.__name__}(response)")
+        debug_log(debug, f"call {getattr(answer_parser, '__name__', 'answer_parser')}(response)")
         pred = answer_parser(response)
+        if task_code in CLINICAL_FIELD_KEYS:
+            validate_clinical_answer(pred, case)
         debug_log(debug, f"parsed model_answer={json.dumps(pred, ensure_ascii=False)}")
         parse_error = None
     except Exception as exc:
@@ -395,8 +429,10 @@ def evaluate_case(
         "task_code": case.get("task_code"),
         "dataset_id": case.get("dataset_id"),
         "difficulty": case.get("difficulty"),
-        "image_path": case["input"]["images"][0].get("path"),
+        "image_path": next((item.get("path") for item in case["input"].get("images", [])), None),
+        "image_paths": [item["path"] for item in case["input"].get("images", [])],
         "reference_answer": ref,
+        "reference_answer_native": case["reference_answer"],
         "model_response": response,
         "token_usage": token_usage or {},
         "model_answer": pred,
@@ -514,6 +550,8 @@ def save_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
 
 
 def build_mock_response(case: dict[str, Any]) -> str:
+    if case.get("task_code") in CLINICAL_FIELD_KEYS:
+        return build_clinical_mock_response(case)
     ref = fields_to_dict(case["reference_answer"]["fields"], case.get("task_code"))
     task_code = case.get("task_code")
     if task_code == "A1.1":
@@ -753,6 +791,9 @@ def run_task(task_code: str, spec: dict[str, Any], args: argparse.Namespace) -> 
     results = [results_by_index[i] for i in sorted(results_by_index)]
 
     if args.dry_run:
+        invalid = [row for row in results if row["model_answer"] is None]
+        if invalid:
+            raise SystemExit(f"Dry run failed for {task_code}: {len(invalid)}/{len(cases)} invalid cases. First error: {invalid[0]['parse_error']}")
         print(f"Dry run passed for {task_code}: {len(cases)} cases. No result files were written.")
         return None
 
