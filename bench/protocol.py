@@ -1,6 +1,7 @@
 import json
 import random
 import re
+from pathlib import Path
 from typing import Any
 
 A11_FIELD_KEYS = ("modality_type", "field_of_view")
@@ -31,6 +32,16 @@ A42_FIELD_KEYS = ("grade_value",)
 A42_ANSWER_KEYS = A42_FIELD_KEYS
 A43_FIELD_KEYS = ("surface_grades",)
 A43_ANSWER_KEYS = A43_FIELD_KEYS
+
+CLINICAL_FIELD_KEYS = {
+    "A5.1": ("diagnoses", "reason"),
+    "A5.2": ("diagnoses", "reason", "exclude_reason"),
+    "A5.3": ("sufficiency", "reason"),
+    "A6.1": ("total", "images"),
+    "A6.2": ("diagnoses", "reason"),
+    "A6.3": ("conditions",),
+    "A7.1": ("plans",),
+}
 
 A43_SURFACE_LABELS = {
     "mesial": "近中面",
@@ -1704,4 +1715,210 @@ def format_clinical_purpose(purpose: dict[str, Any]) -> str:
     if site_text:
         parts.append(f"部位：{site_text}")
     return "；".join(part for part in parts if part)
+
+
+def clinical_input_fields(case: dict[str, Any]) -> dict[str, Any]:
+    """Keep structured values (including numbers and objects) intact."""
+    return {item["key"]: item["value"] for item in case["input"].get("fields", [])}
+
+
+def clinical_media(case: dict[str, Any]) -> list[dict[str, Any]]:
+    """Resolve M identifiers by path, in the actual image sending order."""
+    evidence = clinical_input_fields(case).get("evidence_media", [])
+    by_path = {item["path"]: item for item in evidence}
+    images = case["input"].get("images", [])
+    paths = [item["path"] for item in images]
+    if len(paths) != len(set(paths)):
+        raise ValueError("duplicate image paths in clinical case")
+    if set(by_path) != set(paths) or len(by_path) != len(evidence):
+        raise ValueError("evidence_media must match input.images one to one")
+    ordered = [by_path[path] for path in paths]
+    ids = [item["evidence_id"] for item in ordered]
+    if len(ids) != len(set(ids)):
+        raise ValueError("duplicate evidence_media identifiers")
+    return ordered
+
+
+def build_clinical_prompt(case: dict[str, Any]) -> str:
+    """Render the supplied templates from inputs only, never reference answers."""
+    code = case["task_code"]
+    if code not in CLINICAL_FIELD_KEYS:
+        raise ValueError(f"unsupported clinical task: {code}")
+    fields = clinical_input_fields(case)
+    media = clinical_media(case)
+    facts = "\n".join(
+        f"[{item['evidence_id']}] {item['text']}" for item in fields.get("clinical_facts", [])
+    ) or "未额外提供"
+    options = "\n".join(item["diagnosis"] for item in fields.get("diagnosis_options", []))
+    replacements = {
+        "科室中文名称": DEPARTMENT_LABELS.get(fields.get("department_code"), fields.get("department_code", "未提供")),
+        "事实列表": facts,
+        "事实列表；未提供时注明未额外提供": facts,
+        "所选科室对应的诊断列表": options,
+        "本题正确诊断与待排除诊断组成的中文候选列表": options,
+        "诊断名称": fields.get("diagnosis", fields.get("target_diagnosis", "未提供")),
+        "诊断目标": fields.get("diagnostic_goal", "未提供"),
+        "实体名称": fields.get("target_entity", "未提供"),
+        "按发送顺序列出的影像M编号": "\n".join(item["evidence_id"] for item in media),
+        "性别": fields.get("sex", "未提供"),
+        "年龄": fields.get("age", "未提供"),
+        "患者资料": fields.get("patient_info", "未额外提供"),
+        "主诉": fields.get("chief_complaint", "未提供"),
+        "病史": fields.get("history", "未提供"),
+        "口腔检查结果": fields.get("clinical_exam", "未提供"),
+        "影像检查描述": fields.get("imaging_exam", "未提供"),
+        "患者偏好": fields.get("patient_preferences") or "未提供",
+    }
+    template = (Path(__file__).parent / "prompts" / f"{code}.txt").read_text(encoding="utf-8-sig")
+
+    def replace(match: re.Match) -> str:
+        key = match.group(1)
+        if key not in replacements:
+            raise ValueError(f"unknown prompt placeholder: {key}")
+        return str(replacements[key])
+
+    prompt = re.sub(r"\{\{([^{}]+)\}\}", replace, template).strip()
+    # All candidates come from input; favored/excluded labels stay private.
+    if code in {"A5.1", "A5.2", "A6.2"} and not options:
+        raise ValueError("diagnosis_options must not be empty")
+    if code == "A6.1" and fields.get("entity_description"):
+        prompt += f"\n\n实体定义或计数说明：{fields['entity_description']}"
+    if media:
+        prompt += "\n\n影像发送顺序：\n" + "\n".join(
+            f"第{i}张：{item['evidence_id']}" for i, item in enumerate(media, 1)
+        )
+    return prompt
+
+
+def _clinical_text(value: Any, label: str) -> str:
+    if not isinstance(value, str) or not value.strip():
+        raise ValueError(f"{label} must be a non-empty string")
+    return value.strip()
+
+
+def _clinical_count(value: Any) -> int:
+    if type(value) is not int or value < 0:
+        raise ValueError("counts must be non-negative integers")
+    return value
+
+
+def parse_clinical_answer(text: str | None, task_code: str) -> dict[str, Any]:
+    obj = parse_json_object(text)
+    allowed = set(CLINICAL_FIELD_KEYS[task_code])
+    required = allowed - ({"reason"} if task_code == "A5.3" else set())
+    if set(obj) - allowed or required - set(obj):
+        raise ValueError(f"invalid answer keys for {task_code}: {sorted(obj)}")
+    if task_code in {"A5.1", "A5.2", "A6.2"}:
+        diagnoses = obj["diagnoses"]
+        if not isinstance(diagnoses, list) or not diagnoses:
+            raise ValueError("diagnoses must be a non-empty array")
+        obj["diagnoses"] = [_clinical_text(item, "diagnosis") for item in diagnoses]
+        if len(set(obj["diagnoses"])) != len(diagnoses):
+            raise ValueError("duplicate diagnoses")
+        obj["reason"] = _clinical_text(obj["reason"], "reason")
+        if task_code == "A5.1" and len(obj["reason"]) > 100:
+            raise ValueError("A5.1 reason must be at most 100 characters")
+        if task_code == "A5.2":
+            obj["exclude_reason"] = _clinical_text(obj["exclude_reason"], "exclude_reason")
+            if len(obj["exclude_reason"]) > 100 or len(obj["reason"]) > 100:
+                raise ValueError("A5.2 reasons must be at most 100 characters each")
+        if task_code == "A6.2" and len(obj["reason"]) > 100:
+            raise ValueError("A6.2 reason must be at most 100 characters")
+    elif task_code == "A5.3":
+        if obj["sufficiency"] not in ("充足", "不足"):
+            raise ValueError("sufficiency must be 充足 or 不足")
+        if obj["sufficiency"] == "充足":
+            if "reason" in obj:
+                raise ValueError("omit reason when sufficiency is 充足")
+        else:
+            obj["reason"] = _clinical_text(obj.get("reason"), "reason")
+            if len(obj["reason"]) > 100:
+                raise ValueError("A5.3 reason must be at most 100 characters")
+    elif task_code == "A6.1":
+        obj["total"] = _clinical_count(obj["total"])
+        if not isinstance(obj["images"], list) or not obj["images"]:
+            raise ValueError("images must be a non-empty array")
+        ids = []
+        for item in obj["images"]:
+            if not isinstance(item, dict) or set(item) != {"image", "count"}:
+                raise ValueError("each image count requires image and count")
+            item["image"] = _clinical_text(item["image"], "image")
+            item["count"] = _clinical_count(item["count"])
+            ids.append(item["image"])
+        if len(set(ids)) != len(ids):
+            raise ValueError("duplicate image identifiers")
+        counts = [item["count"] for item in obj["images"]]
+        if not max(counts) <= obj["total"] <= sum(counts):
+            raise ValueError("deduplicated total must be between largest image count and sum")
+    elif task_code in {"A6.3", "A7.1"}:
+        key = "conditions" if task_code == "A6.3" else "plans"
+        if not isinstance(obj[key], list) or not obj[key]:
+            raise ValueError(f"{key} must be a non-empty array")
+        expected = {"category", "detail"} if key == "conditions" else {"plan"}
+        for item in obj[key]:
+            if not isinstance(item, dict) or set(item) != expected:
+                raise ValueError(f"invalid {key} entry")
+            for field in expected:
+                item[field] = _clinical_text(item[field], field)
+            if key == "conditions" and item["category"] not in ("患者信息", "检查状况", "补充图像"):
+                raise ValueError("invalid condition category")
+    return obj
+
+
+def validate_clinical_answer(pred: dict[str, Any], case: dict[str, Any]) -> None:
+    """Check answer identifiers against this case, without consulting labels."""
+    if "diagnoses" in pred:
+        options = {item["diagnosis"] for item in clinical_input_fields(case)["diagnosis_options"]}
+        if set(pred["diagnoses"]) - options:
+            raise ValueError("diagnoses contain names outside input options")
+    if case["task_code"] == "A6.1":
+        ids = [item["evidence_id"] for item in clinical_media(case)]
+        if [item["image"] for item in pred["images"]] != ids:
+            raise ValueError("image counts must match all input M identifiers in sending order")
+
+
+def clinical_reference_answer(case: dict[str, Any]) -> dict[str, Any]:
+    """Adapt native annotations to prompt output names; never used in prompts."""
+    fields = {item["key"]: item["value"] for item in case["reference_answer"]["fields"]}
+    code = case["task_code"]
+    if code in {"A5.1", "A5.2", "A6.2"}:
+        options = {item["option_id"]: item["diagnosis"] for item in clinical_input_fields(case)["diagnosis_options"]}
+        if code == "A5.2":
+            entries = fields["differential_diagnoses"]
+            return {
+                "diagnoses": [options[item["option_id"]] for item in entries if item["role"] == "favored"],
+                "reason": "；".join(item["reason"] for item in entries if item["role"] == "favored"),
+                "exclude_reason": "；".join(f"{options[item['option_id']]}：{item['reason']}" for item in entries if item["role"] == "excluded"),
+            }
+        return {"diagnoses": [options[key] for key in fields["selected_option_ids"]], "reason": fields["diagnostic_reason"]}
+    if code == "A6.1":
+        counts = {item["evidence_id"]: item["count"] for item in fields["image_counts"]}
+        return {"total": fields["total_count"], "images": [
+            {"image": item["evidence_id"], "count": counts[item["evidence_id"]]} for item in clinical_media(case)
+        ]}
+    if code == "A6.3":
+        categories = {"patient_information": "患者信息", "examinations": "检查状况", "additional_images": "补充图像"}
+        return {"conditions": [{"category": categories[item["category"]], "detail": item["detail"]} for item in fields["required_conditions"]]}
+    if code == "A7.1":
+        return {"plans": fields["treatment_plans"]}
+    # supported/not_supported does not establish sufficient/insufficient.
+    return fields
+
+
+def build_clinical_mock_response(case: dict[str, Any]) -> str:
+    """Synthetic format examples for dry-run, not clinical ground truth."""
+    code = case["task_code"]
+    if code in {"A5.1", "A5.2", "A6.2"}:
+        response = {"diagnoses": [clinical_input_fields(case)["diagnosis_options"][0]["diagnosis"]], "reason": "仅用于验证输出格式。"}
+        if code == "A5.2":
+            response["exclude_reason"] = "仅用于验证输出格式。"
+    elif code == "A5.3":
+        response = {"sufficiency": "不足", "reason": "仅用于验证输出格式。"}
+    elif code == "A6.1":
+        response = {"total": 0, "images": [{"image": item["evidence_id"], "count": 0} for item in clinical_media(case)]}
+    elif code == "A6.3":
+        response = {"conditions": [{"category": "患者信息", "detail": "仅用于验证输出格式。"}]}
+    else:
+        response = {"plans": [{"plan": "仅用于验证输出格式。"}]}
+    return json.dumps(response, ensure_ascii=False)
 

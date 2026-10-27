@@ -16,6 +16,7 @@ from bench.protocol import (
     A32_FIELD_KEYS,
     A33_FIELD_KEYS,
     A34_FIELD_KEYS,
+    CLINICAL_FIELD_KEYS,
 )
 
 
@@ -31,6 +32,7 @@ TASK_FIELD_KEYS = {
     "A3.2": A32_FIELD_KEYS,
     "A3.3": A33_FIELD_KEYS,
     "A3.4": A34_FIELD_KEYS,
+    **CLINICAL_FIELD_KEYS,
 }
 
 
