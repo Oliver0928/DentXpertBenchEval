@@ -81,6 +81,7 @@ from bench.metrics.classification import (
 from bench.metrics.localization import score_a22_fields, score_a24_fields, score_a31_fields, score_a32_fields, score_a33_fields, score_a34_fields
 from bench.metrics.report import summarize_fields
 from bench.metrics.clinical import score_clinical_fields
+from bench.metrics.a51 import score_a51_fields, build_reason_judge_messages, parse_reason_judgment, apply_reason_judgment
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent
@@ -211,6 +212,7 @@ for _code, _keys in CLINICAL_FIELD_KEYS.items():
         "answer_parser": partial(parse_clinical_answer, task_code=_code),
         "scorer": partial(score_clinical_fields, task_code=_code),
     }
+TASK_SPECS["A5.1"]["scorer"] = score_a51_fields
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
@@ -664,6 +666,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--task", choices=[*TASK_SPECS.keys(), "all"], default="A1.1")
     parser.add_argument("--cases", type=Path, default=None, help="Override the default case JSON path. Only valid for a single task.")
     parser.add_argument("--image-root", type=Path, default=DEFAULT_IMAGE_ROOT)
+    parser.add_argument("--judge-model-config", type=Path, default=PROJECT_ROOT / "configs/model-gpt-6-luna.json", help="A5.1 reason judge config (independent of evaluated model).")
     parser.add_argument("--output", type=Path, default=None, help="Override the default output JSONL path. Only valid for a single task.")
     parser.add_argument(
         "--include-model-in-output",
@@ -716,6 +719,20 @@ def run_task(task_code: str, spec: dict[str, Any], args: argparse.Namespace) -> 
     if args.workers < 1:
         raise SystemExit("--workers must be at least 1")
     workers = 1 if args.dry_run else min(args.workers, max(1, len(cases)))
+    judge_config = None
+    judge_key = None
+    judge_setup_error = None
+    if task_code == "A5.1" and not args.dry_run:
+        try:
+            judge_config = load_model_config(args.judge_model_config)
+            key_env = str(judge_config.get("api_key_env", "SUBLYX_API_KEY"))
+            judge_key = os.getenv(key_env)
+            if not judge_key and judge_config.get("api_key_file"):
+                judge_key = read_api_key_file(Path(str(judge_config["api_key_file"])))
+            if not judge_key and judge_config.get("requires_api_key", True):
+                judge_setup_error = f"Missing judge API key; configure {key_env} or judge key file"
+        except (SystemExit, ValueError) as exc:
+            judge_setup_error = str(exc)
     run_metadata = {
         "run_id": args.run_id,
         "started_at": args.run_started_at,
@@ -729,6 +746,9 @@ def run_task(task_code: str, spec: dict[str, Any], args: argparse.Namespace) -> 
 
     def process_case(item: tuple[int, dict[str, Any]]) -> tuple[int, dict[str, Any]]:
         index, case = item
+        if task_code == "A5.1" and case.get("id") == "candidate:e1cf8e01197540aea86895416ae5f8a7" and any(not m.get("diagnosis_bbox") for m in clinical_media(case)):
+            print(f"[skipped] {task_code} {case['id']}: diagnosis_bbox missing")
+            return index, {"id": case["id"], "task_code": task_code, "model_answer": None, "case_score": None, "scoring_status": "skipped", "skip_reason": "diagnosis_bbox missing; awaiting annotation", "pending_review_fields": [], "objective_metrics": {}, "run_metadata": run_metadata}
         try:
             token_usage = None
             debug_log(args.debug, f"{task_code} case {index}/{len(cases)} id={case['id']}")
@@ -764,6 +784,26 @@ def run_task(task_code: str, spec: dict[str, Any], args: argparse.Namespace) -> 
                 run_metadata=run_metadata,
                 token_usage=token_usage if not args.dry_run else None,
             )
+            if task_code == "A5.1" and result["model_answer"] is not None and not args.dry_run:
+                result["reason_judge_model"] = judge_config.get("model") if judge_config else None
+                result["reason_judge_error"] = judge_setup_error
+                if judge_setup_error:
+                    print(f"[judge-error] {case['id']}: {judge_setup_error}")
+                if not judge_setup_error and judge_config:
+                    try:
+                        generation = judge_config.get("generation", {})
+                        judgment_response = chat_completion(
+                            messages=build_reason_judge_messages(result["reference_answer"]["reason"], result["model_answer"]["reason"]),
+                            model=str(judge_config["model"]), api_key=judge_key, base_url=str(judge_config["base_url"]),
+                            temperature=0, max_tokens=1024, timeout=min(int(generation.get("timeout", 120)), 120),
+                            extra_body=generation.get("extra_body", {}),
+                        )
+                        result["reason_judge_response"] = judgment_response.get("content")
+                        result["reason_judge_token_usage"] = judgment_response.get("usage") or {}
+                        apply_reason_judgment(result, parse_reason_judgment(judgment_response.get("content")))
+                    except Exception as exc:
+                        result["reason_judge_error"] = str(exc)
+                        print(f"[judge-error] {case['id']}: {exc}")
         except Exception as exc:
             # Never let one malformed case abort the whole task batch.
             print(f"[invalid] {task_code} {case.get('id', index)}: {exc}")
@@ -791,10 +831,11 @@ def run_task(task_code: str, spec: dict[str, Any], args: argparse.Namespace) -> 
     results = [results_by_index[i] for i in sorted(results_by_index)]
 
     if args.dry_run:
-        invalid = [row for row in results if row["model_answer"] is None]
+        invalid = [row for row in results if row.get("scoring_status") != "skipped" and row["model_answer"] is None]
         if invalid:
             raise SystemExit(f"Dry run failed for {task_code}: {len(invalid)}/{len(cases)} invalid cases. First error: {invalid[0]['parse_error']}")
-        print(f"Dry run passed for {task_code}: {len(cases)} cases. No result files were written.")
+        skipped = sum(row.get("scoring_status") == "skipped" for row in results)
+        print(f"Dry run passed for {task_code}: {len(cases) - skipped} cases, {skipped} skipped. No result files were written.")
         return None
 
     summary = summarize_fields(results, spec["field_keys"])

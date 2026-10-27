@@ -1816,6 +1816,8 @@ def parse_clinical_answer(text: str | None, task_code: str) -> dict[str, Any]:
         if len(set(obj["diagnoses"])) != len(diagnoses):
             raise ValueError("duplicate diagnoses")
         obj["reason"] = _clinical_text(obj["reason"], "reason")
+        if task_code == "A5.1" and len(obj["reason"]) > 100:
+            raise ValueError("A5.1 reason must be at most 100 characters")
         if task_code == "A5.2":
             obj["exclude_reason"] = _clinical_text(obj["exclude_reason"], "exclude_reason")
             if len(obj["exclude_reason"]) > 100 or len(obj["reason"]) > 100:

@@ -58,6 +58,8 @@ def summarize_a11(rows: list[dict[str, Any]]) -> dict[str, Any]:
 
 
 def summarize_clinical(rows: list[dict[str, Any]]) -> dict[str, Any]:
+    skipped_rows = [row for row in rows if row.get("scoring_status") == "skipped"]
+    rows = [row for row in rows if row.get("scoring_status") != "skipped"]
     total = len(rows)
     valid = sum(row.get("model_answer") is not None for row in rows)
     keys = sorted({key for row in rows for key in row.get("objective_metrics", {})})
@@ -75,7 +77,10 @@ def summarize_clinical(rows: list[dict[str, Any]]) -> dict[str, Any]:
                 "micro_recall": tp / (tp + fn) if tp + fn else 0.0,
                 "micro_f1": 2 * tp / (2 * tp + fp + fn) if 2 * tp + fp + fn else 0.0,
             })
-    return {
+    result = {
+        "total_cases_including_skipped": total + len(skipped_rows),
+        "skipped": len(skipped_rows),
+        "skipped_cases": [{"id": row.get("id"), "reason": row.get("skip_reason")} for row in skipped_rows],
         "total": total,
         "valid": valid,
         "invalid": total - valid,
@@ -89,4 +94,25 @@ def summarize_clinical(rows: list[dict[str, Any]]) -> dict[str, Any]:
         "average_score": None,
         "scoring_note": "No final clinical score: review open answers and approve task scoring weights first.",
     }
+    if any(row.get("task_code") == "A5.1" for row in rows):
+        scored = [row for row in rows if row.get("scoring_status") == "scored"]
+        result["fully_scored"] = len(scored)
+        result["unscored"] = total - len(scored)
+        f1_values = [row.get("objective_metrics", {}).get("diagnoses", {}).get("f1") for row in rows]
+        f1_values = [value for value in f1_values if value is not None]
+        result["diagnosis_f1_mean"] = sum(f1_values) / len(f1_values) if f1_values else None
+        if scored:
+            result["scored_total_points"] = sum(row["case_points"] for row in scored)
+            result["scored_total_score"] = sum(row["case_score"] for row in scored)
+            result["scored_average_score"] = result["scored_total_score"] / len(scored)
+        if scored and len(scored) == total:
+            result["scoring_status"] = "scored"
+            result["total_score"] = result["scored_total_score"]
+            result["total_points"] = result["scored_total_points"]
+            result["score_rate"] = result["total_score"] / result["total_points"] if result["total_points"] else None
+            result["average_score"] = result["scored_average_score"]
+        else:
+            result["scoring_status"] = "incomplete"
+        result["scoring_note"] = "A5.1 totals exclude skipped cases and remain null until all attempted cases are scored."
+    return result
 
