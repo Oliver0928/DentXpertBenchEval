@@ -2,6 +2,7 @@ import argparse
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import http.client
 import json
+import math
 import os
 import sys
 import time
@@ -75,10 +76,7 @@ from bench.metrics.report import summarize_fields
 PROJECT_ROOT = Path(__file__).resolve().parent
 REPO_ROOT = PROJECT_ROOT.parent
 DEFAULT_IMAGE_ROOT = REPO_ROOT / "公开数据集/公开数据集"
-DEFAULT_MODEL_CONFIG_PATH = PROJECT_ROOT / "configs/model-chatanywhere.json"
-DEFAULT_MAX_TOKENS_BY_TASK = {
-    "A2.4": 2048,
-}
+DEFAULT_MODEL_CONFIG_PATH = PROJECT_ROOT / "configs/model-qwen-local.json"
 TASK_SPECS = {
     "A1.1": {
         "case_path": PROJECT_ROOT / "tasks/A1.1/DentXpertBench-cases-v3.2-A1.1-2026-10-19.json",
@@ -222,14 +220,10 @@ def debug_log(enabled: bool, message: str) -> None:
         print(f"[debug] {message}")
 
 
-def resolve_max_tokens(args: argparse.Namespace, task_code: str | None = None) -> int:
+def resolve_max_tokens(args: argparse.Namespace, task_code: str | None = None) -> int | None:
     if args.max_tokens is not None:
         return args.max_tokens
-    if task_code:
-        task_default = DEFAULT_MAX_TOKENS_BY_TASK.get(task_code)
-        if task_default is not None:
-            return task_default
-    return 512
+    return None
 
 
 def build_openai_messages(
@@ -279,7 +273,7 @@ def call_with_retry(
     messages: list[dict[str, Any]],
     args: argparse.Namespace,
     task_code: str | None = None,
-) -> str:
+) -> dict[str, Any] | None:
     '''
     调用 chat_completion()，也就是调用 api
     '''
@@ -309,8 +303,13 @@ def call_with_retry(
             if error_body:
                 detail += f": {error_body}"
             last_error = RuntimeError(detail)
-            # Authorization/model permission errors will not be fixed by retrying.
-            break
+            # Keep the batch alive even for non-retryable HTTP errors. The case
+            # is recorded as invalid after the configured number of attempts.
+            if attempt >= args.retries:
+                break
+            delay = args.retry_sleep * (attempt + 1)
+            print(f"[retry] {task_code or 'task'} attempt {attempt + 1}/{args.retries + 1}: {detail}; sleeping {delay:.1f}s")
+            time.sleep(delay)
         except (
             urllib.error.URLError,
             TimeoutError,
@@ -325,7 +324,17 @@ def call_with_retry(
             delay = args.retry_sleep * (attempt + 1)
             print(f"[retry] {task_code or 'task'} attempt {attempt + 1}/{args.retries + 1}: {exc}; sleeping {delay:.1f}s")
             time.sleep(delay)
-    raise RuntimeError(f"model call failed after retries: {last_error}")
+        except Exception as exc:
+            # A single malformed/unsupported provider response must not abort
+            # the whole benchmark. Retry it, then treat this case as invalid.
+            last_error = exc
+            if attempt >= args.retries:
+                break
+            delay = args.retry_sleep * (attempt + 1)
+            print(f"[retry] {task_code or 'task'} attempt {attempt + 1}/{args.retries + 1}: {exc}; sleeping {delay:.1f}s")
+            time.sleep(delay)
+    print(f"[invalid] {task_code or 'task'} model call failed after {args.retries + 1} attempts: {last_error}")
+    return None
 
 
 def evaluate_case(
@@ -334,6 +343,7 @@ def evaluate_case(
     answer_parser: Any,
     debug: bool = False,
     run_metadata: dict[str, Any] | None = None,
+    token_usage: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     debug_log(debug, "call evaluate_case(case, response)")
     debug_log(debug, "call fields_to_dict(reference_answer.fields)")
@@ -388,6 +398,7 @@ def evaluate_case(
         "image_path": case["input"]["images"][0].get("path"),
         "reference_answer": ref,
         "model_response": response,
+        "token_usage": token_usage or {},
         "model_answer": pred,
         "parse_error": parse_error,
         "run_metadata": run_metadata or {},
@@ -616,6 +627,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--cases", type=Path, default=None, help="Override the default case JSON path. Only valid for a single task.")
     parser.add_argument("--image-root", type=Path, default=DEFAULT_IMAGE_ROOT)
     parser.add_argument("--output", type=Path, default=None, help="Override the default output JSONL path. Only valid for a single task.")
+    parser.add_argument(
+        "--include-model-in-output",
+        action="store_true",
+        help="Include a sanitized model name in automatically generated result filenames.",
+    )
     parser.add_argument("--temperature", type=float, default=None)
     parser.add_argument("--max-tokens", type=int, default=None, help="Override the model output token budget.")
     parser.add_argument("--timeout", type=int, default=None)
@@ -625,8 +641,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--workers",
         type=int,
-        default=2,
-        help="Number of concurrent cases per task. Defaults to 2.",
+        default=32,
+        help="Number of concurrent cases per task. Defaults to 32.",
     )
     parser.add_argument("--dry-run", action="store_true", help="Build prompts and check images without calling the model.")
     parser.add_argument("--debug", action="store_true", help="Print function-level dry-run trace, prompt text, mock response, parsing, and scoring.")
@@ -675,26 +691,53 @@ def run_task(task_code: str, spec: dict[str, Any], args: argparse.Namespace) -> 
 
     def process_case(item: tuple[int, dict[str, Any]]) -> tuple[int, dict[str, Any]]:
         index, case = item
-        debug_log(args.debug, f"{task_code} case {index}/{len(cases)} id={case['id']}")
-        messages = build_openai_messages(case, args.image_root, spec["prompt_builder"], debug=args.debug)
-        if args.dry_run:
-            response = args.mock_response if args.mock_response is not None else build_mock_response(case)
-            print(f"[dry-run] {task_code} {index}/{len(cases)} {case['id']} image ok")
-            if args.debug:
-                print("[debug] would call call_with_retry(messages, args), skipped because --dry-run is set")
-                print(f"[debug] resolved max_tokens={resolve_max_tokens(args, task_code)}")
-                print(f"[debug] mock LLM response={response}")
-        else:
-            print(f"[eval] {task_code} {index}/{len(cases)} {case['id']}")
-            debug_log(args.debug, f"resolved max_tokens={resolve_max_tokens(args, task_code)}")
-            response = call_with_retry(messages, args, task_code=task_code)
-        result = evaluate_case(
-            case,
-            response,
-            spec["answer_parser"],
-            debug=args.debug,
-            run_metadata=run_metadata,
-        )
+        try:
+            token_usage = None
+            debug_log(args.debug, f"{task_code} case {index}/{len(cases)} id={case['id']}")
+            messages = build_openai_messages(case, args.image_root, spec["prompt_builder"], debug=args.debug)
+            if args.dry_run:
+                response = args.mock_response if args.mock_response is not None else build_mock_response(case)
+                print(f"[dry-run] {task_code} {index}/{len(cases)} {case['id']} image ok")
+                if args.debug:
+                    print("[debug] would call call_with_retry(messages, args), skipped because --dry-run is set")
+                    print(f"[debug] resolved max_tokens={resolve_max_tokens(args, task_code)}")
+                    print(f"[debug] mock LLM response={response}")
+            else:
+                print(f"[eval] {task_code} {index}/{len(cases)} {case['id']}")
+                debug_log(args.debug, f"resolved max_tokens={resolve_max_tokens(args, task_code)}")
+                call_result = call_with_retry(messages, args, task_code=task_code)
+                response = call_result.get("content", "") if call_result else None
+                token_usage = call_result.get("usage") if call_result else None
+                if token_usage:
+                    print(
+                        f"[usage] {task_code} {case['id']} "
+                        f"input={token_usage.get('prompt_tokens', '?')} "
+                        f"thinking={token_usage.get('reasoning_tokens', '?')} "
+                        f"output={token_usage.get('visible_completion_tokens', token_usage.get('completion_tokens', '?'))} "
+                        f"total={token_usage.get('total_tokens', '?')}"
+                    )
+                elif call_result is not None:
+                    print(f"[usage] {task_code} {case['id']} unavailable (provider omitted usage)")
+            result = evaluate_case(
+                case,
+                response,
+                spec["answer_parser"],
+                debug=args.debug,
+                run_metadata=run_metadata,
+                token_usage=token_usage if not args.dry_run else None,
+            )
+        except Exception as exc:
+            # Never let one malformed case abort the whole task batch.
+            print(f"[invalid] {task_code} {case.get('id', index)}: {exc}")
+            result = evaluate_case(
+                case,
+                None,
+                spec["answer_parser"],
+                debug=args.debug,
+                run_metadata=run_metadata,
+                token_usage=None,
+            )
+            result["parse_error"] = f"case processing error: {exc}"
         return index, result
 
     results_by_index: dict[int, dict[str, Any]] = {}
@@ -714,6 +757,38 @@ def run_task(task_code: str, spec: dict[str, Any], args: argparse.Namespace) -> 
         return None
 
     summary = summarize_fields(results, spec["field_keys"])
+    usage_rows = [row.get("token_usage", {}) for row in results if row.get("token_usage", {}).get("total_tokens") is not None]
+    if usage_rows:
+        totals = [int(row["total_tokens"]) for row in usage_rows]
+        input_totals = [int(row["prompt_tokens"]) for row in usage_rows if row.get("prompt_tokens") is not None]
+        output_totals = [int(row["completion_tokens"]) for row in usage_rows if row.get("completion_tokens") is not None]
+        sorted_totals = sorted(totals)
+        p95_index = min(len(sorted_totals) - 1, max(0, math.ceil(len(sorted_totals) * 0.95) - 1))
+        completion_values = [int(row["completion_tokens"]) for row in usage_rows if row.get("completion_tokens") is not None]
+        reasoning_values = [int(row["reasoning_tokens"]) for row in usage_rows if row.get("reasoning_tokens") is not None]
+        visible_values = [int(row["visible_completion_tokens"]) for row in usage_rows if row.get("visible_completion_tokens") is not None]
+        sorted_completion = sorted(completion_values)
+        completion_p95 = None
+        if sorted_completion:
+            completion_p95 = sorted_completion[
+                min(len(sorted_completion) - 1, max(0, math.ceil(len(sorted_completion) * 0.95) - 1))
+            ]
+        summary["token_usage"] = {
+            "measured_cases": len(usage_rows),
+            "missing_cases": len(results) - len(usage_rows),
+            "total_tokens": sum(totals),
+            "avg_total_tokens": round(sum(totals) / len(totals), 2),
+            "max_total_tokens": max(totals),
+            "p95_total_tokens": sorted_totals[p95_index],
+            "max_completion_tokens": max(completion_values) if completion_values else None,
+            "p95_completion_tokens": completion_p95,
+            "total_prompt_tokens": sum(input_totals) if input_totals else None,
+            "total_completion_tokens": sum(output_totals) if output_totals else None,
+            "total_reasoning_tokens": sum(reasoning_values) if reasoning_values else None,
+            "avg_reasoning_tokens": round(sum(reasoning_values) / len(reasoning_values), 2) if reasoning_values else None,
+            "max_reasoning_tokens": max(reasoning_values) if reasoning_values else None,
+            "total_visible_completion_tokens": sum(visible_values) if visible_values else None,
+        }
     summary["run_metadata"] = run_metadata
     summary_path = output_path.with_suffix(".summary.json")
     summary_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -730,7 +805,7 @@ def main() -> None:
     generation = model_config.get("generation", {})
     args.model = str(model_config["model"])
     args.base_url = str(model_config["base_url"])
-    args.temperature = args.temperature if args.temperature is not None else float(generation.get("temperature", 0.0))
+    args.temperature = args.temperature if args.temperature is not None else generation.get("temperature")
     args.max_tokens = args.max_tokens if args.max_tokens is not None else generation.get("max_tokens")
     args.timeout = args.timeout if args.timeout is not None else int(generation.get("timeout", 120))
     args.retries = args.retries if args.retries is not None else int(generation.get("retries", 5))
@@ -751,10 +826,16 @@ def main() -> None:
     args.run_id = datetime.now().astimezone().strftime("%Y%m%d_%H%M%S")
     tasks = resolve_tasks(args)
     if not args.output:
+        output_tag = ""
+        if args.include_model_in_output:
+            output_tag = "_" + "".join(
+                char if char.isalnum() or char in "-_" else "-"
+                for char in args.model
+            ).strip("-")
         for _, spec in tasks:
             default_output = Path(spec["output_path"])
             spec["output_path"] = default_output.with_name(
-                f"{default_output.stem}_{args.run_id}{default_output.suffix}"
+                f"{default_output.stem}_{args.run_id}{output_tag}{default_output.suffix}"
             )
 
     for task_code, spec in tasks:

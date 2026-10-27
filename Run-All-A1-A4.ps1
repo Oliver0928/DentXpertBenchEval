@@ -4,7 +4,7 @@ param(
     [string]$ModelConfig = "",
     [int]$MaxTokens = 0,
     [int]$Timeout = 0,
-    [int]$Workers = 2,
+    [int]$Workers = 32,
     [switch]$Debug
 )
 
