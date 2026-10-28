@@ -486,6 +486,7 @@ def build_a22_prompt(case: dict[str, Any]) -> str:
         target_fdis = extract_a22_reference_fdis(case)
         return (
             "请在提供的口腔影像中定位下列指定FDI牙位，并分别给出完整牙体范围框。\n\n"
+            f"待定位牙位：{target_fdis}" "\n\n"
             "判定与输出规则：\n"
             "1. 每个给定牙位记录一项，同一FDI只出现一次，按编号升序排列；不添加指定列表之外的牙位。\n"
             "2. 每项包含题目给定的fdi和对应bbox。框尽量贴合该牙实际可见的完整牙体，包含可见牙冠和牙根，覆盖所有可见根，不把邻牙、缺牙间隙或修复体单独作为一颗牙。\n"
@@ -500,8 +501,7 @@ def build_a22_prompt(case: dict[str, Any]) -> str:
             '      "bbox": [<左边界坐标>, <上边界坐标>, <右边界坐标>, <下边界坐标>]\n'
             "    }\n"
             "  ]\n"
-            "}\n\n"
-            f"待定位牙位：{target_fdis}"
+            "}"
         )
     raise ValueError(f"unsupported A2.2 localization_mode: {mode}")
 
@@ -535,7 +535,8 @@ def build_a24_prompt(case: dict[str, Any]) -> str:
         target_text = "、".join(target_structures) if target_structures else "{{题目指定的头影关键点中文列表}}"
         return (
             "请在提供的头影影像中定位下列指定关键点，并给出各点的坐标。\n\n"
-            "C005头影结构：A · A-point；ANS · Anterior Nasal Spine；B · B-point；Me · Menton；N · Nasion；Or · Orbitale；Pog · Pogonion；PNS · Posterior Nasal Spine；Pn · Pronasale；R · Ramus；S · Sella；Ar · Articulare；Co · Condylion；Gn · Gnathion；Go · Gonion；Po · Porion；LPM · Lower 2nd PM Cusp Tip；LIT · Lower Incisor Tip；LMT · Lower Molar Cusp Tip；UPM · Upper 2nd PM Cusp Tip；UIA · Upper Incisor Apex；UIT · Upper Incisor Tip；UMT · Upper Molar Cusp Tip；LIA · Lower Incisor Apex；Li · Labrale inferius；Ls · Labrale superius；N` · Soft Tissue Nasion；Pog` · Soft Tissue Pogonion；Sn · Subnasale。\n\n"
+            f"待定位关键点：{target_text}" "\n\n"
+            "头影结构：A · A-point；ANS · Anterior Nasal Spine；B · B-point；Me · Menton；N · Nasion；Or · Orbitale；Pog · Pogonion；PNS · Posterior Nasal Spine；Pn · Pronasale；R · Ramus；S · Sella；Ar · Articulare；Co · Condylion；Gn · Gnathion；Go · Gonion；Po · Porion；LPM · Lower 2nd PM Cusp Tip；LIT · Lower Incisor Tip；LMT · Lower Molar Cusp Tip；UPM · Upper 2nd PM Cusp Tip；UIA · Upper Incisor Apex；UIT · Upper Incisor Tip；UMT · Upper Molar Cusp Tip；LIA · Lower Incisor Apex；Li · Labrale inferius；Ls · Labrale superius；N` · Soft Tissue Nasion；Pog` · Soft Tissue Pogonion；Sn · Subnasale。\n\n"
             "判定与输出规则：\n"
             "1. 只定位题目指定的关键点，每个点记录一次，按给定列表的顺序排列。\n"
             "2. structure_code使用题目给定的点名，coordinate记录该点的坐标。\n"
@@ -549,8 +550,7 @@ def build_a24_prompt(case: dict[str, Any]) -> str:
             '      "coordinate": [<横坐标>, <纵坐标>]\n'
             "    }\n"
             "  ]\n"
-            "}\n\n"
-            f"待定位关键点：{target_text}"
+            "}"
         )
     if modality == "periapical_radiograph":
         image_fdis = extract_a24_periapical_image_fdis(case)
@@ -561,6 +561,8 @@ def build_a24_prompt(case: dict[str, Any]) -> str:
         left_to_right_fdis_text = "、".join(str(fdi) for fdi in left_to_right_fdis) if left_to_right_fdis else "{{从左到右的FDI整数序列}}"
         return (
             "请根据提供的根尖片及图中牙位信息，定位下列目标牙的牙周关键点，并给出各点的坐标。\n\n"
+            f"图中包含的牙位从左到右依次是：{image_fdis_text}\n"
+            f"目标牙位：{target_fdis_text}\n\n"
             "关键点类型：近中釉牙骨质界、远中釉牙骨质界、根尖、近中牙槽嵴顶、远中牙槽嵴顶、根分叉。\n\n"
             "判定与输出规则：\n"
             "1. 只为目标牙位记录关键点；图中包含的其他牙位用于位置参照，不输出其点位。\n"
@@ -578,9 +580,7 @@ def build_a24_prompt(case: dict[str, Any]) -> str:
             '      "coordinate": [<横坐标>, <纵坐标>]\n'
             "    }\n"
             "  ]\n"
-            "}\n\n"
-            f"图中包含的牙位从左到右依次是：{image_fdis_text}\n"
-            f"目标牙位：{target_fdis_text}"
+            "}"
         )
     raise ValueError(f"unsupported A2.4 modality: {modality}")
 
