@@ -1722,6 +1722,20 @@ def clinical_input_fields(case: dict[str, Any]) -> dict[str, Any]:
     return {item["key"]: item["value"] for item in case["input"].get("fields", [])}
 
 
+def clinical_diagnosis_options(case: dict[str, Any]) -> list[dict[str, Any]]:
+    options = clinical_input_fields(case).get("diagnosis_options", [])
+    if case["task_code"] != "A5.2":
+        return options
+    # The candidate set is defined by the doctor's recorded option IDs. Roles
+    # and reasons must never enter the evaluated model's prompt.
+    entries = next((f["value"] for f in case["reference_answer"]["fields"] if f["key"] == "differential_diagnoses"), [])
+    ids = [entry["option_id"] for entry in entries]
+    available = [option["option_id"] for option in options]
+    if not ids or len(set(ids)) != len(ids) or len(set(available)) != len(available) or set(ids) - set(available):
+        raise ValueError("invalid A5.2 doctor-recorded candidate IDs")
+    return [option for option in options if option["option_id"] in set(ids)]
+
+
 def clinical_media(case: dict[str, Any]) -> list[dict[str, Any]]:
     """Resolve M identifiers by path, in the actual image sending order."""
     evidence = clinical_input_fields(case).get("evidence_media", [])
@@ -1749,7 +1763,7 @@ def build_clinical_prompt(case: dict[str, Any]) -> str:
     facts = "\n".join(
         f"[{item['evidence_id']}] {item['text']}" for item in fields.get("clinical_facts", [])
     ) or "未额外提供"
-    options = "\n".join(item["diagnosis"] for item in fields.get("diagnosis_options", []))
+    options = "\n".join(item["diagnosis"] for item in clinical_diagnosis_options(case))
     replacements = {
         "科室中文名称": DEPARTMENT_LABELS.get(fields.get("department_code"), fields.get("department_code", "未提供")),
         "事实列表": facts,
@@ -1825,6 +1839,8 @@ def parse_clinical_answer(text: str | None, task_code: str) -> dict[str, Any]:
         if task_code == "A6.2" and len(obj["reason"]) > 100:
             raise ValueError("A6.2 reason must be at most 100 characters")
     elif task_code == "A5.3":
+        if obj["sufficiency"] == "不充足":
+            obj["sufficiency"] = "不足"
         if obj["sufficiency"] not in ("充足", "不足"):
             raise ValueError("sufficiency must be 充足 or 不足")
         if obj["sufficiency"] == "充足":
@@ -1868,7 +1884,7 @@ def parse_clinical_answer(text: str | None, task_code: str) -> dict[str, Any]:
 def validate_clinical_answer(pred: dict[str, Any], case: dict[str, Any]) -> None:
     """Check answer identifiers against this case, without consulting labels."""
     if "diagnoses" in pred:
-        options = {item["diagnosis"] for item in clinical_input_fields(case)["diagnosis_options"]}
+        options = {item["diagnosis"] for item in clinical_diagnosis_options(case)}
         if set(pred["diagnoses"]) - options:
             raise ValueError("diagnoses contain names outside input options")
     if case["task_code"] == "A6.1":
@@ -1901,7 +1917,12 @@ def clinical_reference_answer(case: dict[str, Any]) -> dict[str, Any]:
         return {"conditions": [{"category": categories[item["category"]], "detail": item["detail"]} for item in fields["required_conditions"]]}
     if code == "A7.1":
         return {"plans": fields["treatment_plans"]}
-    # supported/not_supported does not establish sufficient/insufficient.
+    if code == "A5.3":
+        mapping = {"supported": "充足", "not_supported": "不足"}
+        if fields.get("diagnosis_support") not in mapping:
+            raise ValueError("unknown A5.3 diagnosis_support label")
+        return {**fields, "sufficiency": mapping[fields["diagnosis_support"]],
+                "reason": "；".join(item["statement"] for item in fields.get("reasoning", []))}
     return fields
 
 
@@ -1909,7 +1930,7 @@ def build_clinical_mock_response(case: dict[str, Any]) -> str:
     """Synthetic format examples for dry-run, not clinical ground truth."""
     code = case["task_code"]
     if code in {"A5.1", "A5.2", "A6.2"}:
-        response = {"diagnoses": [clinical_input_fields(case)["diagnosis_options"][0]["diagnosis"]], "reason": "仅用于验证输出格式。"}
+        response = {"diagnoses": [clinical_diagnosis_options(case)[0]["diagnosis"]], "reason": "仅用于验证输出格式。"}
         if code == "A5.2":
             response["exclude_reason"] = "仅用于验证输出格式。"
     elif code == "A5.3":

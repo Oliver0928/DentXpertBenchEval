@@ -3,7 +3,14 @@
   "scoring": {
     "case_points": 100.0,
     "field_weights": {
-      "surface_grades": 1.0
+      "sufficiency": 0.5,
+      "reason": 0.5
+    },
+    "sufficient_correct_full_credit": true,
+    "incorrect_sufficiency_zero_credit": true,
+    "reference_label_mapping": {
+      "supported": "充足",
+      "not_supported": "不足"
     }
   }
 }
