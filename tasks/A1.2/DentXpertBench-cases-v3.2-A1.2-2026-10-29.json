@@ -1,8 +1,9 @@
 {
-  "format_version": "3.2",
+  "format_version": "3.3",
   "cases": [
     {
       "id": "candidate:0a94d75c0aba419b9e8b01ba711dc49e",
+      "case_code": "case69",
       "task_code": "A1.2",
       "dataset_id": "C001",
       "schema_version": "0.7.5",
@@ -49,6 +50,7 @@
     },
     {
       "id": "candidate:19164e27904a4ed3b757e68d9286f559",
+      "case_code": "case51",
       "task_code": "A1.2",
       "dataset_id": "C008",
       "schema_version": "0.7.4",
@@ -91,6 +93,7 @@
     },
     {
       "id": "candidate:1eb66fc13729425ebb31f41878bd5e48",
+      "case_code": "case58",
       "task_code": "A1.2",
       "dataset_id": "C008",
       "schema_version": "0.7.5",
@@ -137,6 +140,7 @@
     },
     {
       "id": "candidate:26032a63dedc4109aa06ee3ce3cc776d",
+      "case_code": "case54",
       "task_code": "A1.2",
       "dataset_id": "C001",
       "schema_version": "0.7.5",
@@ -161,7 +165,6 @@
             "key": "coverage_codes",
             "name": "实际覆盖范围",
             "value": [
-              "正面",
               "前牙区"
             ]
           },
@@ -184,6 +187,7 @@
     },
     {
       "id": "candidate:2dd6b208c4f84bc8958849db2af2e30f",
+      "case_code": "case67",
       "task_code": "A1.2",
       "dataset_id": "C005",
       "schema_version": "0.7.5",
@@ -226,6 +230,7 @@
     },
     {
       "id": "candidate:3d3225db7386486e9588693726b2c562",
+      "case_code": "case46",
       "task_code": "A1.2",
       "dataset_id": "C007",
       "schema_version": "0.7.4",
@@ -273,6 +278,7 @@
     },
     {
       "id": "candidate:44e3828e017e41699544dd6c498e5333",
+      "case_code": "case56",
       "task_code": "A1.2",
       "dataset_id": "C017",
       "schema_version": "0.7.4",
@@ -315,6 +321,7 @@
     },
     {
       "id": "candidate:50666b147c3f438ea01311745c135164",
+      "case_code": "case68",
       "task_code": "A1.2",
       "dataset_id": "C001",
       "schema_version": "0.7.5",
@@ -361,6 +368,7 @@
     },
     {
       "id": "candidate:5bb710843e2d4416b1777cbfa09f5d2f",
+      "case_code": "case47",
       "task_code": "A1.2",
       "dataset_id": "C008",
       "schema_version": "0.7.4",
@@ -403,6 +411,7 @@
     },
     {
       "id": "candidate:631dd7e7e3f94d38aef660c9bb39597a",
+      "case_code": "case66",
       "task_code": "A1.2",
       "dataset_id": "C005",
       "schema_version": "0.7.5",
@@ -449,6 +458,7 @@
     },
     {
       "id": "candidate:6a1e4fb14d3c4b8d9067459ed6bb134a",
+      "case_code": "case71",
       "task_code": "A1.2",
       "dataset_id": "C008",
       "schema_version": "0.7.5",
@@ -495,6 +505,7 @@
     },
     {
       "id": "candidate:6a46a48316f64b07b45f5f6091a474b0",
+      "case_code": "case49",
       "task_code": "A1.2",
       "dataset_id": "C008",
       "schema_version": "0.7.5",
@@ -541,6 +552,7 @@
     },
     {
       "id": "candidate:6dcc5bed84944e7384cdaccdf51de6cf",
+      "case_code": "case55",
       "task_code": "A1.2",
       "dataset_id": "C017",
       "schema_version": "0.7.4",
@@ -583,6 +595,7 @@
     },
     {
       "id": "candidate:6fc067acd3234fc1a2118b711bd2a3d4",
+      "case_code": "case70",
       "task_code": "A1.2",
       "dataset_id": "C007",
       "schema_version": "0.7.5",
@@ -629,6 +642,7 @@
     },
     {
       "id": "candidate:7406610db33845d589b1fe1efe01488b",
+      "case_code": "case63",
       "task_code": "A1.2",
       "dataset_id": "C006",
       "schema_version": "0.7.5",
@@ -675,6 +689,7 @@
     },
     {
       "id": "candidate:7622346997c249f09bfb2e229c6006d0",
+      "case_code": "case50",
       "task_code": "A1.2",
       "dataset_id": "C008",
       "schema_version": "0.7.5",
@@ -721,6 +736,7 @@
     },
     {
       "id": "candidate:7897d95badc94105aebbbffc747f8c13",
+      "case_code": "case64",
       "task_code": "A1.2",
       "dataset_id": "C006",
       "schema_version": "0.7.5",
@@ -767,6 +783,7 @@
     },
     {
       "id": "candidate:8b19901722d440e0a4228e3d3820cb21",
+      "case_code": "case57",
       "task_code": "A1.2",
       "dataset_id": "C002",
       "schema_version": "0.7.4",
@@ -813,6 +830,7 @@
     },
     {
       "id": "candidate:95fee85e132643ed9536ec6836173370",
+      "case_code": "case44",
       "task_code": "A1.2",
       "dataset_id": "C005",
       "schema_version": "0.7.5",
@@ -855,6 +873,7 @@
     },
     {
       "id": "candidate:9677147f11f24afc9d63d9d3bb07aa9a",
+      "case_code": "case65",
       "task_code": "A1.2",
       "dataset_id": "C014",
       "schema_version": "0.7.5",
@@ -897,6 +916,7 @@
     },
     {
       "id": "candidate:a36f3495e08f4defad651a8958eada20",
+      "case_code": "case59",
       "task_code": "A1.2",
       "dataset_id": "C004",
       "schema_version": "0.7.5",
@@ -944,6 +964,7 @@
     },
     {
       "id": "candidate:a6492e967b2c4729bb0d10607b7db08f",
+      "case_code": "case42",
       "task_code": "A1.2",
       "dataset_id": "C002",
       "schema_version": "0.7.4",
@@ -986,6 +1007,7 @@
     },
     {
       "id": "candidate:b26021d3054e497a8978f00033271cfc",
+      "case_code": "case72",
       "task_code": "A1.2",
       "dataset_id": "C010",
       "schema_version": "0.17.0",
@@ -1032,6 +1054,7 @@
     },
     {
       "id": "candidate:b7ddeabb431c4b6bb92cdcadbdac6a71",
+      "case_code": "case61",
       "task_code": "A1.2",
       "dataset_id": "C006",
       "schema_version": "0.7.5",
@@ -1079,6 +1102,7 @@
     },
     {
       "id": "candidate:d1c1888132e348e396be271e06592ddb",
+      "case_code": "case41",
       "task_code": "A1.2",
       "dataset_id": "C001",
       "schema_version": "0.7.4",
@@ -1125,6 +1149,7 @@
     },
     {
       "id": "candidate:d8ce0bcb1eb44d749951f8668d879c93",
+      "case_code": "case60",
       "task_code": "A1.2",
       "dataset_id": "C007",
       "schema_version": "0.7.5",
@@ -1171,6 +1196,7 @@
     },
     {
       "id": "candidate:df3f6be4f3264151b30589d7060849f8",
+      "case_code": "case45",
       "task_code": "A1.2",
       "dataset_id": "C006",
       "schema_version": "0.7.5",
@@ -1195,8 +1221,7 @@
             "key": "coverage_codes",
             "name": "实际覆盖范围",
             "value": [
-              "下颌前牙区",
-              "上颌前牙区"
+              "前牙区"
             ]
           },
           {
@@ -1219,6 +1244,7 @@
     },
     {
       "id": "candidate:e098ee269d1d49a4a265ceacb4717e4e",
+      "case_code": "case53",
       "task_code": "A1.2",
       "dataset_id": "C008",
       "schema_version": "0.7.5",
@@ -1243,7 +1269,6 @@
             "key": "coverage_codes",
             "name": "实际覆盖范围",
             "value": [
-              "上颌",
               "上牙弓"
             ]
           },
@@ -1262,6 +1287,7 @@
     },
     {
       "id": "candidate:e852b09bd22b47a6b4186995a9a688a7",
+      "case_code": "case43",
       "task_code": "A1.2",
       "dataset_id": "C003",
       "schema_version": "0.7.4",
@@ -1304,6 +1330,7 @@
     },
     {
       "id": "candidate:f042f7fabebc48f9a4c3fdda16f72b08",
+      "case_code": "case62",
       "task_code": "A1.2",
       "dataset_id": "C006",
       "schema_version": "0.7.5",
@@ -1351,6 +1378,7 @@
     },
     {
       "id": "candidate:f342d4072e434af4a35c9fe927e3ee48",
+      "case_code": "case52",
       "task_code": "A1.2",
       "dataset_id": "C008",
       "schema_version": "0.7.5",
@@ -1397,6 +1425,7 @@
     },
     {
       "id": "candidate:ff87451ddae24008b89167b2b7dd6833",
+      "case_code": "case73",
       "task_code": "A1.2",
       "dataset_id": "C007",
       "schema_version": "0.17.0",
@@ -1443,6 +1472,7 @@
     },
     {
       "id": "candidate:ffc63e62f19c43c69e98cf6801dc5353",
+      "case_code": "case48",
       "task_code": "A1.2",
       "dataset_id": "C010",
       "schema_version": "0.7.4",

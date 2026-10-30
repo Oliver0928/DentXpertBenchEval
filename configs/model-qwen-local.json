@@ -3,7 +3,6 @@
   "base_url": "http://127.0.0.1:18000/v1",
   "requires_api_key": false,
   "generation": {
-    "max_tokens": 49152,
     "timeout": 600,
     "retries": 10,
     "retry_sleep": 2.0

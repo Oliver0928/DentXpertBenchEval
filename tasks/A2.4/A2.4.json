@@ -16,7 +16,7 @@
         "fields": [
           "structures"
         ],
-        "structures_shape": "objects_with_structure_code_and_coordinate"
+        "structures_shape": "objects_with_structure_code_and_coordinate_four_targets"
       },
       "scoring": {
         "case_points": 100.0,
@@ -25,7 +25,7 @@
             "key": "structures",
             "weight": 1.0,
             "metric": "mean_keypoint_score_by_structure_code",
-            "distance_tolerance": 0.05
+            "distance_tolerance": 0.1
           }
         ]
       }
@@ -37,7 +37,7 @@
         "fields": [
           "structures"
         ],
-        "structures_shape": "objects_with_structure_code_fdi_and_coordinate"
+        "structures_shape": "objects_with_structure_code_and_coordinate_single_target"
       },
       "scoring": {
         "case_points": 100.0,
@@ -45,8 +45,8 @@
           {
             "key": "structures",
             "weight": 1.0,
-            "metric": "mean_keypoint_score_by_fdi_and_structure_code",
-            "distance_tolerance": 0.05
+            "metric": "mean_keypoint_score_by_structure_code",
+            "distance_tolerance": 0.1
           }
         ]
       }
@@ -54,9 +54,9 @@
   },
   "scoring": {
     "case_points": 100.0,
-    "coordinate_score": "max(0, 1 - euclidean_distance / 0.05)",
+    "coordinate_score": "max(0, 1 - euclidean_distance / 0.1)",
     "case_score": "mean score over the union of reference and predicted structure keys; matched keys use coordinate_score, missing and extra keys contribute 0",
-    "case_correct": "true only when the predicted structure key set exactly matches the reference key set and every matched coordinate distance is <= 0.05",
+    "case_correct": "true only when the predicted structure key set exactly matches the reference key set and every matched coordinate distance is <= 0.1",
     "diagnostics": [
       "per_structure_distance",
       "missing_structures",
@@ -122,7 +122,7 @@
     ],
     "coordinate": "[x, y] normalized to 0-1",
     "cephalometric_key": "structure_code",
-    "periapical_key": "fdi + structure_code",
+    "periapical_key": "structure_code (one target FDI per case, supplied in the prompt)",
     "duplicates": "Duplicate structure keys are normalized to one entry, preserving first occurrence."
   }
 }

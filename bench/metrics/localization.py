@@ -7,6 +7,12 @@ IoU, and keypoints.  Classification metrics stay in ``classification.py``.
 import math
 from typing import Any
 
+REGION_EQUIVALENT_CHILDREN = {
+    "前牙区": ("上颌前牙区", "下颌前牙区"),
+    "左侧后牙区": ("左上后牙区", "左下后牙区"),
+    "右侧后牙区": ("右上后牙区", "右下后牙区"),
+}
+
 
 def score_a22_fields(
     pred: dict[str, Any] | None,
@@ -75,6 +81,7 @@ def score_a24_fields(
     ref_by_key = {structure_key(item): item["coordinate"] for item in ref.get("structures", [])}
 
     distances = {}
+    tolerance = scoring_field_parameter(scoring, "distance_tolerance", 0.05)
     per_structure_score = {}
     for key, ref_coordinate in ref_by_key.items():
         pred_coordinate = pred_by_key.get(key)
@@ -82,7 +89,7 @@ def score_a24_fields(
         distances[format_structure_key(key)] = distance
         per_structure_score[format_structure_key(key)] = coordinate_score(
             distance,
-            scoring_field_parameter(scoring, "distance_tolerance", 0.05),
+            tolerance,
         )
 
     expected_keys = set(ref_by_key)
@@ -99,7 +106,7 @@ def score_a24_fields(
     weight = scoring_field_weight(scoring, "structures")
     exact_key_set = predicted_keys == expected_keys
     all_close = exact_key_set and all(
-        distance is not None and distance <= 0.05 for distance in distances.values()
+        distance is not None and distance <= tolerance for distance in distances.values()
     )
 
     return {
@@ -148,12 +155,42 @@ def score_a31_tooth_fields(pred: list[dict[str, Any]], ref: list[dict[str, Any]]
     return score_a31_set_fields(list(expand(pred)), list(expand(ref)), None, case_points, scoring, "tooth")
 
 
-def score_a31_set_fields(pred: list[Any], ref: list[Any], key: str | None, case_points: float, scoring: dict[str, Any] | None, mode: str) -> dict[str, Any]:
+def score_a31_set_fields(
+    pred: list[Any],
+    ref: list[Any],
+    key: str | None,
+    case_points: float,
+    scoring: dict[str, Any] | None,
+    mode: str,
+    region_equivalence: bool = False,
+) -> dict[str, Any]:
     def token(item: Any) -> tuple[Any, ...]:
         if isinstance(item, tuple):
             return item
         return (item["finding_code"], item[key])
-    predicted, expected = {token(item) for item in pred}, {token(item) for item in ref}
+    def expand_region_tokens(items: list[Any], expand_parents: bool) -> set[tuple[Any, ...]]:
+        tokens: set[tuple[Any, ...]] = set()
+        for item in items:
+            current = token(item)
+            if region_equivalence and mode == "region" and expand_parents and len(current) == 2:
+                finding_code, region_code = current
+                children = REGION_EQUIVALENT_CHILDREN.get(region_code)
+                if children:
+                    tokens.update((finding_code, child) for child in children)
+                    continue
+            tokens.add(current)
+        return tokens
+
+    raw_predicted = {token(item) for item in pred}
+    raw_expected = {token(item) for item in ref}
+    if region_equivalence and mode == "region" and raw_predicted == raw_expected:
+        predicted, expected = raw_predicted, raw_expected
+    else:
+        # The reference may use a broad parent region and the model may answer
+        # with both child regions. Do not apply this expansion in reverse:
+        # a broad prediction must not receive partial credit for a narrow reference.
+        predicted = expand_region_tokens(pred, expand_parents=False)
+        expected = expand_region_tokens(ref, expand_parents=True)
     intersection = predicted & expected
     precision = len(intersection) / len(predicted) if predicted else (1.0 if not expected else 0.0)
     recall = len(intersection) / len(expected) if expected else (1.0 if not predicted else 0.0)
@@ -346,7 +383,10 @@ def score_a33_fields(
         return expanded
 
     mode = "tooth" if any("fdi" in item or (isinstance(item.get("site"), dict) and item["site"].get("type") == "tooth") for item in [*ref_items, *pred_items]) else "region"
-    return score_a31_set_fields(expand(pred_items), expand(ref_items), None, case_points, scoring, mode)
+    return score_a31_set_fields(
+        expand(pred_items), expand(ref_items), None, case_points, scoring, mode,
+        region_equivalence=True,
+    )
 
 
 def score_a34_fields(
@@ -390,7 +430,10 @@ def score_a34_fields(
         return expanded
 
     mode = "tooth" if any("fdi" in item or (isinstance(item.get("site"), dict) and item["site"].get("type") == "tooth") for item in [*ref_items, *pred_items]) else "region"
-    return score_a31_set_fields(expand(pred_items), expand(ref_items), None, case_points, scoring, mode)
+    return score_a31_set_fields(
+        expand(pred_items), expand(ref_items), None, case_points, scoring, mode,
+        region_equivalence=True,
+    )
 
 
 def structure_key(item: dict[str, Any]) -> tuple[str, int | None]:

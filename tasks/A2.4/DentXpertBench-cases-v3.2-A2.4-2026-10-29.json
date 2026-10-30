@@ -1,8 +1,9 @@
 {
-  "format_version": "3.2",
+  "format_version": "3.3",
   "cases": [
     {
       "id": "candidate:011c3e7fced54205b1d6f2f3c5c2d5cb",
+      "case_code": "case235",
       "task_code": "A2.4",
       "dataset_id": "C007",
       "schema_version": "0.7.3",
@@ -19,10 +20,7 @@
             "path": "DenPAR-C007/Testing/Images/938.jpg"
           }
         ],
-        "fields": [
-          {"key": "image_fdis", "name": "图中包含的牙位", "value": [17, 16, 15, 14, 13]},
-          {"key": "target_fdis", "name": "目标牙位", "value": [17]}
-        ]
+        "fields": []
       },
       "reference_answer": {
         "fields": [
@@ -149,6 +147,7 @@
     },
     {
       "id": "candidate:0366fd5c2e6e46c6b2bc3e2f9b96f909",
+      "case_code": "case221",
       "task_code": "A2.4",
       "dataset_id": "C005",
       "schema_version": "0.7.3",
@@ -165,9 +164,7 @@
             "path": "Aariz-C005/test/Cephalograms/cl6cc2n5k404r07716yihau93.jpeg"
           }
         ],
-        "fields": [
-          {"key": "target_structures", "name": "目标头影关键点", "value": ["S", "N", "A", "B", "ANS", "PNS", "Me", "Pog"]}
-        ]
+        "fields": []
       },
       "reference_answer": {
         "fields": [
@@ -385,6 +382,7 @@
     },
     {
       "id": "candidate:04926faa96e24001bb6dd2a97cb2e1bb",
+      "case_code": "case242",
       "task_code": "A2.4",
       "dataset_id": "C007",
       "schema_version": "0.7.3",
@@ -401,10 +399,7 @@
             "path": "DenPAR-C007/Training/Images/432.jpg"
           }
         ],
-        "fields": [
-          {"key": "image_fdis", "name": "图中包含的牙位", "value": [35, 36, 37]},
-          {"key": "target_fdis", "name": "目标牙位", "value": [35, 36]}
-        ]
+        "fields": []
       },
       "reference_answer": {
         "fields": [
@@ -523,6 +518,7 @@
     },
     {
       "id": "candidate:07a327da28814beeb3c79ad5a6b8f984",
+      "case_code": "case217",
       "task_code": "A2.4",
       "dataset_id": "C005",
       "schema_version": "0.7.3",
@@ -539,9 +535,7 @@
             "path": "Aariz-C005/train/Cephalograms/cks2ip8fr2a3q0yufadyu84rc.png"
           }
         ],
-        "fields": [
-          {"key": "target_structures", "name": "目标头影关键点", "value": ["S", "N", "Or", "Po", "Co", "Ar", "Go", "Me"]}
-        ]
+        "fields": []
       },
       "reference_answer": {
         "fields": [
@@ -759,6 +753,7 @@
     },
     {
       "id": "candidate:0b0a629b01c44f65886b22fe66695183",
+      "case_code": "case219",
       "task_code": "A2.4",
       "dataset_id": "C005",
       "schema_version": "0.7.3",
@@ -775,9 +770,7 @@
             "path": "Aariz-C005/train/Cephalograms/cl6cc2n543zeb0771cq8zdf07.bmp"
           }
         ],
-        "fields": [
-          {"key": "target_structures", "name": "目标头影关键点", "value": ["A", "B", "UIA", "UIT", "LIA", "LIT", "UPM", "LPM"]}
-        ]
+        "fields": []
       },
       "reference_answer": {
         "fields": [
@@ -995,6 +988,7 @@
     },
     {
       "id": "candidate:27ef48d5dcfa40d1be8c7e4ba6041c80",
+      "case_code": "case223",
       "task_code": "A2.4",
       "dataset_id": "C005",
       "schema_version": "0.7.3",
@@ -1011,9 +1005,7 @@
             "path": "Aariz-C005/train/Cephalograms/cl7ww1jcl9ccw084fgcjj9brn.bmp"
           }
         ],
-        "fields": [
-          {"key": "target_structures", "name": "目标头影关键点", "value": ["N`", "Pn", "Ls", "Li", "Sn", "Pog`", "A", "Pog"]}
-        ]
+        "fields": []
       },
       "reference_answer": {
         "fields": [
@@ -1231,6 +1223,7 @@
     },
     {
       "id": "candidate:2b9aef2e59854c4788441701289571cc",
+      "case_code": "case233",
       "task_code": "A2.4",
       "dataset_id": "C007",
       "schema_version": "0.7.3",
@@ -1247,10 +1240,7 @@
             "path": "DenPAR-C007/Testing/Images/483.jpg"
           }
         ],
-        "fields": [
-          {"key": "image_fdis", "name": "图中包含的牙位", "value": [24, 25, 26, 27]},
-          {"key": "target_fdis", "name": "目标牙位", "value": [24, 25, 26]}
-        ]
+        "fields": []
       },
       "reference_answer": {
         "fields": [
@@ -1345,6 +1335,7 @@
     },
     {
       "id": "candidate:3483ccfe23af460c89c5bb94434e2476",
+      "case_code": "case239",
       "task_code": "A2.4",
       "dataset_id": "C007",
       "schema_version": "0.7.3",
@@ -1361,10 +1352,7 @@
             "path": "DenPAR-C007/Training/Images/1181.jpg"
           }
         ],
-        "fields": [
-          {"key": "image_fdis", "name": "图中包含的牙位", "value": [33, 34, 35, 36, 37]},
-          {"key": "target_fdis", "name": "目标牙位", "value": [33, 34, 35, 36, 37]}
-        ]
+        "fields": []
       },
       "reference_answer": {
         "fields": [
@@ -1523,6 +1511,7 @@
     },
     {
       "id": "candidate:3743865507a34eb4b65ba8ec6098bacb",
+      "case_code": "case236",
       "task_code": "A2.4",
       "dataset_id": "C007",
       "schema_version": "0.7.3",
@@ -1539,10 +1528,7 @@
             "path": "DenPAR-C007/Training/Images/589.jpg"
           }
         ],
-        "fields": [
-          {"key": "image_fdis", "name": "图中包含的牙位", "value": [43, 42, 41, 31, 32]},
-          {"key": "target_fdis", "name": "目标牙位", "value": [43, 42, 41, 31]}
-        ]
+        "fields": []
       },
       "reference_answer": {
         "fields": [
@@ -1669,6 +1655,7 @@
     },
     {
       "id": "candidate:55a8b164130b4653975b868614e235a0",
+      "case_code": "case234",
       "task_code": "A2.4",
       "dataset_id": "C007",
       "schema_version": "0.7.3",
@@ -1685,10 +1672,7 @@
             "path": "DenPAR-C007/Training/Images/67.jpg"
           }
         ],
-        "fields": [
-          {"key": "image_fdis", "name": "图中包含的牙位", "value": [17, 16, 15]},
-          {"key": "target_fdis", "name": "目标牙位", "value": [17, 16, 15]}
-        ]
+        "fields": []
       },
       "reference_answer": {
         "fields": [
@@ -1799,6 +1783,7 @@
     },
     {
       "id": "candidate:568bc0b34e3342a09baa766a2fb3a271",
+      "case_code": "case243",
       "task_code": "A2.4",
       "dataset_id": "C007",
       "schema_version": "0.7.3",
@@ -1815,10 +1800,7 @@
             "path": "DenPAR-C007/Training/Images/1287.jpg"
           }
         ],
-        "fields": [
-          {"key": "image_fdis", "name": "图中包含的牙位", "value": [48, 47, 46, 45]},
-          {"key": "target_fdis", "name": "目标牙位", "value": [48]}
-        ]
+        "fields": []
       },
       "reference_answer": {
         "fields": [
@@ -1945,6 +1927,7 @@
     },
     {
       "id": "candidate:5934634766c347eab49a0573e6e92531",
+      "case_code": "case240",
       "task_code": "A2.4",
       "dataset_id": "C007",
       "schema_version": "0.7.3",
@@ -1961,10 +1944,7 @@
             "path": "DenPAR-C007/Validation/Images/935.jpg"
           }
         ],
-        "fields": [
-          {"key": "image_fdis", "name": "图中包含的牙位", "value": [15, 14]},
-          {"key": "target_fdis", "name": "目标牙位", "value": [15, 14]}
-        ]
+        "fields": []
       },
       "reference_answer": {
         "fields": [
@@ -2051,6 +2031,7 @@
     },
     {
       "id": "candidate:5b6e59f0ab354bf49e666c4fc497292b",
+      "case_code": "case218",
       "task_code": "A2.4",
       "dataset_id": "C005",
       "schema_version": "0.7.3",
@@ -2067,9 +2048,7 @@
             "path": "Aariz-C005/train/Cephalograms/cl9k69ka132i5088c3imk12f4.jpg"
           }
         ],
-        "fields": [
-          {"key": "target_structures", "name": "目标头影关键点", "value": ["Gn", "Go", "Me", "A", "B", "UIA", "LIA", "Pog"]}
-        ]
+        "fields": []
       },
       "reference_answer": {
         "fields": [
@@ -2287,6 +2266,7 @@
     },
     {
       "id": "candidate:662849fbfacb41d6ada9db1ab4159e20",
+      "case_code": "case230",
       "task_code": "A2.4",
       "dataset_id": "C007",
       "schema_version": "0.7.3",
@@ -2303,10 +2283,7 @@
             "path": "DenPAR-C007/Training/Images/1005.jpg"
           }
         ],
-        "fields": [
-          {"key": "image_fdis", "name": "图中包含的牙位", "value": [12, 11, 21, 22]},
-          {"key": "target_fdis", "name": "目标牙位", "value": [12, 11, 21, 22]}
-        ]
+        "fields": []
       },
       "reference_answer": {
         "fields": [
@@ -2401,6 +2378,7 @@
     },
     {
       "id": "candidate:69e643ab6d7e47848d9167b6d3d7dfa7",
+      "case_code": "case227",
       "task_code": "A2.4",
       "dataset_id": "C005",
       "schema_version": "0.7.3",
@@ -2417,9 +2395,7 @@
             "path": "Aariz-C005/train/Cephalograms/cl6cc2n5l405n07713eef9lbt.jpeg"
           }
         ],
-        "fields": [
-          {"key": "target_structures", "name": "目标头影关键点", "value": ["S", "N", "A", "B", "ANS", "PNS", "Me", "Pog"]}
-        ]
+        "fields": []
       },
       "reference_answer": {
         "fields": [
@@ -2637,6 +2613,7 @@
     },
     {
       "id": "candidate:6c071cefddc7429bb79b91ebb666ad2b",
+      "case_code": "case241",
       "task_code": "A2.4",
       "dataset_id": "C007",
       "schema_version": "0.7.3",
@@ -2653,10 +2630,7 @@
             "path": "DenPAR-C007/Training/Images/105.jpg"
           }
         ],
-        "fields": [
-          {"key": "image_fdis", "name": "图中包含的牙位", "value": [24, 25, 26, 27, 28]},
-          {"key": "target_fdis", "name": "目标牙位", "value": [24, 25, 26, 27, 28]}
-        ]
+        "fields": []
       },
       "reference_answer": {
         "fields": [
@@ -2775,6 +2749,7 @@
     },
     {
       "id": "candidate:6cf5e76c23ba480d90e1476cb9ecc7d4",
+      "case_code": "case225",
       "task_code": "A2.4",
       "dataset_id": "C005",
       "schema_version": "0.7.3",
@@ -2791,9 +2766,7 @@
             "path": "Aariz-C005/train/Cephalograms/cl5lc0isd128s072ucfos30b1.jpg"
           }
         ],
-        "fields": [
-          {"key": "target_structures", "name": "目标头影关键点", "value": ["S", "N", "Or", "Po", "Co", "Ar", "Go", "Me"]}
-        ]
+        "fields": []
       },
       "reference_answer": {
         "fields": [
@@ -3011,6 +2984,7 @@
     },
     {
       "id": "candidate:755c8f5828d04c2dbec93358b8cedd6a",
+      "case_code": "case232",
       "task_code": "A2.4",
       "dataset_id": "C007",
       "schema_version": "0.7.3",
@@ -3027,10 +3001,7 @@
             "path": "DenPAR-C007/Testing/Images/1271.jpg"
           }
         ],
-        "fields": [
-          {"key": "image_fdis", "name": "图中包含的牙位", "value": [47, 46, 45]},
-          {"key": "target_fdis", "name": "目标牙位", "value": [47, 46, 45]}
-        ]
+        "fields": []
       },
       "reference_answer": {
         "fields": [
@@ -3165,6 +3136,7 @@
     },
     {
       "id": "candidate:76158016d6484318bd3ade0f57853048",
+      "case_code": "case237",
       "task_code": "A2.4",
       "dataset_id": "C007",
       "schema_version": "0.7.3",
@@ -3181,10 +3153,7 @@
             "path": "DenPAR-C007/Training/Images/1215.jpg"
           }
         ],
-        "fields": [
-          {"key": "image_fdis", "name": "图中包含的牙位", "value": [42, 41, 31, 32, 33]},
-          {"key": "target_fdis", "name": "目标牙位", "value": [42, 41, 31, 32]}
-        ]
+        "fields": []
       },
       "reference_answer": {
         "fields": [
@@ -3295,6 +3264,7 @@
     },
     {
       "id": "candidate:a0ee3262c7974f339136939f2495270b",
+      "case_code": "case226",
       "task_code": "A2.4",
       "dataset_id": "C005",
       "schema_version": "0.7.3",
@@ -3311,9 +3281,7 @@
             "path": "Aariz-C005/test/Cephalograms/cl5lc0isd1298072u53z31emu.jpg"
           }
         ],
-        "fields": [
-          {"key": "target_structures", "name": "目标头影关键点", "value": ["A", "B", "UIA", "UIT", "LIA", "LIT", "UPM", "LPM"]}
-        ]
+        "fields": []
       },
       "reference_answer": {
         "fields": [
@@ -3531,6 +3499,7 @@
     },
     {
       "id": "candidate:abbfc7fb768d458eb7ea66959f875ffe",
+      "case_code": "case224",
       "task_code": "A2.4",
       "dataset_id": "C005",
       "schema_version": "0.7.3",
@@ -3547,9 +3516,7 @@
             "path": "Aariz-C005/train/Cephalograms/cl5lg05uq01k6074kh7rl7rdx.jpg"
           }
         ],
-        "fields": [
-          {"key": "target_structures", "name": "目标头影关键点", "value": ["N`", "Pn", "Ls", "Li", "Sn", "Pog`", "A", "Pog"]}
-        ]
+        "fields": []
       },
       "reference_answer": {
         "fields": [
@@ -3767,6 +3734,7 @@
     },
     {
       "id": "candidate:b392317747854fc2a2c6fe395e5aad9c",
+      "case_code": "case215",
       "task_code": "A2.4",
       "dataset_id": "C005",
       "schema_version": "0.7.3",
@@ -3783,9 +3751,7 @@
             "path": "Aariz-C005/train/Cephalograms/cl6cc2n5c3zqn077186yv9qml.jpeg"
           }
         ],
-        "fields": [
-          {"key": "target_structures", "name": "目标头影关键点", "value": ["Gn", "Go", "Me", "A", "B", "UIA", "LIA", "Pog"]}
-        ]
+        "fields": []
       },
       "reference_answer": {
         "fields": [
@@ -4003,6 +3969,7 @@
     },
     {
       "id": "candidate:b60f52cd29204fbe8318ad1f920ac63d",
+      "case_code": "case238",
       "task_code": "A2.4",
       "dataset_id": "C007",
       "schema_version": "0.7.3",
@@ -4019,10 +3986,7 @@
             "path": "DenPAR-C007/Training/Images/32.jpg"
           }
         ],
-        "fields": [
-          {"key": "image_fdis", "name": "图中包含的牙位", "value": [43, 42, 31, 32, 33]},
-          {"key": "target_fdis", "name": "目标牙位", "value": [43, 42, 31, 32, 33]}
-        ]
+        "fields": []
       },
       "reference_answer": {
         "fields": [
@@ -4149,6 +4113,7 @@
     },
     {
       "id": "candidate:bc80edd7f3ad4c49877006a735bcfcec",
+      "case_code": "case231",
       "task_code": "A2.4",
       "dataset_id": "C007",
       "schema_version": "0.7.3",
@@ -4165,10 +4130,7 @@
             "path": "DenPAR-C007/Training/Images/553.jpg"
           }
         ],
-        "fields": [
-          {"key": "image_fdis", "name": "图中包含的牙位", "value": [25, 26, 27]},
-          {"key": "target_fdis", "name": "目标牙位", "value": [25]}
-        ]
+        "fields": []
       },
       "reference_answer": {
         "fields": [
@@ -4279,6 +4241,7 @@
     },
     {
       "id": "candidate:bd224a41c99246f2b8202f701ba208b6",
+      "case_code": "case222",
       "task_code": "A2.4",
       "dataset_id": "C005",
       "schema_version": "0.7.3",
@@ -4295,9 +4258,7 @@
             "path": "Aariz-C005/train/Cephalograms/cl6cc2n5a3zmf0771he5sh0i5.jpeg"
           }
         ],
-        "fields": [
-          {"key": "target_structures", "name": "目标头影关键点", "value": ["S", "N", "A", "B", "ANS", "PNS", "Me", "Pog"]}
-        ]
+        "fields": []
       },
       "reference_answer": {
         "fields": [
@@ -4515,6 +4476,7 @@
     },
     {
       "id": "candidate:c57ac7c3d0764f099c0e2b14a5a020b2",
+      "case_code": "case228",
       "task_code": "A2.4",
       "dataset_id": "C005",
       "schema_version": "0.7.3",
@@ -4531,9 +4493,7 @@
             "path": "Aariz-C005/train/Cephalograms/cl6cc2n5b3znz07718ntmeo0a.jpeg"
           }
         ],
-        "fields": [
-          {"key": "target_structures", "name": "目标头影关键点", "value": ["S", "N", "Or", "Po", "Co", "Ar", "Go", "Me"]}
-        ]
+        "fields": []
       },
       "reference_answer": {
         "fields": [
@@ -4751,6 +4711,7 @@
     },
     {
       "id": "candidate:c6d54d4d62f946cb94dce963f03fcfe5",
+      "case_code": "case220",
       "task_code": "A2.4",
       "dataset_id": "C005",
       "schema_version": "0.7.3",
@@ -4767,9 +4728,7 @@
             "path": "Aariz-C005/train/Cephalograms/cl5lc0isd129s072u8q2f6xbf.jpg"
           }
         ],
-        "fields": [
-          {"key": "target_structures", "name": "目标头影关键点", "value": ["A", "B", "UIA", "UIT", "LIA", "LIT", "UPM", "LPM"]}
-        ]
+        "fields": []
       },
       "reference_answer": {
         "fields": [
@@ -4987,6 +4946,7 @@
     },
     {
       "id": "candidate:dbbb8ca4f620406f9ad1bf3264c9b8d3",
+      "case_code": "case216",
       "task_code": "A2.4",
       "dataset_id": "C005",
       "schema_version": "0.7.3",
@@ -5003,9 +4963,7 @@
             "path": "Aariz-C005/train/Cephalograms/cl6cc2n5i401f0771as4t0pmi.jpeg"
           }
         ],
-        "fields": [
-          {"key": "target_structures", "name": "目标头影关键点", "value": ["N`", "Pn", "Ls", "Li", "Sn", "Pog`", "A", "Pog"]}
-        ]
+        "fields": []
       },
       "reference_answer": {
         "fields": [
@@ -5223,6 +5181,7 @@
     },
     {
       "id": "candidate:e9980f31b74e4232ba08d0c488c880c8",
+      "case_code": "case229",
       "task_code": "A2.4",
       "dataset_id": "C005",
       "schema_version": "0.7.3",
@@ -5239,9 +5198,7 @@
             "path": "Aariz-C005/train/Cephalograms/cl6wmcdb23jfb078vas0r8v7e.jpeg"
           }
         ],
-        "fields": [
-          {"key": "target_structures", "name": "目标头影关键点", "value": ["Gn", "Go", "Me", "A", "B", "UIA", "LIA", "Pog"]}
-        ]
+        "fields": []
       },
       "reference_answer": {
         "fields": [
@@ -5459,6 +5416,7 @@
     },
     {
       "id": "candidate:f4e7efe4df4e4e92aaae45bf37f8914a",
+      "case_code": "case244",
       "task_code": "A2.4",
       "dataset_id": "C007",
       "schema_version": "0.7.3",
@@ -5475,10 +5433,7 @@
             "path": "DenPAR-C007/Training/Images/637.jpg"
           }
         ],
-        "fields": [
-          {"key": "image_fdis", "name": "图中包含的牙位", "value": [13, 12, 11, 21, 22]},
-          {"key": "target_fdis", "name": "目标牙位", "value": [13, 12]}
-        ]
+        "fields": []
       },
       "reference_answer": {
         "fields": [
