@@ -1,12 +1,12 @@
 # A5～A7 提示词与评测
 
-7 份原始提示词保存在 `bench/prompts/`，内容来自本次提供的 txt。程序按题目的 `input.fields` 填充占位符，不把参考答案写入提示词。A7.2 没有提供模板，本次不接入。
+7 份提示词保存在 `bench/prompts/`，内容来自提供的 txt。程序按题目的 `input.fields` 填充占位符；A5.2 另按医生记录的候选项 ID 筛选题面选项，不展示其角色、参考理由或正确诊断标签。A7.2 没有提供模板，本次不接入。
 
 | 任务 | 输出字段 | 自动比较 | 待审核内容 |
 | --- | --- | --- | --- |
 | A5.1 | diagnoses、reason | 每题诊断集合 F1；独立模型评分理由 | 评分调用失败时需重试或人工审核 |
-| A5.2 | diagnoses、reason、exclude_reason | 倾向诊断名称集合 | 诊断理由与排除理由 |
-| A5.3 | sufficiency、可选 reason | 暂无 | 充足性及不足理由 |
+| A5.2 | diagnoses、reason、exclude_reason | 诊断 F1；两类理由分别评分 | 评分失败时重试或人工审核 |
+| A5.3 | sufficiency、可选 reason | 项目约定标签映射；条件计分及不足理由评分 | 评分失败时重试或人工审核 |
 | A6.1 | total、images | 去重总数、逐图数量 | 最终计分规则 |
 | A6.2 | diagnoses、reason | 诊断名称集合 | 多图诊断理由 |
 | A6.3 | conditions | 暂无 | 补充条件 |
@@ -48,7 +48,7 @@ python run.py --task A6.1 --image-root 'D:\你的数据集根目录' --model-con
 - 所有 `input.images` 按原顺序发送，使用路径与 `evidence_media` 一一对应，在每张图前注明 M 编号，不把第 1 张固定称为 M01。
 - A5.1、A5.2 根据各图的 `diagnosis_bbox` 绘制红框，原图保留，绘制结果写入 `preview/`。缺少坐标时记录输入错误，不自行推断范围。
 - A7.1 发送文字病历，允许 `images` 为空；性别、年龄、主诉、病史、检查、诊断和患者偏好按字段填充，未提供的内容明确注明未提供。
-- A5.1/A6.2 将参考答案的 `selected_option_ids` 按输入选项转换为中文诊断；A5.2 只把 `favored` 项作为诊断集合参考，不将未标注的选项自动当成已排除。
+- A5.1/A6.2 将参考答案的 `selected_option_ids` 按输入选项转换为中文诊断；A5.2 仅展示 `differential_diagnoses` 中医生记录的候选项，按原输入选项顺序排列。将 `favored` 项作为诊断集合参考，`excluded` 项及其理由作为排除理由参考，其他选项不提供。模型若输出未展示的诊断，该题解析无效。
 - A6.1 将 `total_count`/`image_counts` 转为 `total`/`images`，按实际图片发送顺序排列。
 - A6.3 将补充条件类别转为提示词要求的中文标签；A7.1 将 `treatment_plans` 转为 `plans`。这些转换供审核展示，不作临床语义等价判分。
 - 原始答案保存在结果的 `reference_answer_native`；`reference_answer` 为转换后的展示或比较版本。
@@ -62,11 +62,17 @@ python run.py --task A6.1 --image-root 'D:\你的数据集根目录' --model-con
 
 A5.1 每题总分 100：诊断得分为诊断集合 F1 × 50，理由得分为理由评分（0、1、2）÷ 2 × 50。F1 分别统计真阳性、假阳性、假阴性；模型若有未知诊断选项或格式错误，该题标记无效而不是默认为零分。
 
-实际运行 A5.1 时使用独立的理由评分模型，默认读取 `configs/model-gpt-6-luna.json`，也可通过 `--judge-model-config` 指定另一个配置文件。被测模型与评分模型各自读取自己的配置及 API Key；评分提示词只传递医生参考理由和模型理由，并要求输出 0、1、2 的评分及解释，结果包含评分模型名、原始回答、分数、解释及评分 token 使用量。调用或解析失败时保存 `reason_judge_error`，理由分数及该题总分保持 `null`，可检查错误后重新运行该题；不会默记为 0 分。自动评分需要课题组验证其与专家判断的一致性。
+实际运行 A5.1～A5.3 时使用独立的理由评分模型，默认读取 `configs/model-gpt-6-luna.json`，也可通过 `--judge-model-config` 指定另一个配置文件。被测模型与评分模型各自读取自己的配置及 API Key；评分提示词传递医生参考理由和模型理由，要求输出 0、1、2 的评分及解释，结果包含评分模型名、原始回答、分数、解释及评分 token 使用量。调用或解析失败时保存 `reason_judge_error`，理由分数及该题总分保持 `null`，已算出的客观得分保留；不会默记为 0 分。自动评分需要课题组验证其与专家判断的一致性。
 
-汇总中的 `skipped` 和 `skipped_cases` 单独记录跳过的题，不纳入有效题及总分分母；`fully_scored` / `unscored` 区分已评分和未完成的题。未完成所有已尝试题的评分时，整体 `total_score`、`score_rate` 和 `average_score` 为 `null`；若部分题已完成，另行报告 `scored_total_score`、`scored_total_points` 和 `scored_average_score`。其他 A5～A7 任务尚未确认计分规则，最终分数保持 `null`。
+A5.2 每题100分：诊断集合 F1 ×50分；诊断理由和排除理由各按模型原始评分 ÷2 ×25分。一道题只发送一次理由评分请求，返回 `reason` 和 `exclude_reason` 两个对象，各包含整数 `score`（0/1/2）与文字 `explanation`。排除理由必须与医生明确排除的诊断及其依据对应。两类理由各限100字，原始医生参考理由不受模型输出字数限制。缺失或未知候选项 ID 明确报错，不退回完整选项列表。
 
-特别是 A5.3：原始标注为 `diagnosis_support: supported/not_supported`，提示词要求判断资料“充足/不足”。不支持某诊断并不意味着资料不足，本实现保留提示词和原始标注，整项交由审核，不作标签互换。
+A5.3 按本项目约定将 `supported` 映射为“充足”、`not_supported` 映射为“不足”。保留 `reference_answer_native` 和 `reference_answer` 中的原始标签、`reasoning` 文字及证据编号；`reference_label_mapping` 记录转换策略。提示词及标准输出仍使用“充足/不足”，模型的“不充足”作为“不足”的别名接收。“充足”时须省略理由；“不足”时须给出非空且不超过100字的理由。
+
+A5.3 条件计分：参考为“充足”且答对，判断字段得100分、理由不适用；参考为“不足”且答对，判断得50分，理由按0/1/2分换算50分；判断错误整题得0分。只在正确判断“不足”时调用理由评分模型，对比医生 `reasoning` 的文字内容。格式错误不是错误判断，记为 `invalid` 且不产生总分。
+
+汇总中的 `skipped` 和 `skipped_cases` 单独记录跳过的题，不纳入有效题及总分分母；A5.1～A5.3 的 `fully_scored` / `unscored` 区分已评分和未完成的题。未完成所有已尝试题的评分时，整体 `total_score`、`score_rate` 和 `average_score` 为 `null`；若部分题已完成，另行报告 `scored_total_score`、`scored_total_points` 和 `scored_average_score`。A5.3 通过 `objective_metrics.sufficiency` 报告判断准确率。其他临床任务尚未确认计分规则，最终分数保持 `null`。
+
+上述 A5.3 映射是本项目明确采用的任务标签约定；输出保留转换记录，便于后续调整标注和审核。
 
 结果 JSONL 的原始模型回答和转换后的回答均保留。可以用下面的命令重新汇总已有结果；该命令不重新调用模型，也不执行人工审核：
 
@@ -78,4 +84,4 @@ python evaluate.py 'results/实际结果文件名.jsonl' --task A6.1
 
 A5.1 的 `candidate:e1cf8e01197540aea86895416ae5f8a7` 仅有 M02 影像，`evidence_media` 中没有 `diagnosis_bbox`，与提示词要求的红框范围不符。该题暂时记录为跳过；补充有效坐标后会自动恢复处理。其他缺框题仍会明确报错。
 
-自动测试覆盖 352 道题的提示词、模拟输出解析和参考答案转换；使用临时图片验证 351 道题的消息构造和 1 道缺框题的跳过，另测试 A5.1 分数换算及评分接口失败，并抽查原有 14 个任务的首题请求构造和评分。测试不能替代真实模型的评测。
+自动测试覆盖 352 道题的提示词、模拟输出解析和参考答案转换；使用临时图片验证 351 道题的消息构造和 1 道缺框题的跳过，另测试 A5.1～A5.3 分数换算、条件评分及评分接口失败，并抽查原有 14 个任务的首题请求构造和评分。测试不能替代真实模型的评测。

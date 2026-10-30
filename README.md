@@ -1,6 +1,6 @@
 # DentXpertBench Evaluation
 
-DentXpertBench-Eval is a lightweight evaluation toolkit for the DentXpertBench oral multimodal benchmark. The runner supports A1.1–A4.3 and the seven supplied A5.1–A7.1 prompt templates (A7.2 is not registered). A5.1 scores diagnosis F1 and optionally judges reasons with a separately configured model; other clinical open answers remain pending review. See [A5–A7 使用说明](docs/clinical-prompts.md).
+DentXpertBench-Eval is a lightweight evaluation toolkit for the DentXpertBench oral multimodal benchmark. The runner supports A1.1–A4.3 and the seven supplied A5.1–A7.1 prompt templates (A7.2 is not registered). A5.1–A5.3 support task-specific scoring and independently configured reason judging; other clinical open answers remain pending review. See [A5–A7 使用说明](docs/clinical-prompts.md).
 
 ## Project Layout
 

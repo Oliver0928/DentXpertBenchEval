@@ -83,6 +83,7 @@ from bench.metrics.localization import score_a22_fields, score_a24_fields, score
 from bench.metrics.report import summarize_fields
 from bench.metrics.clinical import score_clinical_fields
 from bench.metrics.a51 import score_a51_fields, build_reason_judge_messages, parse_reason_judgment, apply_reason_judgment
+from bench.metrics.a52_a53 import score_a52_fields, score_a53_fields, build_a52_judge_messages, parse_a52_judgment, apply_clinical_judgment
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent
@@ -214,6 +215,8 @@ for _code, _keys in CLINICAL_FIELD_KEYS.items():
         "scorer": partial(score_clinical_fields, task_code=_code),
     }
 TASK_SPECS["A5.1"]["scorer"] = score_a51_fields
+TASK_SPECS["A5.2"]["scorer"] = score_a52_fields
+TASK_SPECS["A5.3"]["scorer"] = score_a53_fields
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
@@ -672,7 +675,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--task", choices=[*TASK_SPECS.keys(), "all"], default="A1.1")
     parser.add_argument("--cases", type=Path, default=None, help="Override the default case JSON path. Only valid for a single task.")
     parser.add_argument("--image-root", type=Path, default=DEFAULT_IMAGE_ROOT)
-    parser.add_argument("--judge-model-config", type=Path, default=PROJECT_ROOT / "configs/model-gpt-6-luna.json", help="A5.1 reason judge config (independent of evaluated model).")
+    parser.add_argument("--judge-model-config", type=Path, default=PROJECT_ROOT / "configs/model-gpt-6-luna.json", help="A5.1-A5.3 reason judge config (independent of evaluated model).")
     parser.add_argument("--output", type=Path, default=None, help="Override the default output JSONL path. Only valid for a single task.")
     parser.add_argument(
         "--include-model-in-output",
@@ -728,7 +731,7 @@ def run_task(task_code: str, spec: dict[str, Any], args: argparse.Namespace) -> 
     judge_config = None
     judge_key = None
     judge_setup_error = None
-    if task_code == "A5.1" and not args.dry_run:
+    if task_code in {"A5.1", "A5.2", "A5.3"} and not args.dry_run:
         try:
             judge_config = load_model_config(args.judge_model_config)
             key_env = str(judge_config.get("api_key_env", "SUBLYX_API_KEY"))
@@ -737,7 +740,7 @@ def run_task(task_code: str, spec: dict[str, Any], args: argparse.Namespace) -> 
                 judge_key = read_api_key_file(Path(str(judge_config["api_key_file"])))
             if not judge_key and judge_config.get("requires_api_key", True):
                 judge_setup_error = f"Missing judge API key; configure {key_env} or judge key file"
-        except (SystemExit, ValueError) as exc:
+        except (SystemExit, ValueError, OSError) as exc:
             judge_setup_error = str(exc)
     run_metadata = {
         "run_id": args.run_id,
@@ -790,7 +793,7 @@ def run_task(task_code: str, spec: dict[str, Any], args: argparse.Namespace) -> 
                 run_metadata=run_metadata,
                 token_usage=token_usage if not args.dry_run else None,
             )
-            if task_code == "A5.1" and result["model_answer"] is not None and not args.dry_run:
+            if task_code in {"A5.1", "A5.2", "A5.3"} and result.get("pending_review_fields") and result["model_answer"] is not None and not args.dry_run:
                 result["reason_judge_model"] = judge_config.get("model") if judge_config else None
                 result["reason_judge_error"] = judge_setup_error
                 if judge_setup_error:
@@ -798,15 +801,23 @@ def run_task(task_code: str, spec: dict[str, Any], args: argparse.Namespace) -> 
                 if not judge_setup_error and judge_config:
                     try:
                         generation = judge_config.get("generation", {})
+                        if task_code == "A5.2":
+                            judge_messages = build_a52_judge_messages(result["reference_answer"], result["model_answer"])
+                        else:
+                            judge_messages = build_reason_judge_messages(result["reference_answer"]["reason"], result["model_answer"]["reason"])
                         judgment_response = chat_completion(
-                            messages=build_reason_judge_messages(result["reference_answer"]["reason"], result["model_answer"]["reason"]),
+                            messages=judge_messages,
                             model=str(judge_config["model"]), api_key=judge_key, base_url=str(judge_config["base_url"]),
                             temperature=0, max_tokens=1024, timeout=min(int(generation.get("timeout", 120)), 120),
                             extra_body=generation.get("extra_body", {}),
                         )
                         result["reason_judge_response"] = judgment_response.get("content")
                         result["reason_judge_token_usage"] = judgment_response.get("usage") or {}
-                        apply_reason_judgment(result, parse_reason_judgment(judgment_response.get("content")))
+                        if task_code == "A5.1":
+                            apply_reason_judgment(result, parse_reason_judgment(judgment_response.get("content")))
+                        else:
+                            judgment = parse_a52_judgment(judgment_response.get("content")) if task_code == "A5.2" else parse_reason_judgment(judgment_response.get("content"))
+                            apply_clinical_judgment(result, judgment)
                     except Exception as exc:
                         result["reason_judge_error"] = str(exc)
                         print(f"[judge-error] {case['id']}: {exc}")

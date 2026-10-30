@@ -37,11 +37,21 @@ class ClinicalProtocolTests(unittest.TestCase):
                     prompt = build_clinical_prompt(case)
                     self.assertNotIn("{{", prompt)
                     changed = copy.deepcopy(case)
-                    changed["reference_answer"] = {"fields": [{"key": "secret", "value": "PRIVATE_LABEL"}]}
+                    if code == "A5.2":
+                        for field in changed["reference_answer"]["fields"]:
+                            if field["key"] == "differential_diagnoses":
+                                for entry in field["value"]:
+                                    entry["role"] = "PRIVATE_LABEL"
+                                    entry["reason"] = "PRIVATE_REASON"
+                    else:
+                        changed["reference_answer"] = {"fields": [{"key": "secret", "value": "PRIVATE_LABEL"}]}
                     self.assertEqual(prompt, build_clinical_prompt(changed))
                     row = run.evaluate_case(case, build_clinical_mock_response(case), run.TASK_SPECS[code]["answer_parser"])
                     self.assertIsNone(row["parse_error"])
-                    self.assertIsNone(row["case_score"])
+                    if code == "A5.3" and row["scoring_status"] == "scored":
+                        self.assertEqual(row["case_score"], 0)
+                    else:
+                        self.assertIsNone(row["case_score"])
                     self.assertEqual(row["reference_answer_native"], case["reference_answer"])
                     rows.append(row)
                     count += 1
@@ -141,8 +151,9 @@ class ClinicalProtocolTests(unittest.TestCase):
             self.assertIsNone(row["case_score"])
         case = load_cases("A5.3")[0]
         row = run.evaluate_case(case, '{"sufficiency":"充足"}', run.TASK_SPECS["A5.3"]["answer_parser"])
-        self.assertEqual(row["objective_metrics"], {})
-        self.assertEqual(row["scoring_status"], "pending_review")
+        self.assertTrue(row["objective_metrics"]["sufficiency"]["exact_match"])
+        self.assertEqual(row["scoring_status"], "scored")
+        self.assertEqual(row["case_score"], 100)
         self.assertIn("diagnosis_support", row["reference_answer"])
 
     def test_text_only_cli_dry_run_and_invalid_exit_code(self):
