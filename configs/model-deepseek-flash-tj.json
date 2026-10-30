@@ -1,0 +1,13 @@
+{
+  "model": "DeepSeek-V4.1-Flash",
+  "base_url": "https://agi.tongji.edu.cn/v1",
+  "api_key_file": "D:\\Desktop\\tjapi.txt",
+  "api_key_env": "TONGJI_API_KEY",
+  "generation": {
+    "max_tokens": 49152,
+    "timeout": 600,
+    "retries": 10,
+    "retry_sleep": 2.0
+  }
+}
+

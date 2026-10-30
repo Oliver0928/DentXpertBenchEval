@@ -41,7 +41,8 @@ from bench.protocol import (
     build_a32_prompt,
     build_a33_prompt,
     build_a34_prompt,
-    extract_a24_periapical_target_fdis,
+    select_a24_cephalometric_structures,
+    select_a24_periapical_target_fdis,
     fields_to_dict,
     parse_a11_answer,
     parse_a12_answer,
@@ -87,10 +88,10 @@ from bench.metrics.a51 import score_a51_fields, build_reason_judge_messages, par
 PROJECT_ROOT = Path(__file__).resolve().parent
 REPO_ROOT = PROJECT_ROOT.parent
 DEFAULT_IMAGE_ROOT = REPO_ROOT / "公开数据集/公开数据集"
-DEFAULT_MODEL_CONFIG_PATH = PROJECT_ROOT / "configs/model-qwen-local.json"
+DEFAULT_MODEL_CONFIG_PATH = PROJECT_ROOT / "configs/model-deepseek-flash.json"
 TASK_SPECS = {
     "A1.1": {
-        "case_path": PROJECT_ROOT / "tasks/A1.1/DentXpertBench-cases-v3.2-A1.1-2026-10-19.json",
+        "case_path": PROJECT_ROOT / "tasks/A1.1/DentXpertBench-cases-v3.2-A1.1-2026-10-29.json",
         "output_path": PROJECT_ROOT / "results/a1_1_eval_results.jsonl",
         "field_keys": A11_FIELD_KEYS,
         "prompt_builder": build_a11_prompt,
@@ -98,7 +99,7 @@ TASK_SPECS = {
         "scorer": score_a11_fields,
     },
     "A1.2": {
-        "case_path": PROJECT_ROOT / "tasks/A1.2/DentXpertBench-cases-v3.2-A1.2-2026-10-19.json",
+        "case_path": PROJECT_ROOT / "tasks/A1.2/DentXpertBench-cases-v3.2-A1.2-2026-10-29.json",
         "output_path": PROJECT_ROOT / "results/a1_2_eval_results.jsonl",
         "field_keys": A12_FIELD_KEYS,
         "prompt_builder": build_a12_prompt,
@@ -106,7 +107,7 @@ TASK_SPECS = {
         "scorer": score_a12_fields,
     },
     "A1.3": {
-        "case_path": PROJECT_ROOT / "tasks/A1.3/DentXpertBench-cases-v3.2-A1.3-2026-10-19.json",
+        "case_path": PROJECT_ROOT / "tasks/A1.3/DentXpertBench-cases-v3.2-A1.3-2026-10-29.json",
         "output_path": PROJECT_ROOT / "results/a1_3_eval_results.jsonl",
         "field_keys": A13_FIELD_KEYS,
         "prompt_builder": build_a13_prompt,
@@ -114,7 +115,7 @@ TASK_SPECS = {
         "scorer": score_a13_fields,
     },
     "A2.1": {
-        "case_path": PROJECT_ROOT / "tasks/A2.1/DentXpertBench-cases-v3.2-A2.1-2026-10-19.json",
+        "case_path": PROJECT_ROOT / "tasks/A2.1/DentXpertBench-cases-v3.2-A2.1-2026-10-29.json",
         "output_path": PROJECT_ROOT / "results/a2_1_eval_results.jsonl",
         "field_keys": A21_FIELD_KEYS,
         "prompt_builder": build_a21_prompt,
@@ -122,7 +123,7 @@ TASK_SPECS = {
         "scorer": score_a21_fields,
     },
     "A2.2": {
-        "case_path": PROJECT_ROOT / "tasks/A2.2/DentXpertBench-cases-v3.2-A2.2-2026-10-12.json",
+        "case_path": PROJECT_ROOT / "tasks/A2.2/DentXpertBench-cases-v3.2-A2.2-2026-10-29.json",
         "output_path": PROJECT_ROOT / "results/a2_2_eval_results.jsonl",
         "field_keys": A22_FIELD_KEYS,
         "prompt_builder": build_a22_prompt,
@@ -130,7 +131,7 @@ TASK_SPECS = {
         "scorer": score_a22_fields,
     },
     "A2.3": {
-        "case_path": PROJECT_ROOT / "tasks/A2.3/DentXpertBench-cases-v3.2-A2.3-2026-10-14.json",
+        "case_path": PROJECT_ROOT / "tasks/A2.3/DentXpertBench-cases-v3.2-A2.3-2026-10-29.json",
         "output_path": PROJECT_ROOT / "results/a2_3_eval_results.jsonl",
         "field_keys": A23_FIELD_KEYS,
         "prompt_builder": build_a23_prompt,
@@ -138,7 +139,7 @@ TASK_SPECS = {
         "scorer": score_a23_fields,
     },
     "A2.4": {
-        "case_path": PROJECT_ROOT / "tasks/A2.4/DentXpertBench-cases-v3.2-A2.4-2026-10-18.json",
+        "case_path": PROJECT_ROOT / "tasks/A2.4/DentXpertBench-cases-v3.2-A2.4-2026-10-29.json",
         "output_path": PROJECT_ROOT / "results/a2_4_eval_results.jsonl",
         "field_keys": A24_FIELD_KEYS,
         "prompt_builder": build_a24_prompt,
@@ -146,7 +147,7 @@ TASK_SPECS = {
         "scorer": score_a24_fields,
     },
     "A3.1": {
-        "case_path": PROJECT_ROOT / "tasks/A3.1/DentXpertBench-cases-v3.2-A3.1-2026-10-16.json",
+        "case_path": PROJECT_ROOT / "tasks/A3.1/DentXpertBench-cases-v3.2-A3.1-2026-10-29.json",
         "output_path": PROJECT_ROOT / "results/a3_1_eval_results.jsonl",
         "field_keys": A31_FIELD_KEYS,
         "prompt_builder": build_a31_prompt,
@@ -154,7 +155,7 @@ TASK_SPECS = {
         "scorer": score_a31_fields,
     },
     "A3.2": {
-        "case_path": PROJECT_ROOT / "tasks/A3.2/DentXpertBench-cases-v3.2-A3.2-2026-10-18.json",
+        "case_path": PROJECT_ROOT / "tasks/A3.2/DentXpertBench-cases-v3.2-A3.2-2026-10-29.json",
         "output_path": PROJECT_ROOT / "results/a3_2_eval_results.jsonl",
         "field_keys": A32_FIELD_KEYS,
         "prompt_builder": build_a32_prompt,
@@ -162,7 +163,7 @@ TASK_SPECS = {
         "scorer": score_a32_fields,
     },
     "A3.3": {
-        "case_path": PROJECT_ROOT / "tasks/A3.3/DentXpertBench-cases-v3.2-A3.3-2026-10-19.json",
+        "case_path": PROJECT_ROOT / "tasks/A3.3/DentXpertBench-cases-v3.2-A3.3-2026-10-29.json",
         "output_path": PROJECT_ROOT / "results/a3_3_eval_results.jsonl",
         "field_keys": A33_FIELD_KEYS,
         "prompt_builder": build_a33_prompt,
@@ -170,7 +171,7 @@ TASK_SPECS = {
         "scorer": score_a33_fields,
     },
     "A3.4": {
-        "case_path": PROJECT_ROOT / "tasks/A3.4/DentXpertBench-cases-v3.2-A3.4-2026-10-19.json",
+        "case_path": PROJECT_ROOT / "tasks/A3.4/DentXpertBench-cases-v3.2-A3.4-2026-10-29.json",
         "output_path": PROJECT_ROOT / "results/a3_4_eval_results.jsonl",
         "field_keys": A34_FIELD_KEYS,
         "prompt_builder": build_a34_prompt,
@@ -178,7 +179,7 @@ TASK_SPECS = {
         "scorer": score_a34_fields,
     },
     "A4.1": {
-        "case_path": PROJECT_ROOT / "tasks/A4.1/DentXpertBench-cases-v3.2-A4.1-2026-10-19.json",
+        "case_path": PROJECT_ROOT / "tasks/A4.1/DentXpertBench-cases-v3.2-A4.1-2026-10-29.json",
         "output_path": PROJECT_ROOT / "results/a4_1_eval_results.jsonl",
         "field_keys": A41_FIELD_KEYS,
         "prompt_builder": build_a41_prompt,
@@ -186,7 +187,7 @@ TASK_SPECS = {
         "scorer": score_fields,
     },
     "A4.2": {
-        "case_path": PROJECT_ROOT / "tasks/A4.2/DentXpertBench-cases-v3.2-A4.2-2026-10-19.json",
+        "case_path": PROJECT_ROOT / "tasks/A4.2/DentXpertBench-cases-v3.2-A4.2-2026-10-29.json",
         "output_path": PROJECT_ROOT / "results/a4_2_eval_results.jsonl",
         "field_keys": A42_FIELD_KEYS,
         "prompt_builder": build_a42_prompt,
@@ -194,7 +195,7 @@ TASK_SPECS = {
         "scorer": score_fields,
     },
     "A4.3": {
-        "case_path": PROJECT_ROOT / "tasks/A4.3/DentXpertBench-cases-v3.2-A4.3-2026-10-19.json",
+        "case_path": PROJECT_ROOT / "tasks/A4.3/DentXpertBench-cases-v3.2-A4.3-2026-10-29.json",
         "output_path": PROJECT_ROOT / "results/a4_3_eval_results.jsonl",
         "field_keys": A43_FIELD_KEYS,
         "prompt_builder": build_a43_prompt,
@@ -205,7 +206,7 @@ TASK_SPECS = {
 
 for _code, _keys in CLINICAL_FIELD_KEYS.items():
     TASK_SPECS[_code] = {
-        "case_path": PROJECT_ROOT / f"tasks/{_code}/DentXpertBench-cases-v3.2-{_code}-2026-10-25.json",
+        "case_path": PROJECT_ROOT / f"tasks/{_code}/DentXpertBench-cases-v3.2-{_code}-2026-10-29.json",
         "output_path": PROJECT_ROOT / f"results/{_code.lower().replace('.', '_')}_eval_results.jsonl",
         "field_keys": _keys,
         "prompt_builder": build_clinical_prompt,
@@ -386,15 +387,16 @@ def evaluate_case(
     if task_code == "A2.4":
         modality = case.get("input", {}).get("images", [{}])[0].get("modality")
         if modality == "periapical_radiograph":
-            target_fdis = set(extract_a24_periapical_target_fdis(case))
+            target_fdis = set(select_a24_periapical_target_fdis(case))
             ref["structures"] = [item for item in ref["structures"] if item.get("fdi") in target_fdis]
+            # Periapical answers now contain one target tooth per case, so FDI
+            # is supplied by the prompt and is no longer part of each item key.
+            ref["structures"] = [
+                {key: value for key, value in item.items() if key != "fdi"}
+                for item in ref["structures"]
+            ]
         elif modality == "cephalometric_radiograph":
-            target_structures = {
-                value
-                for field in case.get("input", {}).get("fields", [])
-                if field.get("key") == "target_structures"
-                for value in field.get("value", [])
-            }
+            target_structures = set(select_a24_cephalometric_structures(case))
             if target_structures:
                 ref["structures"] = [
                     item for item in ref["structures"] if item.get("structure_code") in target_structures
@@ -403,6 +405,11 @@ def evaluate_case(
     try:
         debug_log(debug, f"call {getattr(answer_parser, '__name__', 'answer_parser')}(response)")
         pred = answer_parser(response)
+        if task_code == "A2.4" and modality == "periapical_radiograph" and pred:
+            pred["structures"] = [
+                {key: value for key, value in item.items() if key != "fdi"}
+                for item in pred.get("structures", [])
+            ]
         if task_code in CLINICAL_FIELD_KEYS:
             validate_clinical_answer(pred, case)
         debug_log(debug, f"parsed model_answer={json.dumps(pred, ensure_ascii=False)}")
@@ -604,15 +611,14 @@ def build_mock_response(case: dict[str, Any]) -> str:
     elif task_code == "A2.4":
         modality = case.get("input", {}).get("images", [{}])[0].get("modality")
         if modality == "periapical_radiograph":
-            target_fdis = set(extract_a24_periapical_target_fdis(case))
+            target_fdis = set(select_a24_periapical_target_fdis(case))
             structures = [item for item in ref["structures"] if item.get("fdi") in target_fdis]
+            structures = [
+                {key: value for key, value in item.items() if key != "fdi"}
+                for item in structures
+            ]
         elif modality == "cephalometric_radiograph":
-            target_structures = {
-                value
-                for field in case.get("input", {}).get("fields", [])
-                if field.get("key") == "target_structures"
-                for value in field.get("value", [])
-            }
+            target_structures = set(select_a24_cephalometric_structures(case))
             structures = [
                 item for item in ref["structures"]
                 if not target_structures or item.get("structure_code") in target_structures

@@ -1,8 +1,9 @@
 {
-  "format_version": "3.2",
+  "format_version": "3.3",
   "cases": [
     {
       "id": "candidate:00a0a7e71a514764bf2f03c2e426d50e",
+      "case_code": "case35",
       "task_code": "A1.1",
       "dataset_id": "C007",
       "schema_version": "0.7.5",
@@ -44,6 +45,7 @@
     },
     {
       "id": "candidate:00fa38c4b1a84b1e95ea78f4521cc718",
+      "case_code": "case38",
       "task_code": "A1.1",
       "dataset_id": "C001",
       "schema_version": "0.7.5",
@@ -85,6 +87,7 @@
     },
     {
       "id": "candidate:05776d57faf5413880b45aac0dc542fc",
+      "case_code": "case13",
       "task_code": "A1.1",
       "dataset_id": "C002",
       "schema_version": "0.7.5",
@@ -126,6 +129,7 @@
     },
     {
       "id": "candidate:0d908fa676fc4b6da3d22fe93c430024",
+      "case_code": "case4",
       "task_code": "A1.1",
       "dataset_id": "C006",
       "schema_version": "0.7.5",
@@ -167,6 +171,7 @@
     },
     {
       "id": "candidate:13ddc7cee8f64905a9989593b5d959bd",
+      "case_code": "case22",
       "task_code": "A1.1",
       "dataset_id": "C008",
       "schema_version": "0.7.5",
@@ -208,6 +213,7 @@
     },
     {
       "id": "candidate:1fd8e7a2366f44c484b7ee90c61b7163",
+      "case_code": "case3",
       "task_code": "A1.1",
       "dataset_id": "C005",
       "schema_version": "0.7.5",
@@ -249,6 +255,7 @@
     },
     {
       "id": "candidate:32f630b89ce54f3f8aca64861651fc26",
+      "case_code": "case20",
       "task_code": "A1.1",
       "dataset_id": "C001",
       "schema_version": "0.7.5",
@@ -290,6 +297,7 @@
     },
     {
       "id": "candidate:3942c8dcc51d46de9774fa4ab6fa8591",
+      "case_code": "case11",
       "task_code": "A1.1",
       "dataset_id": "C001",
       "schema_version": "0.7.5",
@@ -331,6 +339,7 @@
     },
     {
       "id": "candidate:3ebe915a6bf84d32a465a948d06e0f6c",
+      "case_code": "case39",
       "task_code": "A1.1",
       "dataset_id": "C001",
       "schema_version": "0.7.5",
@@ -372,6 +381,7 @@
     },
     {
       "id": "candidate:41939617c51d4deab68521052f7c1919",
+      "case_code": "case27",
       "task_code": "A1.1",
       "dataset_id": "C008",
       "schema_version": "0.7.5",
@@ -413,6 +423,7 @@
     },
     {
       "id": "candidate:46d6ae86ca4f4bc18b07a659f8919f76",
+      "case_code": "case24",
       "task_code": "A1.1",
       "dataset_id": "C008",
       "schema_version": "0.7.5",
@@ -454,6 +465,7 @@
     },
     {
       "id": "candidate:4771980d4a6b4ee8be3b8daea42c70d1",
+      "case_code": "case1",
       "task_code": "A1.1",
       "dataset_id": "C001",
       "schema_version": "0.7.5",
@@ -495,6 +507,7 @@
     },
     {
       "id": "candidate:47b732706d8a42e1a4ad1b11fa34cf1e",
+      "case_code": "case36",
       "task_code": "A1.1",
       "dataset_id": "C005",
       "schema_version": "0.7.5",
@@ -536,6 +549,7 @@
     },
     {
       "id": "candidate:4ae39eebcb3f4edd9bd45b5d1068517e",
+      "case_code": "case2",
       "task_code": "A1.1",
       "dataset_id": "C003",
       "schema_version": "0.7.5",
@@ -577,6 +591,7 @@
     },
     {
       "id": "candidate:698f37a3e4874a68b6dc16995739c852",
+      "case_code": "case25",
       "task_code": "A1.1",
       "dataset_id": "C008",
       "schema_version": "0.7.5",
@@ -618,6 +633,7 @@
     },
     {
       "id": "candidate:6d524bc4cb0a463a8898f0ca859709fd",
+      "case_code": "case33",
       "task_code": "A1.1",
       "dataset_id": "C007",
       "schema_version": "0.7.5",
@@ -659,6 +675,7 @@
     },
     {
       "id": "candidate:7040d28ed81f4e4482bd02bf6c77c0fe",
+      "case_code": "case8",
       "task_code": "A1.1",
       "dataset_id": "C008",
       "schema_version": "0.7.5",
@@ -700,6 +717,7 @@
     },
     {
       "id": "candidate:789b68ed2d6b409da2bf869c39f6ae86",
+      "case_code": "case10",
       "task_code": "A1.1",
       "dataset_id": "C004",
       "schema_version": "0.7.5",
@@ -741,6 +759,7 @@
     },
     {
       "id": "candidate:79c636ce3c3d44cc81f919216af32e37",
+      "case_code": "case37",
       "task_code": "A1.1",
       "dataset_id": "C001",
       "schema_version": "0.7.5",
@@ -782,6 +801,7 @@
     },
     {
       "id": "candidate:829477a70608406aa7db79655beaa721",
+      "case_code": "case29",
       "task_code": "A1.1",
       "dataset_id": "C008",
       "schema_version": "0.7.5",
@@ -823,6 +843,7 @@
     },
     {
       "id": "candidate:86e2d133b5804b039248be6d1eea59d1",
+      "case_code": "case7",
       "task_code": "A1.1",
       "dataset_id": "C005",
       "schema_version": "0.7.5",
@@ -864,6 +885,7 @@
     },
     {
       "id": "candidate:8f2ce2a5d18f4b23a3b11418b81cd55d",
+      "case_code": "case15",
       "task_code": "A1.1",
       "dataset_id": "C007",
       "schema_version": "0.7.5",
@@ -905,6 +927,7 @@
     },
     {
       "id": "candidate:92a0fe3c9e3f42a9b4b93d74d25d9284",
+      "case_code": "case28",
       "task_code": "A1.1",
       "dataset_id": "C008",
       "schema_version": "0.7.5",
@@ -946,6 +969,7 @@
     },
     {
       "id": "candidate:9907255cdb8446d788b19668597d66e1",
+      "case_code": "case32",
       "task_code": "A1.1",
       "dataset_id": "C008",
       "schema_version": "0.7.5",
@@ -987,6 +1011,7 @@
     },
     {
       "id": "candidate:9974111112f14f50afcd1cf0b8fe71c5",
+      "case_code": "case19",
       "task_code": "A1.1",
       "dataset_id": "C001",
       "schema_version": "0.7.5",
@@ -1028,6 +1053,7 @@
     },
     {
       "id": "candidate:a17bc040952a46ca9e212d8976d728ec",
+      "case_code": "case34",
       "task_code": "A1.1",
       "dataset_id": "C007",
       "schema_version": "0.7.5",
@@ -1069,6 +1095,7 @@
     },
     {
       "id": "candidate:a77d87b262a247c19a5367cde36cfa8d",
+      "case_code": "case6",
       "task_code": "A1.1",
       "dataset_id": "C017",
       "schema_version": "0.7.5",
@@ -1110,6 +1137,7 @@
     },
     {
       "id": "candidate:aacdbc6a632c48b3ac7678d9a882d203",
+      "case_code": "case5",
       "task_code": "A1.1",
       "dataset_id": "C014",
       "schema_version": "0.7.5",
@@ -1151,6 +1179,7 @@
     },
     {
       "id": "candidate:b32917aa64ac405aaeed1f7389d4d3cd",
+      "case_code": "case16",
       "task_code": "A1.1",
       "dataset_id": "C010",
       "schema_version": "0.7.5",
@@ -1192,6 +1221,7 @@
     },
     {
       "id": "candidate:b3401d4fb2ef417198ff302e8469826a",
+      "case_code": "case23",
       "task_code": "A1.1",
       "dataset_id": "C008",
       "schema_version": "0.7.5",
@@ -1233,6 +1263,7 @@
     },
     {
       "id": "candidate:b7bb08a91216436cb040b5f407b76148",
+      "case_code": "case21",
       "task_code": "A1.1",
       "dataset_id": "C008",
       "schema_version": "0.7.5",
@@ -1274,6 +1305,7 @@
     },
     {
       "id": "candidate:bdbba1408a9542f98a3d86b44b48568e",
+      "case_code": "case14",
       "task_code": "A1.1",
       "dataset_id": "C007",
       "schema_version": "0.7.5",
@@ -1315,6 +1347,7 @@
     },
     {
       "id": "candidate:bdd1a08c1295414586084432e974da2c",
+      "case_code": "case26",
       "task_code": "A1.1",
       "dataset_id": "C008",
       "schema_version": "0.7.5",
@@ -1356,6 +1389,7 @@
     },
     {
       "id": "candidate:c8a95eeae70146d8b4926803fc6379e6",
+      "case_code": "case18",
       "task_code": "A1.1",
       "dataset_id": "C001",
       "schema_version": "0.7.5",
@@ -1397,6 +1431,7 @@
     },
     {
       "id": "candidate:dd7b5bbb33a54fa4a397c4234886a3ac",
+      "case_code": "case12",
       "task_code": "A1.1",
       "dataset_id": "C001",
       "schema_version": "0.7.5",
@@ -1438,6 +1473,7 @@
     },
     {
       "id": "candidate:de0a6028228b41e481045b434ca9ebef",
+      "case_code": "case17",
       "task_code": "A1.1",
       "dataset_id": "C001",
       "schema_version": "0.7.5",
@@ -1479,6 +1515,7 @@
     },
     {
       "id": "candidate:de8441cb994e48b7bfd1960281c73ebf",
+      "case_code": "case31",
       "task_code": "A1.1",
       "dataset_id": "C008",
       "schema_version": "0.7.5",
@@ -1520,6 +1557,7 @@
     },
     {
       "id": "candidate:e5401c2c81e14cfabac0a11a5bbbb425",
+      "case_code": "case9",
       "task_code": "A1.1",
       "dataset_id": "C001",
       "schema_version": "0.7.5",
@@ -1561,6 +1599,7 @@
     },
     {
       "id": "candidate:f802646c2476467c8c809efa13db66fa",
+      "case_code": "case40",
       "task_code": "A1.1",
       "dataset_id": "C007",
       "schema_version": "0.7.5",
@@ -1602,6 +1641,7 @@
     },
     {
       "id": "candidate:fb20e981bd094541b5c74d4e7832f2bc",
+      "case_code": "case30",
       "task_code": "A1.1",
       "dataset_id": "C008",
       "schema_version": "0.7.5",
